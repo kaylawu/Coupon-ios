@@ -3,25 +3,49 @@
  */
 "user strict"
 
-define(["jquery", "../services/loginService"], function ($, service) {
+define(["jquery", "../services/userService"], function ($, service) {
 
     var theApp = service.theApp;
     var $$ = Dom7;
-    // Loading flag
-    var loading = false;
 
-    // Last loaded index
-    var lastIndex = $$('.list-block li').length;
-    var maxItems = 20;
-    // Append items per load
-    var itemsPerLoad = 5;
 
 
     var getInitData = function(){
-        console.log("getInitData activated");
+        theApp.showPreloader();
+        var username = localStorage.getItem("username");
+        service.getUserProfile(username);
+        service.getMerchantCount(username);
+        console.log("Init Data");
+        var tid = setInterval(pageLoading,1000);
+        function pageLoading(){
+            if(localStorage.getItem("userProfile")!== null && localStorage.getItem("userMechants")!==null){
+                console.log(JSON.parse(localStorage.getItem("userProfile")));
+                console.log(localStorage.getItem("userMechants"));
+                clearInterval(tid);
+                console.log("stop timer");
+                if(localStorage.getItem("userMechants")<=6){
+                    service.getMerchants(username,localStorage.getItem("userMechants"),0);
+                }else{
+                    service.getMerchants(username,6,0);
+                }
+                theApp.hidePreloader();
+
+            }
+        }
     };
 
     var refreshPage = function(){
+
+
+        // Loading flag
+        var loading = false;
+
+        // Last loaded index
+        var lastIndex = $$('.list-block li').length;
+
+        var maxItems = 20;
+        // Append items per load
+        var itemsPerLoad = 5;
 
         console.log("refresh activated");
         // Exit, if loading in progress

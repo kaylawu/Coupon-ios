@@ -16,6 +16,7 @@ requirejs.config({
         isotope: 'lib/isotope.min',
         imagesLoaded: 'lib/imagesLoaded.min',
         countdown: 'lib/countdown.min',
+        underscore:'lib.underscore',
 
         async: 'lib/require/async',
         propertyParser: 'lib/require/propertyParser',
@@ -34,7 +35,9 @@ require(['jquery', 'business/userBusiness'], function ($, user) {
         // Export selectors engine
         var $$ = Dom7;
         // Add view
-        var mainView = theApp.addView('.view-main', {});
+        var mainView = theApp.addView('.view-main', {
+            dynamicNavbar: true
+        });
 
         theApp.onPageInit('main_index',function(){
 

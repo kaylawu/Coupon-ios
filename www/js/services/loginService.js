@@ -21,7 +21,15 @@ define(["jquery","framework7"],function($,Framework7){
     var loginSuccess = function(data){
 
         if (data.result == 'success') {
-            window.location.replace("_USER/userhome.html");
+            if(typeof(Storage) !== "undefined") {
+
+                localStorage.setItem("username",data.username);
+
+                window.location.replace("_USER/userhome.html");
+            } else {
+                theApp.alert("Your phone do not support this version");
+            }
+
 
         } else if (data.result == 'fail') {
             theApp.alert("Failed to login! Please try again.");
