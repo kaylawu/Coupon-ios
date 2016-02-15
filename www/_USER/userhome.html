@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>Sweipe - Mobile HTML Web App Ready Theme</title>
+    <meta name="author" content="ThemingCool"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <!--*
+        *   Splash Screen Images
+        **-->
+    <!-- Allow web app to be run in full-screen mode. -->
+    <meta name="apple-mobile-web-app-capable"
+          content="yes">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="../css/framework7.ios.min.css">
+    <link rel="stylesheet" href="../css/framework7.ios.colors.min.css"/>
+    <link rel="stylesheet" href="../css/framework7.3dpanels.min.css"/>
+    <link rel="stylesheet" href="../css/essentials.css">
+    <link rel="stylesheet" href="../css/my-app.css"/>
+</head>
+<!--angular module "myAPP"-->
+<body>
+<div class="statusbar-overlay"></div>
+<!-- Panels overlay-->
+<div class="panel-overlay"></div>
+<!-- Left panel with reveal effect-->
+<div class="panel panel-left panel-reveal">
+
+    <div class="content-block">
+        <div class="content-inner">
+            <!--<div class="avatar">
+                <img src="" alt="userImage">
+            </div>-->
+            <div class="details">
+                <div class="item-title"></div>
+            </div>
+
+            <nav class="list-block accordion-list menu-list">
+                <ul>
+
+
+                    <li class="nav-menu"><a href="userhome.html" class="close-panel back with-animation"
+                                            data-reload="true" data-ignore-cache="true">
+
+                        <div class="item-inner">
+                            <div class="item-title">Home</div>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="nav-menu"><a href="business-list.html" class="close-panel">
+                        <div class="item-inner">
+                            <div class="item-title">My Shops</div>
+                        </div>
+                    </a>
+                    </li>
+
+                    <li class="nav-menu"><a href="myVoucher.html" class="close-panel">
+                        <div class="item-inner">
+                            <div class="item-title">My Vouchers</div>
+                        </div>
+                    </a>
+                    </li>
+
+                    <li class="nav-menu"><a href="userSettings.html" class="close-panel">
+                        <div class="item-inner">
+                            <div class="item-title">My Profile</div>
+                        </div>
+                    </a>
+
+                    </li>
+                    <li class="nav-menu"><a href="business-list.html" class="close-panel">
+                        <div class="item-inner">
+                            <div class="item-title">New Offers <span class="primary-color">5</span></div>
+                        </div>
+                    </a>
+                    </li>
+
+                </ul>
+            </nav><!-- .menu-list | ENDS -->
+
+            <div class="content-inner contact-information">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Views-->
+<div class="views">
+    <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left">
+                    <a href="#" class="open-panel" data-panel="left"><i class="uiicon-list91"></i></a>
+                    <div class="page-name">My Progress</div>
+                </div>
+                <form method="get" action="?" class="tc-header-search list-block">
+                    <div class="item-input item-input-field">
+                        <input type="text" placeholder="Search..." class="" required>
+                    </div>
+                    <button type="submit"></button>
+                </form>
+                <div class="right">
+                    <a href="#" class="link icon-only header-search-icon"><i class="uiicon-magnifying55"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="pages navbar-through toolbar-through">
+            <div class="page" data-page="main_index">
+                <!-- Scrollable page content-->
+                <div class="page-content infinite-scroll" data-distance="10"  style="background-color:rgba(0,0,0,.04)">
+                    <div class="content-block"  style="background-color:white">
+                        <div class="row">
+                            <div class="col-100">
+                                <div class="tc-user-card">
+                                    <div class="avatar">
+                                        <img src="http://placehold.it/140x140" alt="">
+                                    </div>
+                                    <div class="details">
+                                        <h2>Kelly</h2>
+                                    </div>
+                                </div><!-- .tc-user-card | ENDS -->
+                            </div><!-- .col-100 | ENDS -->
+                        </div><!-- .row | ENDS -->
+                    </div> <!-- .content-block | ENDS -->
+
+                    <div class="content-block-title">Your Progress</div>
+                    <div class="list-block media-list userPoint" data->
+                        <ul>
+                            <li>
+                                <div class="item-content">
+
+                                    <div class="item-media"><img src=../img/logo.png></div>
+                                    <div class="item-inner">
+                                        <h3>Red Chill Sichuan</h3>
+                                        <div class="progress-box" data-percent="47">
+                                            <div class="bar" style="transition-duration: 300ms; width: 47%;">
+                                                <div class="progress">47%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><img src=../img/logo.png></div>
+                                    <div class="item-inner">
+                                        <h3>New Shanghai</h3>
+                                        <div class="progress-box" data-percent="57">
+                                            <div class="bar" style="transition-duration: 300ms; width: 57%;">
+                                                <div class="progress">57%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><img src=../img/logo.png></div>
+                                    <div class="item-inner">
+                                        <h3>Easyway</h3>
+                                        <div class="progress-box" data-percent="80">
+                                            <div class="bar" style="transition-duration: 300ms; width: 80%;">
+                                                <div class="progress">80%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><img src=../img/logo.png></div>
+                                    <div class="item-inner">
+                                        <h3>Chatime</h3>
+                                        <div class="progress-box" data-percent="30">
+                                            <div class="bar" style="transition-duration: 300ms; width: 30%;">
+                                                <div class="progress">30%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><img src=../img/logo.png></div>
+                                    <div class="item-inner">
+                                        <h3>New world</h3>
+                                        <div class="progress-box" data-percent="10">
+                                            <div class="bar" style="transition-duration: 300ms; width: 10%;">
+                                                <div class="progress">10%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><img src=../img/logo.png></div>
+                                    <div class="item-inner">
+                                        <h3>Chatime</h3>
+                                        <div class="progress-box" data-percent="47">
+                                            <div class="bar" style="transition-duration: 300ms; width: 47%;">
+                                                <div class="progress">57%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><img src=../img/logo.png></div>
+                                    <div class="item-inner">
+                                        <h3>New world</h3>
+                                        <div class="progress-box" data-percent="47">
+                                            <div class="bar" style="transition-duration: 300ms; width: 47%;">
+                                                <div class="progress">57%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <div class="infinite-scroll-preloader">
+                        <div class="preloader"></div>
+                    </div>
+
+
+
+                    <!--                     <div class ="infinite-scroll infinite-scroll-top">
+                                            <div class="progress-list media-list" >
+                                                <ul>
+                                                    <li class="item-content accordion-item">
+                                                        <a href="#" class="item-link item-content">
+                                                            <div class="item-inner"><a href="shopdetail.html">
+                    <<<<<<< HEAD
+                                                                <div class="item-media"><h3>Red Chill Sichuan</h3></div>
+                    =======
+                                                                <div class="item-media"><img src=../img/logo.png></div>
+                    >>>>>>> origin/master
+                                                                <div class="item-inner">
+                                                                    <h3>Red Chill Sichuan</h3>
+                                                                    <div class="progress-box" data-percent="47">
+                                                                        <div class="bar" style="transition-duration: 300ms; width: 47%;">
+                                                                            <div class="progress">47%</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div></a>
+                                                                </div>
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="item-content">
+                                                        <a href="#" class="item-link item-content">
+                                                            <div class="item-inner"><a href="shopdetail.html">
+                                                                <div class="item-media"><h3>New Shanghai</h3></div>
+                                                                <div class="item-inner">
+                                                                    <div class="progress-box" data-percent="47">
+                                                                        <div class="bar" style="transition-duration: 300ms; width: 47%;">
+                                                                            <div class="progress">47%</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div></a>
+                                                                </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="item-content">
+                                                        <a href="#" class="item-link item-content">
+                                                            <div class="item-inner"><a href="shopdetail.html">
+                                                                <div class="item-media"><h3>Easy Way</h3></div>
+                                                                <div class="item-inner">
+
+                                                                    <div class="progress-box" data-percent="77">
+                                                                        <div class="bar" style="transition-duration: 300ms; width: 77%;">
+                                                                            <div class="progress">77%</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div></a>
+                                                                </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="item-content">
+                                                        <a href="#" class="item-link item-content">
+                                                            <div class="item-inner"><a href="_USER/shopdetail.html">
+                                                                <div class="item-media"><h3>Chatime</h3></div>
+                                                                <div class="item-inner">
+                                                                    <div class="item-title-row">
+
+                                                                    </div>
+                                                                    <div class="progress-box" data-percent="87">
+                                                                        <div class="bar" style="transition-duration: 300ms; width: 87%;">
+                                                                            <div class="progress">87%</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div></a>
+                                                                </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="item-content">
+                                                        <a href="#" class="item-link item-content">
+                                                            <div class="item-inner"><a href="shopdetail.html">
+                                                                <div class="item-media"><h3>Lantern by Wagaya</h3></div>
+                                                                <div class="item-inner">
+                                                                    <div class="item-title-row">
+
+                                                                    </div>
+                                                                    <div class="progress-box" data-percent="97">
+                                                                        <div class="bar" style="transition-duration: 300ms; width: 97%;">
+                                                                            <div class="progress">97%</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div></a>
+                                                                </div>
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>--> <!-- .infinite scroll | ENDS -->
+                    <!-- list-block accordion-list | ENDS -->
+                    <!--&lt;!&ndash; Preloader &ndash;&gt;-->
+                    <!--<div class="infinite-scroll-preloader">-->
+                    <!--<div class="preloader"></div>-->
+                    <!--</div>-->
+
+                </div><!-- .page-content | ENDS -->
+            </div><!-- .page | ENDS -->
+        </div><!-- .pages | ENDS -->
+    </div>
+</div>
+<!-- Loading Screen -->
+<div class="tc-loading-screen vh-center">
+    <div>
+        <div class="big">Page is Loading</div>
+        <div class="small">Please Wait...</div>
+
+        <div class="preloader-wrapper active">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+
+            <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+
+            <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+
+            <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- .tc-loading-screen | ENDS -->
+
+<script data-main="../js/user" src="../js/require.min.js"></script>
+</body>
+</html>

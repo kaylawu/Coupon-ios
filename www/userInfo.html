@@ -1,0 +1,83 @@
+<!-- We don't need full layout here, because this page will be parsed with Ajax-->
+<div class="pages navbar-fixed">
+    <!-- Page, data-page contains page name-->
+    <div data-page="register" class="page bg-2">
+        <div class="navbar">
+            <div class="navbar-inner">
+              <div class="center">LOGO</div>
+            </div>
+        </div>
+        <!-- Scrollable page content-->
+        <div class="page-content vh-center">
+            <div class="content-block">
+                <div class="row">
+                    <div class="col-100">
+                        <div class="content-block-inner">
+                            <p>Please provide us your information</p>
+                            <form method="post" action="?" class="tc-contact-form list-block inputs-list">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">Name</div>
+                                                <div class="item-input">
+                                                    <input name="name" type="text" placeholder="Your name" required/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">Gender</div>
+                                                <div class="item-input">
+                                                    <select name="gender">
+                                                        <option>Female</option>
+                                                        <option>Male</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">Mobile Phone</div>
+                                                <div class="item-input">
+                                                    <input name="phone" type="text" placeholder="040 0000 0000" required/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">Address</div>
+                                                <div class="item-input">
+                                                    <input name="address" type="text" placeholder="" optional/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    <!--<li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">Details</div>
+                                                <div class="item-input">
+                                                    <textarea name="details" class="resizable" placeholder="Detailed Message" required></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>-->
+                                    <li>
+                                        <p class="buttons-row"><button class="button button-raised button-fill color-green" type="submit">Done</button></p>
+                                    </li>
+                                </ul>
+                            </form><!-- .list-block | ENDS -->
+                        </div><!-- .content-block-inner | ENDS -->
+                    </div><!-- .col-100 | ENDS -->
+                </div><!-- .row | ENDS -->
+            </div><!-- .content-block | ENDS -->
+        </div><!-- .page-content | ENDS -->
+        </div><!-- .page-content | ENDS -->
+    </div>
+</div>

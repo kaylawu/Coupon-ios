@@ -1,0 +1,155 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <title>SR Super Reards Club</title>
+    <meta name="author" content="ThemingCool"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <!--*
+        *   Splash Screen Images
+        **-->
+    <!-- Allow web app to be run in full-screen mode. -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css"/>
+    <link rel="stylesheet" href="css/framework7.3dpanels.min.css"/>
+    <link rel="stylesheet" href="css/essentials.css">
+    <link rel="stylesheet" href="css/my-app.css">
+</head>
+<body>
+<div class="statusbar-overlay"></div>
+<div class="views">
+    <div class="view view-main">
+        <!-- We don't need full layout here, because this page will be parsed with Ajax-->
+        <div class="pages toolbar-through">
+
+
+            <div class="navbar no-border primary-bg">
+                <div class="navbar-inner">
+                    <div class="center sliding">
+                      Home
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Page, data-page contains page name-->
+  <div data-page="login" class="page bg-3 no-toolbar">
+                <!-- Scrollable page content-->
+                <div class="page-content vh-center" style="background-color:rgba(0,0,0,.84)">
+                    <div class="content-block">
+
+                        <!-- End of tab bar -->
+                        <div class="tabs">
+                            <div id="tab-1" class="tab active">
+                                <h2>Member Login</h2>
+                                <div class="tc-divider thick"></div>
+
+                                <div id="userLogin" class="list-block">
+                                    <div class="item-content">
+                                        <div class="item-media"><i class="uiicon-price12"></i></div>
+                                        <div class="item-inner">
+                                            <div class="item-input item-input-field">
+                                                <input id="user-username" name="username" type="text"
+                                                       placeholder="Username">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="item-content">
+                                        <div class="item-media"><i class="uiicon-locked60"></i></div>
+                                        <div class="item-inner">
+                                            <div class="item-input item-input-field">
+                                                <input id="user-password" name="password" type="password"
+                                                       placeholder="Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="small">
+                                    <a href="forget_password.html">Forget password?</a></div>
+                                    <br/>
+                                    <br/>
+                                    <p class="buttons-row">
+                                        <button id="user-login" class="button button-big color-green" type="button">
+                                            LOGIN
+                                        </button>
+                                    </p>
+                                </div>
+
+                                <p class="buttons-row">
+                                    <a class="button button-big" href="register.html">
+                                        <small><i class="uiicon-unlocked45"></i>Create account</small>
+                                    </a>
+                                    <!-- <a class="button text-right external" href="_USER/userhome.html"><small><i class="uiicon-home152"></i>Skip Login</small></a> -->
+                                </p>
+
+                                <!--<div class="tc-divider thick"></div>-->
+
+                                <!-- <p class="buttons-row"><button class="button button-raised button-fill color-indigo" type="submit">Login with Facebook</button></p>
+
+                                <p class="buttons-row"><button class="button button-raised button-fill color-cyan" type="submit">Login with Twitter</button></p> -->
+                            </div><!--tab1 | ENDS -->
+
+                            <div id="tab-2" class="tab">
+                                <h2>Business Login</h2>
+                                <div class="tc-divider thick"></div>
+                                <!--<h3>Enter your username and password</h3>-->
+                                <div id="businessLogin" class="list-block">
+                                    <div class="item-content">
+                                        <div class="item-media"><i class="uiicon-price12"></i></div>
+                                        <div class="item-inner">
+                                            <div class="item-input item-input-field">
+                                                <input id="business-username" type="text" placeholder="Username">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="item-content">
+                                        <div class="item-media"><i class="uiicon-locked60"></i></div>
+                                        <div class="item-inner">
+                                            <div class="item-input item-input-field">
+                                                <input id="business-password" type="password" placeholder="Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="small">
+                                    <a href="forget_password.html">Forget password?</a></div>
+                                    <br/>
+                                    <br/>
+                                    <p class="buttons-row">
+                                        <button class="button button-big color-green" id="business-login" type="button">
+                                            LOGIN
+                                        </button>
+                                    </p>
+
+                                </div>
+                                <p class="buttons-row"><a class="button button-big color-blue"
+                                                          href="../www/about-us.html">
+                                    <small><i class="uiicon-unlocked45"></i>Create account</small>
+                                </a></p>
+                                <!--<div class="tc-divider thick"></div>-->
+                            </div><!--tab2 | ENDS -->
+                        </div>
+                    </div><!-- .content-block | ENDS -->
+                </div><!-- .page-content | ENDS -->
+            </div>
+        </div>
+        <div class="toolbar" style="background-color:rgba(0,0,0,.84)">
+            <div class="buttons-row" style="border-radius:0px">
+                <a href="#tab-1" class="tab-link active button ">Memeber Login</a>
+                <a href="#tab-2" class="tab-link button">Business Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
+    <script data-main="js/login" src="js/require.min.js"></script>
+</body>
+</html>

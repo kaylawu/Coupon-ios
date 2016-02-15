@@ -1,0 +1,261 @@
+
+    <!-- Page, data-page contains page name-->
+    <div data-page="user-about-me" class="page">
+        <!-- Top Navbar-->
+        <div class="navbar no-border primary-bg">
+            <div class="navbar-inner">
+                <div class="left">
+                    <a href="#" class="link icon-only open-panel" data-panel="left"><i class="uiicon-list91"></i></a>
+                    <div class="page-name">SRC</div>
+                </div>
+
+                <div class="right">
+                    <a href="#" class="link icon-only header-search-icon"><i class="uiicon-magnifying55"></i></a>
+                    
+                </div>
+
+                <form method="get" action="?" class="tc-header-search list-block">
+                    <div class="item-input item-input-field">
+                        <input type="text" placeholder="Search..." class="" required>
+                    </div>
+                    <button type="submit"></button>
+                </form>
+            </div>
+        </div>    
+        
+               <!-- Scrollable page content-->
+            <div class="page-content infinite-scroll">
+                <!-- Slider container -->
+                 <div class="swiper-container swiper-init" data-autoplay="5000" data-speed="400" data-space-between="0" data-next-button=".swiper-next" data-prev-button=".swiper-prev">
+                        <!-- Slides wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <img src="https://placeimg.com/355/250/NATURE" alt=""/>
+                                <div class="tc-slider-caption-1">
+                                    <h1></h1>
+                                    <h2>Vouchers give away</h2>
+                                    <p>When you spend $100 at SRC</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://placeimg.com/355/250/NATURE" alt=""/>
+                                <div class="tc-slider-caption-1 text-center">
+                                    <h1></h1>
+                                    <h2>Happy Chinese New Year</h2>
+                                    <p>We specifically optimized and minimized everything to speed up loading!</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://placeimg.com/355/250/NATURE" alt=""/>
+                                <div class="tc-slider-caption-1 text-right">
+                                    <h1></h1>
+                                    <h2>Double rewards points for new users</h2>
+                                    <p>But at the same time We covered many features in it.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-prev"><i class="uiicon-left222"></i></div>
+                        <div class="swiper-next"><i class="uiicon-left222"></i></div>
+                    </div><!-- .swiper-container | ENDS -->
+                <!--filter version-->
+                    <div class="content-block">
+                      <div class="row">
+                         <div class="col-30">
+                             <a href="#" data-filter =".popular" class="button button-big button-fill color-gray"><small>Popular</small></a>
+                          </div>          
+                         <div class="col-30">
+                             <a href="javascript:showhide('shoptype')" data-filter=".type"  class="button button-big button-fill color-yellow"><small>Shop Type</small></a>
+                          </div>
+                         <div class="col-30">
+                             <a href="mapview.html" class="button button-big button-fill color-red"><small>Location</small></a>
+                          </div>
+                                    
+                                  <!--  <div class="tc-filters clearfix">
+                                        <span>Filter:</span>
+                                        <a href="#" data-filter=".popular" class="active">Popular</a>
+                                        <a href="javascript:showhide('shoptype')" data-filter=".type">Type</a>
+                                        <a href="mapview.html">Location</a>
+                                    </div>-->
+                        </div>
+                        <div id ="shoptype" style="display:none;">
+                          <p class ="buttons-row">
+                                <a href="#" class="button color-blue"><small>Cafe</small></a><a href="#" class="button color-cyan"><small>FOOD</small></a><a href="#" class="button color-indigo"><small>Retails</small></a>
+                            </p>  
+                        </div>  
+                    </div>               
+                <div class="col-100 tablet-50">
+                    <div class="tc-product">
+                        <a href="shopdetail.html" class="title">
+                        <img src="../img/shop1.png" alt="" class="cover"/>
+                        <div class="tag new">New shop</div>
+                            <div class="details">
+                                <div class="head">
+                                    <h3>Chatime</h3>
+                                    <h3>Sydney</h3>
+                                </div>
+                                <div class="buttons">
+                                    <a href="#"><i class="uiicon-web39 color-orange"></i> Your points: 35 </a>
+                                    <a href="shopdetail.html"><i class="uiicon-web38"></i> Details</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div><!-- .col-100.tablet-50 | ENDS -->
+                <div class="col-100 tablet-50">
+                    <div class="tc-product">
+                        <a href="shopdetail.html" class="title">
+                        <img src="../img/shop2.jpg" alt="" class="cover" />
+                        <div class="tag new">New Offer</div>
+                        <div class="details">
+                            <div class="head">
+                               <h3>Bags for Lyfe</h3>
+                                <h3>Haymarket</h3>
+                            </div>
+                            <div class="buttons">
+                                <a href="#"><i class="uiicon-web39 color-orange"></i> Your points: 35 </a>
+                                <a href="shopdetail.html"><i class="uiicon-web38"></i> Details</a>
+                            </div>
+                            </div>
+                        </a>
+                    </div>
+                </div><!-- .col-100.tablet-50 | ENDS -->
+                <div class="col-100 tablet-50">
+                    <div class="tc-product">
+                      <a href="shopdetail.html" class="title">
+                        <img src="../img/testing.png" alt=""  class="cover"/>
+                            <div class="tag new">New Shop</div>
+                                <div class="details">
+                                    <div class="head">
+                                        <h3>Handmade Chair</h3>
+                                        <h3>Zetland</h3>
+                                    </div>
+                            <div class="buttons">
+                                <a href="#"><i class="uiicon-web39 color-orange"></i> Your points: 35</a>
+                                <a href="shopdetail.html"><i class="uiicon-web38"></i> Details</a>
+                            </div>
+                            </div>
+                        </a>
+                    </div>
+                </div><!-- .col-100.tablet-50 | ENDS -->
+                <div class="col-100 tablet-50">
+                    <div class="tc-product">
+                        <a href="shopdetail.html" class="title">
+                        <img src="../img/shop4.png" alt="" />
+                        <div class="details">
+                            <div class="head">
+                              <h3>Spraii</h3>
+                               <h3>Chatswood</h3>
+                            </div>
+                            <div class="buttons">
+                                <a href="#"><i class="uiicon-web39 color-orange"></i> Your points: 35</a>
+                                <a href="shopdetail.html"><i class="uiicon-web38"></i> Details</a>
+                            </div>
+                        </div></a>
+                </div><!-- .col-100.tablet-50 | ENDS -->
+            </div><!-- .col-100 | ENDS -->
+                <div class="col-100 tablet-50">
+                        <div class="tc-product">
+                            <a href="shopdetail.html" class="title">
+                            <img src="../img/shop5.png" alt="" />
+
+                            <div class="details">
+                                <div class="head">
+                                  <h3>Spraii</h3>
+                                   <h3>Chatswood</h3>
+                                </div>
+                                <div class="buttons">
+                                    <a href="#"><i class="uiicon-web39 color-orange"></i> Your points: 35</a>
+                                    <a href="shopdetail.html"><i class="uiicon-web38"></i> Details</a>
+                                </div>
+                            </div></a>
+                    </div><!-- .col-100.tablet-50 | ENDS -->
+                </div><!-- .col-100 | ENDS -->
+                    </div><!-- .content-block | ENDS -->        
+        
+        
+        
+        
+        <!-- <ul>
+                            <li>
+                               
+                                 <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-form-name"></i>                                                 </div>
+                                        <div class="item-inner">
+                                            <div class="item-title label">Username</div>
+                                                <div class="item-input">
+                                             <input type="text" placeholder="Your name"/>
+                                        </div>
+                                    </div>
+                            </li>
+                            <li>
+                                 <div class="item-content">
+                                      <div class="item-media"><i class="icon icon-form-email"></i>                                               </div>
+                                        <div class="item-inner">
+                                            <div class="item-title label">E-mail</div>
+                                                <div class="item-input">
+                                               <input type="email" placeholder="E-mail"/>
+                                           </div>
+                                       </div>
+                                 </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-form-password"></i>                                             </div>
+                                        <div class="item-inner">
+                                            <div class="item-title label">Password</div>
+                                            <div class="item-input">
+                                                 <input type="password" placeholder="Password"/>
+                                           </div>
+                                     </div>
+                                 </div>
+                            </li>
+                    </ul>-->
+                </div>
+                <!--end of list-block>
+                                       
+                                  
+                <!--<div class="row">
+                    <div class="col-100 tablet-50">
+                        <div class="tc-progress-bar clearfix">
+                            <strong>HTML5</strong>
+                            <i>90%</i>
+                            <div class="wrap"><div class="bar red" style="width: 90%"></div></div>
+                        </div>
+
+                        <div class="tc-progress-bar clearfix">
+                            <strong>CSS3</strong>
+                            <i>95%</i>
+                            <div class="wrap"><div class="bar indigo" style="width: 95%"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="col-100 tablet-50">
+                        <div class="tc-progress-bar clearfix">
+                            <strong>Javascript</strong>
+                            <i>80%</i>
+                            <div class="wrap"><div class="bar amber" style="width: 80%"></div></div>
+                        </div>
+
+                        <div class="tc-progress-bar clearfix">
+                            <strong>WordPress</strong>
+                            <i>70%</i>
+                            <div class="wrap"><div class="bar cyan" style="width: 70%"></div></div>
+                        </div>
+                    </div>
+                </div>-->
+            <!-- </div> -->
+
+            <div class="content-block tc-footer text-center primary-bg">
+                <div class="content-block-inner">
+                    <span>Copyright 2015 by SRC</span>
+                    <div>
+                        <a href="#" class="external tc-icon-ball socialicon-facebook43 color-facebook"></a>
+                        <a href="#" class="external tc-icon-ball socialicon-google109 color-google"></a>
+                       
+                    </div>
+                </div><!-- .content-block-inner | ENDS -->
+            </div><!-- .tc-footer | ENDS -->
+       <!--  </div>.page-content | ENDS
+    </div> -->
