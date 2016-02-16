@@ -41,8 +41,8 @@
                               <div class="content-block">
                                 <div class="item-input">
                                  <input type="text" placeholder="Current address:"/>
-                                     <input type="text" placeholder="Eneter your new address"/>
-                                       <h3><button class="Raised Buttons color-green">Update</button></h3>
+                                     <input type="text" id="textUpdateAddress" placeholder="Eneter your new address"/>
+                                       <h3><button id="btnUpdateAddress" class="Raised Buttons color-green">Update</button></h3>
                                 </div> 
                               </div>
                             </div>
@@ -56,8 +56,8 @@
                               <div class="content-block">
                                 <div class="item-input">
                                  <input type="text" placeholder="Current phone number:"/>
-                                     <input type="text" placeholder="Eneter your new phone number"/>
-                                       <h3><button class="Raised Buttons color-green">Update</button></h3>
+                                     <input id='textUserPhoneNum' type="text" placeholder="Eneter your new phone number"/>
+                                       <h3><button id="btnUpdatePhoneNum" class="Raised Buttons color-green">Update</button></h3>
                                 </div> 
                               </div>
                             </div>
@@ -70,9 +70,9 @@
                             <div class="accordion-item-content">
                               <div class="content-block">
                                   <div class="item-input">
-                                       <input type="text" placeholder="Eneter your current password"/>
-                                       <input type="text" placeholder="Eneter your new password"/>
-                                        <h3><button class="Raised Buttons color-green">Update</button></h3>
+                                       <input type="text" id="textCurrentPassword" placeholder="Eneter your current password"/>
+                                       <input type="text" id="textNewPassowrd" placeholder="Eneter your new password"/>
+                                        <h3><button id="btnResetPassword" class="Raised Buttons color-green">Update</button></h3>
                                    </div> 
                               </div>
                             </div>
@@ -84,8 +84,8 @@
                           <div class="accordion-item-content">
                               <div class="content-block">
                                   <div class="item-input">
-                                       <input type="text" placeholder="Eneter your new email"/>
-                                        <h3><button class="Raised Buttons color-green">Update</button></h3>
+                                       <input type="text" id="textNewEmail" placeholder="Eneter your new email"/>
+                                        <h3><button id="btnUpdateEmail" class="Raised Buttons color-green">Update</button></h3>
                                    </div> 
                               </div>
                             </div>
@@ -125,7 +125,7 @@
                               </div>
                             </div>
                         </li>
-                          <li class="accordion-item"><a href="../index.html" class="item-link item-content">
+                          <li class="accordion-item"><a href="../index.html" id="linkLogout" class="item-link item-content">
                             <div class="item-inner">
                               <div class="item-title">Logout</div>
                             </div>

@@ -59,38 +59,33 @@ define(["jquery", "../services/userService"], function ($, service) {
             service.getFreshMechants(username,maxItems - lastIndex,lastIndex);
         }
 
-        //// Emulate 1s loading
-        //setTimeout(function () {
-        //    // Reset loading flag
-        //    loading = false;
-        //
-        //    if (lastIndex >= localStorage.getItem("userMechants")) {
-        //        // Nothing more to load, detach infinite scroll events to prevent unnecessary loadings
-        //        theApp.detachInfiniteScroll($$('.infinite-scroll'));
-        //        // Remove preloader
-        //        $$('.infinite-scroll-preloader').remove();
-        //        return;
-        //    }
-        //
-        //    // Generate new items HTML
-        //    var html = '';
-        //    for (var i = lastIndex + 1; i <= lastIndex + itemsPerLoad; i++) {
-        //        html += '<li><div class="item-content"><div class="item-media"><img src=../img/logo.png></div><div class="item-inner"><h3>'+i+'</h3><div class="progress-box" data-percent="47">';
-        //        html += '<div class="bar" style="transition-duration: 300ms; width: 47%;"><div class="progress">47%</div></div></div></div> </div></li>';
-        //    }
-        //
-        //    // Append new items
-        //    $$('.userPoint ul').append(html);
-        //
-        //    // Update last loaded index
-        //    lastIndex = $$('.userPoint li').length;
-        //}, 1000);
+    };
 
+    var updateAddress = function(){
+
+        service.updateAddress(localStorage.getItem('username'),address);
+    };
+
+    var updatePhone = function(){
+
+        service.updatePhone(localStorage.getItem('username'),phone);
+    };
+
+    var resetPassword = function(){
+
+        service.resetPasswrod(localStorage.getItem('username'),oldPassword,newPassword);
+    };
+
+    var userProfileInit = function(){
 
     };
     return {
         theApp: theApp,
         getInitData:getInitData,
-        refreshPage:refreshPage
+        refreshPage:refreshPage,
+        updateAddress:updateAddress,
+        updatePhone:updatePhone,
+        resetPassword:resetPassword,
+        userProfileInit:userProfileInit
     }
 });

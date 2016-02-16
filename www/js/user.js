@@ -45,6 +45,15 @@ require(['jquery', 'business/userBusiness'], function ($, user) {
            $$(".infinite-scroll").on('infinite', user.refreshPage);
 
         });
+
+        theApp.onPageInit('user-setting',function(){
+
+            user.userProfileInit();
+            $('#btnUpdatePhoneNum').click(user.updatePhone);
+            $('#btnUpdateAddress').click(user.updateAddress);
+            $('#btnResetPassword').click(user.resetPassword);
+
+        });
         
         theApp.init();
         ///**       ---          /

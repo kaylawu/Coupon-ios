@@ -55,6 +55,23 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
       };
 
 
+    //updatePhone
+    var updatePhoneSuccess = function(data){
+
+    };
+    var updatePhoneError = function (data) {
+
+    };
+    var updatePhone = function(username,phone){
+        $.ajax({
+            url:baseUrl+"/user/updatephone",
+            type:"POST",
+            data:{username:username,phone:phone},
+            success:updatePhoneSuccess,
+            error:updatePhoneError
+        });
+    };
+
 
     //getUserProfile
     var getUserProfileSuccess = function(data){
@@ -194,7 +211,8 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         getUserProfile:getUserProfile,
         updateAddress:updateAddress,
         resetPasswrod:resetPassword,
-        getFreshMechants:getFreshMechants
+        getFreshMechants:getFreshMechants,
+        updatePhone:updatePhone
 
 
     }
