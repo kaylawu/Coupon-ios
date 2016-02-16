@@ -29,9 +29,7 @@ require(['jquery', 'business/loginBusiness'], function ($, login) {
 
         theApp.onPageInit('login', function () {
             console.log("login init");
-
             $("#business-login").click(login.businessLogin);
-
             $("#user-login").click(login.userLogin);
         });
 
@@ -43,6 +41,10 @@ require(['jquery', 'business/loginBusiness'], function ($, login) {
             console.log("into forget_password");
 
             mainView.hideToolbar();
+        });
+
+        theApp.onPageBack('foget_password', function () {
+            mainView.showToolbar();
         });
         theApp.init();
     });
