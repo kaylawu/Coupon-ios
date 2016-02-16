@@ -3,7 +3,7 @@
  */
 "user strict"
 
-define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
+define(['jquery', 'framework7'], function ($, Framework7) {
 
       //AppInit
       var theApp = new window.Framework7({
