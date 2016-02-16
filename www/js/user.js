@@ -16,7 +16,7 @@ requirejs.config({
         isotope: 'lib/isotope.min',
         imagesLoaded: 'lib/imagesLoaded.min',
         countdown: 'lib/countdown.min',
-
+        underscore:'lib/underscore-min',
         async: 'lib/require/async',
         propertyParser: 'lib/require/propertyParser',
         font: 'lib/require/font',

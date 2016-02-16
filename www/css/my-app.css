@@ -57,6 +57,7 @@
     *   - Color Radio
     *   - Cart Items
     *   - Infinite scroll
+    *   - Mechants in HomePage
     *************************/
 .small {
     float: right;
@@ -2811,3 +2812,10 @@ h3 + .tc-comment-item{
     border-style: none;
     border-radius: 0px;
 }*/
+
+/*Mechants in HomePage*/
+
+.mechantLoge{
+    height: 40px !important;
+    width: 40px !important;
+}

@@ -3,7 +3,7 @@
  */
 "user strict"
 
-define(['jquery', 'framework7'], function ($, Framework7) {
+define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
 
       //AppInit
       var theApp = new window.Framework7({
@@ -15,6 +15,7 @@ define(['jquery', 'framework7'], function ($, Framework7) {
 
      //Start to write Services
       var baseUrl = "http://47.88.30.91:8080/CouponManagementSystem/";
+      var imgBaseUrl = 'http://47.88.30.91:8080';
 
 
       //resetPassword
@@ -97,34 +98,103 @@ define(['jquery', 'framework7'], function ($, Framework7) {
 
     };
 
-    //getMerchants
-    var getMerchantsSuccess = function(data){
-        
+    //getInitMerchants
+    var getInitMerchantsSuccess = function(data){
+        var content = '';
+        _.each(data,function(v,k,list){
+            content += mechantHtmlHelper(v);
+        });
+
+        $('.userPoint ul').append(content);
+        $('.infinite-scroll-preloader').append('<div class="preloader"></div>');
+        theApp.hidePreloader();
     };
 
-    var getMerchantsError = function(data){
+
+    var getInitMerchantsError = function(data){
         console.log("system error");
+        if(data.result == 'error'){
+            theApp.alert('System get error');
+        }else if(data.result == 'out_of_index'){
+            theApp.alert('out of index');
+        }
     };
 
-    var getMerchants = function(username,needItemNum,existItemNum){
+    var getInitMerchants = function(username,needItemNum,existItemNum){
         $.ajax({
             url:baseUrl+"/user/getmerchantsbyuser",
             type:"GET",
             data:{username:username,needItemNum:needItemNum,existItemNum:existItemNum},
-            success:getMerchantsSuccess,
-            error:getMerchantsError
+            success:getInitMerchantsSuccess,
+            error:getInitMerchantsError
         });
 
+    };
+
+
+
+    //getFreshMechants
+    var getFreshMechantsSuccess = function(data){
+        var content = '';
+        console.log('max'+localStorage.getItem("userMechants"));
+        _.each(data,function(v,k,list){
+            console.log(k);
+
+            if(k == localStorage.getItem("userMechants")){
+                content += mechantHtmlHelper(v);
+                theApp.detachInfiniteScroll($$('.infinite-scroll'));
+                // Remove preloader
+                $$('.infinite-scroll-preloader').remove();
+            }else
+            {
+                content += mechantHtmlHelper(v);
+            }
+        });
+        $('.userPoint ul').append(content);
+        return false;
+    };
+
+
+    var getFreshMechantsError = function(data){
+        console.log("system error");
+        if(data.result == 'error'){
+            theApp.alert('System get error');
+        }else if(data.result == 'out_of_index'){
+            theApp.alert('out of index');
+        }
+        return false;
+    };
+
+    var getFreshMechants = function(username,needItemNum,existItemNum){
+        console.log('needItem'+ needItemNum + 'existItem' + existItemNum);
+        $.ajax({
+            url:baseUrl+"/user/getmerchantsbyuser",
+            type:"GET",
+            data:{username:username,needItemNum:needItemNum,existItemNum:existItemNum},
+            success:getFreshMechantsSuccess,
+            error:getFreshMechantsError
+        });
+
+    };
+
+    //private function
+    var mechantHtmlHelper = function(v){
+        var content = '<li> <div class="item-content"> <div class="item-media"><img class="mechantLoge" src='+imgBaseUrl+ v.logoUrl+'></div>';
+        content +='<div class="item-inner"> <h3>'+ v.merchantName+'</h3> <div class="progress-box" data-percent="47">';
+        content += '<div class="bar" style="transition-duration: 300ms; width: 47%;"> <div class="progress">47%</div></div>';
+        content += '</div></div></div></li>';
+        return content;
     };
 
     return{
         theApp : theApp,
 
         getMerchantCount:getMerchantCount,
-        getMerchants:getMerchants,
+        getInitMerchants:getInitMerchants,
         getUserProfile:getUserProfile,
         updateAddress:updateAddress,
-        resetPasswrod:resetPassword
+        resetPasswrod:resetPassword,
+        getFreshMechants:getFreshMechants
 
 
     }
