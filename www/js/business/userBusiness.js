@@ -36,9 +36,10 @@ define(["jquery", "../services/userService"], function ($, service) {
 
     var refreshPage = function(){
 
+        console.log("refresh activated");
         var username = localStorage.getItem("username");
         // Loading flag
-        var loading = false;
+        localStorage.setItem("mechantsScroll",false);
         // Last loaded index
         var lastIndex = $$('.userPoint li').length;
 
@@ -46,15 +47,16 @@ define(["jquery", "../services/userService"], function ($, service) {
         // Append items per load
         var itemsPerLoad = 5;
         // Exit, if loading in progress
-        if (loading) return;
+        if (localStorage.getItem("mechantsScroll") ==true) return;
         // Set loading flag
-        loading = true;
 
-        if(maxItems - lastIndex >= 5){
-            loading = service.getFreshMechants(username,itemsPerLoad,lastIndex);
+        localStorage.setItem("mechantsScroll",true);
+
+        if(maxItems - lastIndex >= itemsPerLoad){
+            service.getFreshMechants(username,itemsPerLoad,lastIndex);
 
         }else{
-            loading = service.getFreshMechants(username,maxItems - lastIndex,lastIndex);
+            service.getFreshMechants(username,maxItems - lastIndex,lastIndex);
         }
 
         //// Emulate 1s loading

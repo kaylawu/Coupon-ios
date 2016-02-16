@@ -151,7 +151,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
             }
         });
         $('.userPoint ul').append(content);
-        return false;
+        localStorage.setItem("mechantsScroll",false);
     };
 
 
@@ -162,7 +162,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         }else if(data.result == 'out_of_index'){
             theApp.alert('out of index');
         }
-        return false;
+        localStorage.setItem("mechantsScroll",false);
     };
 
     var getFreshMechants = function(username,needItemNum,existItemNum){
