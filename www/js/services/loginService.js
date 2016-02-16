@@ -86,10 +86,41 @@ define(["jquery","framework7"],function($,Framework7){
         });
     };
 
+    //user forget_password
+    var forgetPasswordSuccess = function(data){
+        if(data.result == 'success'){
+            theApp.alert('New Password has sent yout email');
+        }
+
+    };
+
+    var forgetPasswordError = function(data){
+        if(data.result == 'fail'){
+            theApp.alert('send email fail');
+        }else if(data.result == 'email_not_exist'){
+            theApp.alert('email not exist');
+        }else{
+            theApp.alert('System get error');
+            console.log(data);
+        }
+    };
+
+    var forgetPasswrod = function(email){
+        console.log('input forget password service');
+        $.ajax({
+            type: "POST",
+            url: baseUrl+"/user/forgotpassword",
+            data: {email: email},
+            success:forgetPasswordSuccess,
+            error:forgetPasswordError
+        })
+
+    };
 
     return{
         register : register,
         userLogin : userLogin,
+        forgetPassword:forgetPasswrod,
         theApp:theApp
     }
 });

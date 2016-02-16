@@ -37,13 +37,14 @@ require(['jquery', 'business/loginBusiness'], function ($, login) {
             $("#user-register").click(login.register);
         });
 
-        theApp.onPageInit('foget_password',function(){
-            console.log("into forget_password");
-
+        theApp.onPageInit('forget_password',function(){
             mainView.hideToolbar();
+            $("#forgetPassword-submit").click(login.forgetPassword);
         });
 
-        theApp.onPageBack('foget_password', function () {
+
+
+        theApp.onPageBack('forget_password', function () {
             mainView.showToolbar();
         });
         theApp.init();

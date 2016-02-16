@@ -52,10 +52,28 @@ define(["jquery","../services/loginService"],function($,service){
         }
     };
 
+    var forgetpasswrod = function(){
+        console.log('forget passwrod activated');
+        var email = $('#forgetPassword-email').val();
+        console.log(email);
+        if(email == ''){
+            theApp.alert("Please input email");
+        }
+        else if(!emailReg.test(email)){
+            console.log("invalid email");
+            theApp.alert("Please input a valid email");
+        }
+        else {
+            service.forgetPassword(email);
+        }
+
+    };
+
     return{
         businessLogin : businessLogin,
         userLogin : userLogin,
         register:register,
+        forgetPassword:forgetpasswrod,
         theApp : theApp
 
     }
