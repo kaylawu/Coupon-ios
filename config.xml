@@ -23,6 +23,10 @@
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="android-installLocation" value="auto" />
+    <preference name="SplashScreen" value="foo" />
+    <preference name="SplashScreen" value="foo" />
+    <preference name="SplashScreenDelay" value="10000" />
+    <preference name="SplashMaintainAspectRatio" value="true|false" />
     <gap:plugin name="org.apache.cordova.battery-status" />
     <gap:plugin name="org.apache.cordova.camera" />
     <gap:plugin name="org.apache.cordova.media-capture" />
@@ -69,7 +73,7 @@
 
     <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
     <plugin name="net.roughshod.plugins.barcodescanner" spec="3.0.0" source="pgb" />
-    <plugin name="br.com.paveisitemas.splashscreen" spec="2.1.1" source="pgb" />
+    <plugin name="cordova-plugin-splashscreen" spec="2.1.0" source="pgb" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
