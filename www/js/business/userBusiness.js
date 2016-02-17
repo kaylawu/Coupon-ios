@@ -28,8 +28,6 @@ define(["jquery", "../services/userService"], function ($, service) {
                 }else{
                     service.getInitMerchants(username,6,0);
                 }
-
-
             }
         }
     };
@@ -39,15 +37,18 @@ define(["jquery", "../services/userService"], function ($, service) {
         console.log("refresh activated");
         var username = localStorage.getItem("username");
         // Loading flag
-        localStorage.setItem("mechantsScroll",false);
+
+
+        console.log(localStorage.getItem("mechantsScroll"));
         // Last loaded index
         var lastIndex = $$('.userPoint li').length;
 
         var maxItems = localStorage.getItem('userMechants');
         // Append items per load
         var itemsPerLoad = 5;
+
         // Exit, if loading in progress
-        if (localStorage.getItem("mechantsScroll") ==true) return;
+        if (JSON.parse(localStorage.getItem("mechantsScroll"))) return;
         // Set loading flag
 
         localStorage.setItem("mechantsScroll",true);
