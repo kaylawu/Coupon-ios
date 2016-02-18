@@ -68,8 +68,8 @@
     <gap:splash gap:platform="ios" height="768" src="www/res/screen/ios/screen-ipad-landscape.png" width="1024" />
     <gap:splash gap:platform="winphone" src="www/res/screen/windows-phone/screen-portrait.jpg" />
     <access origin="*" />
-    <plugin name="cordova-plugin-whitelist" spec="n/a" />
-    <plugin name="net.roughshod.plugins.barcodescanner" source="pgb" spec="n/a" />
+    <plugin name="com.jp.whitelistplugin" spec="1.1.2" source="pgb" />
+    <plugin name="net.roughshod.plugins.barcodescanner" spec="3.0.0" source="pgb" />
 
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
