@@ -21,12 +21,13 @@ require(['jquery', 'business/loginBusiness'], function ($, login) {
         console.log("init-app");
 
         var theApp = login.theApp;
+
         // Add view
         var mainView = theApp.addView('.view-main', {
             dynamicNavbar: true
         });
 
-
+        theApp.device.statusBar = true;
         theApp.onPageInit('login', function () {
             console.log("login init");
             $("#business-login").click(login.businessLogin);
