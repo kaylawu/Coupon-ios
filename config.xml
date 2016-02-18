@@ -41,7 +41,87 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
+    <!-- rest of config here -->
 
+    <!-- iOS 8 Override Config to support iPhone 6/6+ screen size -->
+    <gap:config-file platform="ios" parent="UILaunchImages" overwrite="true">
+        <array>
+            <!-- iPhone 4s -->
+            <dict>
+                <key>UILaunchImageMinimumOSVersion</key>
+                <string>8.0</string>
+                <key>UILaunchImageName</key>
+                <string>Default-480h</string>
+                <key>UILaunchImageOrientation</key>
+                <string>Portrait</string>
+                <key>UILaunchImageSize</key>
+                <string>{320, 480}</string>
+            </dict>
+
+            <!-- iPhone 5/s/c -->
+            <dict>
+                <key>UILaunchImageMinimumOSVersion</key>
+                <string>8.0</string>
+                <key>UILaunchImageName</key>
+                <string>Default-568h</string>
+                <key>UILaunchImageOrientation</key>
+                <string>Portrait</string>
+                <key>UILaunchImageSize</key>
+                <string>{320, 568}</string>
+            </dict>
+
+            <!-- iPhone 6 -->
+            <dict>
+                <key>UILaunchImageMinimumOSVersion</key>
+                <string>8.0</string>
+                <key>UILaunchImageName</key>
+                <string>Default-667h</string>
+                <key>UILaunchImageOrientation</key>
+                <string>Portrait</string>
+                <key>UILaunchImageSize</key>
+                <string>{375, 667}</string>
+            </dict>
+
+            <!-- iPhone 6+ -->
+            <dict>
+                <key>UILaunchImageMinimumOSVersion</key>
+                <string>8.0</string>
+                <key>UILaunchImageName</key>
+                <string>Default-736h</string>
+                <key>UILaunchImageOrientation</key>
+                <string>Portrait</string>
+                <key>UILaunchImageSize</key>
+                <string>{414, 736}</string>
+            </dict>
+
+            <!-- iPad / Mini -->
+            <dict>
+                <key>UILaunchImageMinimumOSVersion</key>
+                <string>8.0</string>
+                <key>UILaunchImageName</key>
+                <string>Default-1024h</string>
+                <key>UILaunchImageOrientation</key>
+                <string>Portrait</string>
+                <key>UILaunchImageSize</key>
+                <string>{768, 1024}</string>
+            </dict>
+
+            <!-- iPad Retina -->
+            <dict>
+                <key>UILaunchImageMinimumOSVersion</key>
+                <string>8.0</string>
+                <key>UILaunchImageName</key>
+                <string>Default-2048h</string>
+                <key>UILaunchImageOrientation</key>
+                <string>Portrait</string>
+                <key>UILaunchImageSize</key>
+                <string>{1536, 2048}</string>
+            </dict>
+        </array>
+    </gap:config-file>
+
+    <gap:splash src="res/screen/ios/screen-iphone-portrait-667h@2x.png" gap:platform="ios" width="750"  height="1334" />
+    <gap:splash src="res/screen/ios/screen-iphone-portrait-736h@3x.png" gap:platform="ios" width="1242" height="2208" />
     <icon src="icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
@@ -66,6 +146,8 @@
     <gap:splash gap:platform="ios" height="1136" src="www/res/screen/ios/screen-iphone-portrait-568h-2x.png" width="640" />
     <gap:splash gap:platform="ios" height="1024" src="www/res/screen/ios/screen-ipad-portrait.png" width="768" />
     <gap:splash gap:platform="ios" height="768" src="www/res/screen/ios/screen-ipad-landscape.png" width="1024" />
+
+
     <gap:splash gap:platform="winphone" src="www/res/screen/windows-phone/screen-portrait.jpg" />
     <access origin="*" />
     <plugin name="cordova-plugin-whitelist" version="1" />
