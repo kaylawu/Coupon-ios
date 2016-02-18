@@ -24,71 +24,71 @@
       <file leaf-file-name="config.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61204016">
-              <caret line="87" column="57" selection-start-line="87" selection-start-column="57" selection-end-line="87" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.4882943">
+              <caret line="73" column="70" selection-start-line="73" selection-start-column="70" selection-end-line="73" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Default~iphone.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default~iphone.png">
+        <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default~iphone.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Default-568h@2x~iphone.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-568h@2x~iphone.png">
+        <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default-568h@2x~iphone.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Default-667h@2x~iphone.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-667h@2x~iphone.png">
+      <file leaf-file-name="Default-667h.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default-667h.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Default-736h.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default-736h.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Default-Landscape@2x~ipad.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Landscape@2x~ipad.png">
+        <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default-Landscape@2x~ipad.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Default-Landscape~ipad.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Landscape~ipad.png">
+        <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default-Landscape~ipad.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Default-Landscape-736h@3x.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Landscape-736h@3x.png">
+      <file leaf-file-name="Default-Landscape-736h.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default-Landscape-736h.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Default-Portrait@2x~ipad.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Portrait@2x~ipad.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Default-Portrait-736h@3x.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Portrait-736h@3x.png">
+        <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default-Portrait@2x~ipad.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Default-Portrait~ipad.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Portrait~ipad.png">
+        <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default-Portrait~ipad.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
@@ -221,7 +221,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="screen" />
+              <option name="myItemId" value="splash" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -244,11 +244,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\PhoneGap\Coupon-ios\www\res\screen\ios" />
+      <recent name="E:\PhoneGap\Coupon-ios\www\res\splash\ios" />
       <recent name="E:\PhoneGap\Coupon-ios\www\res" />
+      <recent name="E:\PhoneGap\Coupon-ios\www\res\screen\ios" />
       <recent name="E:\PhoneGap\Coupon-ios\www\js\lib" />
       <recent name="D:\phonegap\wordplace\Coupon\www\js\lib" />
-      <recent name="D:\phonegap\wordplace\Coupon\www\js\lib\framework7" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\phonegap\wordplace\Coupon\www\css" />
@@ -650,66 +650,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384">
-          <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
+        <state vertical-scroll-proportion="-13.730769">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default@2x~iphone.png">
+    <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default@2x~iphone.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-568h@2x~iphone.png">
+    <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default~iphone.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-667h@2x~iphone.png">
+    <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default-568h@2x~iphone.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Landscape@2x~ipad.png">
+    <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default-667h.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Landscape-736h@3x.png">
+    <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default-736h.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Landscape~ipad.png">
+    <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default-Landscape@2x~ipad.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Portrait@2x~ipad.png">
+    <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default-Landscape~ipad.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Portrait-736h@3x.png">
+    <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default-Landscape-736h.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Portrait~ipad.png">
+    <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default-Portrait@2x~ipad.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default~iphone.png">
+    <entry file="file://$PROJECT_DIR$/www/res/splash/ios/Default-Portrait~ipad.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61204016">
-          <caret line="87" column="57" selection-start-line="87" selection-start-column="57" selection-end-line="87" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.4882943">
+          <caret line="73" column="70" selection-start-line="73" selection-start-column="70" selection-end-line="73" selection-end-column="70" />
           <folding />
         </state>
       </provider>
