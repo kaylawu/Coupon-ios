@@ -21,74 +21,74 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Default@2x~iphone.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/Default@2x~iphone.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="config.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6309922">
-              <caret line="88" column="25" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.55518395">
+              <caret line="84" column="85" selection-start-line="84" selection-start-column="85" selection-end-line="84" selection-end-column="85" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Default~iphone.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/Default~iphone.png">
+        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default~iphone.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Default-568h@2x~iphone.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/Default-568h@2x~iphone.png">
+        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-568h@2x~iphone.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Default-667h@2x~iphone.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/Default-667h@2x~iphone.png">
+        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-667h@2x~iphone.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Default-Landscape@2x~ipad.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/Default-Landscape@2x~ipad.png">
+        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Landscape@2x~ipad.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Default-Landscape~ipad.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/Default-Landscape~ipad.png">
+        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Landscape~ipad.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Default-Landscape-736h@3x.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/Default-Landscape-736h@3x.png">
+        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Landscape-736h@3x.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Default-Portrait@2x~ipad.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/Default-Portrait@2x~ipad.png">
+        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Portrait@2x~ipad.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Default-Portrait-736h@3x.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Portrait-736h@3x.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Default-Portrait~ipad.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/res/Default-Portrait~ipad.png">
+        <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Portrait~ipad.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
@@ -170,7 +170,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -221,9 +220,18 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="screen" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -235,19 +243,19 @@
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\PhoneGap\Coupon-ios\www\res\screen\ios" />
+      <recent name="E:\PhoneGap\Coupon-ios\www\res" />
+      <recent name="E:\PhoneGap\Coupon-ios\www\js\lib" />
+      <recent name="D:\phonegap\wordplace\Coupon\www\js\lib" />
+      <recent name="D:\phonegap\wordplace\Coupon\www\js\lib\framework7" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\phonegap\wordplace\Coupon\www\css" />
       <recent name="D:\phonegap\wordplace\Coupon\www\css\fonts" />
       <recent name="D:\phonegap\wordplace\Coupon\www\js\requires" />
       <recent name="D:\phonegap\wordplace\Coupon\www" />
       <recent name="D:\phonegap\wordplace\Coupon\www\js\lib" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\PhoneGap\Coupon-ios\www\res" />
-      <recent name="E:\PhoneGap\Coupon-ios\www\js\lib" />
-      <recent name="D:\phonegap\wordplace\Coupon\www\js\lib" />
-      <recent name="D:\phonegap\wordplace\Coupon\www\js\lib\framework7" />
-      <recent name="D:\phonegap\wordplace\Coupon\www\js\lib\angularJs" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
@@ -587,7 +595,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -595,7 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="47" column="55" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -603,7 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -611,7 +616,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="229" column="53" selection-start-line="229" selection-start-column="59" selection-end-line="229" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -619,7 +623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="91" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -627,7 +630,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="143" column="87" selection-start-line="143" selection-start-column="87" selection-end-line="143" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -643,7 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2777" column="20" selection-start-line="2777" selection-start-column="20" selection-end-line="2777" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -655,60 +656,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/Default-Portrait-736h@3x.png">
+    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default@2x~iphone.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/Default@2x~iphone.png">
+    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-568h@2x~iphone.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/Default~iphone.png">
+    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-667h@2x~iphone.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/Default-568h@2x~iphone.png">
+    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Landscape@2x~ipad.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/Default-667h@2x~iphone.png">
+    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Landscape-736h@3x.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/Default-Landscape@2x~ipad.png">
+    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Landscape~ipad.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/Default-Landscape~ipad.png">
+    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Portrait@2x~ipad.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/Default-Landscape-736h@3x.png">
+    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Portrait-736h@3x.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/Default-Portrait@2x~ipad.png">
+    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default-Portrait~ipad.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/res/Default-Portrait~ipad.png">
+    <entry file="file://$PROJECT_DIR$/www/res/screen/ios/Default~iphone.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6309922">
-          <caret line="88" column="25" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.55518395">
+          <caret line="84" column="85" selection-start-line="84" selection-start-column="85" selection-end-line="84" selection-end-column="85" />
           <folding />
         </state>
       </provider>
