@@ -28,26 +28,39 @@ require(['jquery', 'business/loginBusiness'], function ($, login) {
         });
 
         theApp.device.statusBar = true;
-        theApp.onPageInit('login', function () {
+        theApp.onPageInit('login', function (page) {
             console.log("login init");
             $("#business-login").click(login.businessLogin);
             $("#user-login").click(login.userLogin);
         });
 
-        theApp.onPageInit('register', function () {
+        theApp.onPageInit('register', function (page) {
+            console.log("register int");
+            //page.view.hideToolbar();
             $("#user-register").click(login.register);
         });
 
-        theApp.onPageInit('forget_password',function(){
-            mainView.hideToolbar();
+        theApp.onPageInit('about-us', function (page) {
+            console.log("about-us int");
+
+        });
+
+        theApp.onPageInit('forget_password',function(page){
+            console.log("forget_password init");
+            //page.view.hideToolbar();
             $("#forgetPassword-submit").click(login.forgetPassword);
         });
 
+        //theApp.onPageBack('forget_password', function (page) {
+        //    console.log("forget_password back");
+        //    page.view.showToolbar();
+        //});
+        //
+        //theApp.onPageBack('register', function (page) {
+        //    console.log("forget_password back");
+        //    page.view.showToolbar();
+        //});
 
-
-        theApp.onPageBack('forget_password', function () {
-            mainView.showToolbar();
-        });
         theApp.init();
     });
 
