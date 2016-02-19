@@ -54,6 +54,20 @@ require(['jquery', 'business/userBusiness'], function ($, user) {
             $('#btnResetPassword').click(user.resetPassword);
 
         });
+
+        theApp.onPageInit('business-list',function(){
+            console.log('businiss-list init');
+        });
+        theApp.onPageInit('mapview',function(){
+            console.log('mapview init');
+        });
+        theApp.onPageInit('user-voucher',function(){
+            console.log('user-voucher init');
+        });
+        theApp.onPageInit('shopdetail',function(){
+            console.log('shopdetail init');
+        });
+
         
         theApp.init();
         ///**       ---          /

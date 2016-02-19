@@ -20,54 +20,95 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
 
       //resetPassword
       var resetPasswordSuccess = function (data) {
-
+          console.log(data);
+          if(data.result == 'success'){
+              $('#textCurrentPassword').val('');
+              $('#textNewPassowrd').val('');
+              theApp.hidePreloader();
+              theApp.alert('Success reset password');
+          }else if(data.result == 'wrong_old_password'){
+              $('#textCurrentPassword').val('');
+              $('#textNewPassowrd').val('');
+              theApp.hidePreloader();
+              theApp.alert('you input a wrong current password');
+          }
       };
 
       var resetPasswordError = function(data){
 
+             if(data.result == 'fail'){
+              $('#textCurrentPassword').val('');
+              $('#textNewPassowrd').val('');
+              theApp.hidePreloader();
+              theApp.alert('Reset password fail');
+          }else{
+                 theApp.hidePreloader();
+                 theApp.alert('System error');
+                 console.log(data);
+             }
+
       };
 
-      var resetPassword = function(email,oldPwd,newPwd){
+      var resetPassword = function(username,oldPwd,newPwd){
          $.ajax({
             type:"POST",
             url:baseUrl+"/user/resetpassword",
-            data:{email:email,oldPassword:oldPwd,newPassword:newPwd},
+            data:{username:username,oldPassword:oldPwd,newPassword:newPwd},
             success:resetPasswordSuccess,
             error:resetPasswordError
          });
       };
 
       //updateAddress
-      var updateAddressSuccess = function(data){
 
-      };
       var updateAddressError = function (data) {
-
+          theApp.hidePreloader();
+          if(data.result == 'fail'){
+              theApp.alert('Update fail');
+          }
       };
       var updateAddress = function(username,address){
+
          $.ajax({
             url:baseUrl+"/user/updateaddress",
             type:"POST",
             data:{username:username,address:address},
-            success:updateAddressSuccess,
+            success: function (data) {
+                if(data.result == 'success'){
+                    theApp.hidePreloader();
+                    var userProfile = JSON.parse(localStorage.getItem('userProfile'));
+                    console.log(address);
+                    userProfile.address = address;
+                    $('#currentAddress').replaceWith(address);
+                    $('#textUpdateAddress').val('');
+                }
+            },
             error:updateAddressError
          });
       };
 
 
     //updatePhone
-    var updatePhoneSuccess = function(data){
-
-    };
     var updatePhoneError = function (data) {
-
+        theApp.hidePreloader();
+        if(data.result == 'fail'){
+            theApp.alert('Update fail');
+        }
     };
     var updatePhone = function(username,phone){
         $.ajax({
             url:baseUrl+"/user/updatephone",
             type:"POST",
             data:{username:username,phone:phone},
-            success:updatePhoneSuccess,
+            success:function(data){
+                if(data.result == 'success'){
+                    theApp.hidePreloader();
+                    var userProfile = JSON.parse(localStorage.getItem('userProfile'));
+                    userProfile.phone = phone;
+                    $('#currentPhone').replaceWith(phone);
+                    $('#textUserPhoneNum').val('');
+                }
+            },
             error:updatePhoneError
         });
     };

@@ -1,153 +1,191 @@
-<div class="pages navbar-fixed">
-    <!-- Page, data-page contains page name-->
-    <div data-page="user-setting" class="page">
-        <!-- Top Navbar-->
-        <div class="navbar no-border primary-bg">
-            <div class="navbar-inner">
-                <div class="left">
-                    <a href="#" class="link icon-only open-panel" data-panel="left"><i class="uiicon-list91"></i></a>
-                    <div class="page-name">My Profile</div>
-                </div>
-            </div>
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="open-panel" data-panel="left"><i class="uiicon-list91"></i></a>
+
         </div>
-        <!-- Scrollable page content-->
-        <div class="page-content">
-            <div class="content-block">
-                <div class="row">
-                    <div class="col-100">
-                        <div class="tc-user-card">
-<!--                        <div class="visuals">
-                                <img src="http://placehold.it/784x853" alt="" height="250" />
-                                
-                            </div>-->
-                            <div class="avatar">
-                                    <img src="http://placehold.it/140x140" alt="">
-                                </div>
-                            <div class="details">
-                                <h2>Kelly</h2>
-                            </div>
-                        </div><!-- .tc-user-card | ENDS -->
-                    </div><!-- .col-100 | ENDS -->
-                </div><!-- .row | ENDS -->
-                <div class="row">
+        <form method="get" action="?" class="tc-header-search list-block">
+            <div class="item-input item-input-field">
+                <input type="text" placeholder="Search..." class="" required>
+            </div>
+            <button type="submit"></button>
+        </form>
+        <div class="right">
+            <a href="#" class="link icon-only header-search-icon"><i class="uiicon-magnifying55"></i></a>
+        </div>
+    </div>
+</div>
+<div data-page="user-setting" class="page">
+    <!-- Scrollable page content-->
+    <div class="page-content">
+        <div class="content-block">
+            <div class="row">
+                <div class="col-100">
+                    <div class="tc-user-card">
+                        <!--                        <div class="visuals">
+                                                        <img src="http://placehold.it/784x853" alt="" height="250" />
+
+                                                    </div>-->
+                        <div class="avatar">
+                            <img src="http://placehold.it/140x140" alt="">
+                        </div>
+                        <div class="details">
+                            <h2>Kelly</h2>
+                        </div>
+                    </div><!-- .tc-user-card | ENDS -->
+                </div><!-- .col-100 | ENDS -->
+            </div><!-- .row | ENDS -->
+            <div class="row">
                 <div class="list-block">
-                      <ul>
+                    <ul>
                         <li class="accordion-item"><a href="#" class="item-link item-content">
                             <div class="item-inner">
-                              <div class="item-title">Update address</div>
+                                <div class="item-title">Update address</div>
                             </div>
-                          </a>
+                        </a>
                             <div class="accordion-item-content">
-                              <div class="content-block">
-                                <div class="item-input">
-                                 <input type="text" placeholder="Current address:"/>
-                                     <input type="text" id="textUpdateAddress" placeholder="Eneter your new address"/>
-                                       <h3><button id="btnUpdateAddress" class="Raised Buttons color-green">Update</button></h3>
-                                </div> 
-                              </div>
+                                <div class="content-block">
+                                    <div class="item-input">
+                                        <label><span>Current address:</span><span id="currentAddress"></span></label>
+                                        <input type="text" id="textUpdateAddress"
+                                               placeholder="Eneter your new address"/>
+                                        <h3>
+                                            <button id="btnUpdateAddress" class="Raised Buttons color-green">Update
+                                            </button>
+                                        </h3>
+                                    </div>
+                                </div>
                             </div>
                         </li>
-                         <li class="accordion-item"><a href="#" class="item-link item-content">
+                        <li class="accordion-item"><a href="#" class="item-link item-content">
                             <div class="item-inner">
-                              <div class="item-title">Update Phone Number</div>
+                                <div class="item-title">Update Phone Number</div>
                             </div>
-                          </a>
+                        </a>
                             <div class="accordion-item-content">
-                              <div class="content-block">
-                                <div class="item-input">
-                                 <input type="text" placeholder="Current phone number:"/>
-                                     <input id='textUserPhoneNum' type="text" placeholder="Eneter your new phone number"/>
-                                       <h3><button id="btnUpdatePhoneNum" class="Raised Buttons color-green">Update</button></h3>
-                                </div> 
-                              </div>
+                                <div class="content-block">
+                                    <div class="item-input">
+                                        <label><span>Current Phone:</span><span id="currentPhone"></span></label>
+                                        <input id='textUserPhoneNum' type="text"
+                                               placeholder="Eneter your new phone number"/>
+                                        <h3>
+                                            <button id="btnUpdatePhoneNum" class="Raised Buttons color-green">Update
+                                            </button>
+                                        </h3>
+                                    </div>
+                                </div>
                             </div>
                         </li>
-                          <li class="accordion-item"><a href="#" class="item-link item-content">
+                        <li class="accordion-item"><a href="#" class="item-link item-content">
                             <div class="item-inner">
-                              <div class="item-title">Reset Password</div>
+                                <div class="item-title">Reset Password</div>
                             </div>
-                          </a>
+                        </a>
                             <div class="accordion-item-content">
-                              <div class="content-block">
-                                  <div class="item-input">
-                                       <input type="text" id="textCurrentPassword" placeholder="Eneter your current password"/>
-                                       <input type="text" id="textNewPassowrd" placeholder="Eneter your new password"/>
-                                        <h3><button id="btnResetPassword" class="Raised Buttons color-green">Update</button></h3>
-                                   </div> 
-                              </div>
+                                <div class="content-block">
+                                    <div class="item-input">
+                                        <input type="password" id="textCurrentPassword"
+                                               placeholder="Eneter your current password"/>
+                                        <input type="password" id="textNewPassowrd"
+                                               placeholder="Eneter your new password"/>
+                                        <h3>
+                                            <button id="btnResetPassword" class="Raised Buttons color-green">Update
+                                            </button>
+                                        </h3>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         <!--<li class="accordion-item"><a href="#" class="item-content item-link">-->
-                           <!--<div class="item-inner">-->
-                               <!--<div class="item-title">Reset Email</div>-->
-                           <!--</div></a>-->
-                          <!--<div class="accordion-item-content">-->
-                              <!--<div class="content-block">-->
-                                  <!--<div class="item-input">-->
-                                       <!--<input type="text" id="textNewEmail" placeholder="Eneter your new email"/>-->
-                                        <!--<h3><button id="btnUpdateEmail" class="Raised Buttons color-green">Update</button></h3>-->
-                                   <!--</div> -->
-                              <!--</div>-->
-                            <!--</div>-->
+                        <!--<div class="item-inner">-->
+                        <!--<div class="item-title">Reset Email</div>-->
+                        <!--</div></a>-->
+                        <!--<div class="accordion-item-content">-->
+                        <!--<div class="content-block">-->
+                        <!--<div class="item-input">-->
+                        <!--<input type="text" id="textNewEmail" placeholder="Eneter your new email"/>-->
+                        <!--<h3><button id="btnUpdateEmail" class="Raised Buttons color-green">Update</button></h3>-->
+                        <!--</div> -->
+                        <!--</div>-->
+                        <!--</div>-->
                         <!--</li>-->
                         <li class="accordion-item"><a href="#" class="item-content item-link">
                             <div class="item-inner">
-                              <div class="item-title">Privacy Policy</div>
+                                <div class="item-title">Privacy Policy</div>
                             </div>
-                          </a>
+                        </a>
                             <div class="accordion-item-content">
-                              <div class="content-block">
-                                      <p class>
-                                      Lose eyes get fat shew. Winter can indeed letter oppose way change tended now. So is improve my charmed picture exposed adapted demands. Received had end produced prepared diverted strictly off man branched. Known ye money so large decay voice there to. Preserved be mr cordially incommode as an. He doors quick child an point at. Had share vexed front least style off why him. 
+                                <div class="content-block">
+                                    <p class>
+                                        Lose eyes get fat shew. Winter can indeed letter oppose way change tended now.
+                                        So is improve my charmed picture exposed adapted demands. Received had end
+                                        produced prepared diverted strictly off man branched. Known ye money so large
+                                        decay voice there to. Preserved be mr cordially incommode as an. He doors quick
+                                        child an point at. Had share vexed front least style off why him.
 
-</p>
-                              <h3><button class="Raised Buttons color-green">Close</button></h3>
-                              </div>
+                                    </p>
+                                    <h3>
+                                        <button class="Raised Buttons color-green">Close</button>
+                                    </h3>
+                                </div>
                             </div>
                         </li>
                         <li class="accordion-item"><a href="#" class="item-content item-link">
                             <div class="item-inner">
-                              <div class="item-title">About SRC</div>
+                                <div class="item-title">About SRC</div>
                             </div>
-                          </a>
+                        </a>
                             <div class="accordion-item-content">
-                              <div class="content-block">
-                                      <p class>
-                                      Lose eyes get fat shew. Winter can indeed letter oppose way change tended now. So is improve my charmed picture exposed adapted demands. Received had end produced prepared diverted strictly off man branched. Known ye money so large decay voice there to. Preserved be mr cordially incommode as an. He doors quick child an point at. Had share vexed front least style off why him. 
+                                <div class="content-block">
+                                    <p class>
+                                        Lose eyes get fat shew. Winter can indeed letter oppose way change tended now.
+                                        So is improve my charmed picture exposed adapted demands. Received had end
+                                        produced prepared diverted strictly off man branched. Known ye money so large
+                                        decay voice there to. Preserved be mr cordially incommode as an. He doors quick
+                                        child an point at. Had share vexed front least style off why him.
 
-</p>
-                                
-                                <p><i class="uiicon-tack2"></i><span> Address: Lipsum Street Lorem Way PO 60009 Dolor/ALASKA</span></p>
-                                <p><i class="uiicon-smartphone23"></i><span> Phone: <a class="external" href="tel:+000000000">+1 234 56 78</a></span></p>
-                                <p><i class="uiicon-print44"></i><span> Fax: +1 876 54 32</span></p>
-                                <p><i class="uiicon-email108"></i><span> E-Mail: <a class="external" href="mailto:mymail@address.com"> sweipe@themingcool.com</a></span></p>
-                              <h3><button class="Raised Buttons color-green"> Close</button></h3>
-                              </div>
+                                    </p>
+
+                                    <p><i class="uiicon-tack2"></i><span> Address: Lipsum Street Lorem Way PO 60009 Dolor/ALASKA</span>
+                                    </p>
+                                    <p><i class="uiicon-smartphone23"></i><span> Phone: <a class="external"
+                                                                                           href="tel:+000000000">+1 234
+                                        56 78</a></span></p>
+                                    <p><i class="uiicon-print44"></i><span> Fax: +1 876 54 32</span></p>
+                                    <p><i class="uiicon-email108"></i><span> E-Mail: <a class="external"
+                                                                                        href="mailto:mymail@address.com">
+                                        sweipe@themingcool.com</a></span></p>
+                                    <h3>
+                                        <button class="Raised Buttons color-green"> Close</button>
+                                    </h3>
+                                </div>
                             </div>
                         </li>
-                          <li class="accordion-item"><a href="../index.html" id="linkLogout" class="item-link item-content">
+                        <li class="accordion-item"><a href="../index.html" id="linkLogout"
+                                                      class="item-link item-content">
                             <div class="item-inner">
-                              <div class="item-title">Logout</div>
+                                <div class="item-title">Logout</div>
                             </div>
-                          </a>
-                            
+                        </a>
+
                         </li>
-                      </ul>
-                    </div>
-                </div><!--row | ENDS -->
-            </div><!-- .content-block | ENDS -->
-<!--
-            <div class="content-block tc-footer text-center primary-bg">
-                <div class="content-block-inner">
-                    <span>Copyright 2015 by SRC</span>
-                    <div>
-                        <a href="#" class="external tc-icon-ball socialicon-facebook43 color-facebook"></a>
-                        <a href="#" class="external tc-icon-ball socialicon-google109 color-google"></a>
-                       
-                    </div>
+                    </ul>
                 </div>
-            </div>--><!-- .tc-footer | ENDS -->
-        </div><!-- .page-content | ENDS -->
-    </div>
+            </div><!--row | ENDS -->
+        </div><!-- .content-block | ENDS -->
+        <!--
+                    <div class="content-block tc-footer text-center primary-bg">
+                        <div class="content-block-inner">
+                            <span>Copyright 2015 by SRC</span>
+                            <div>
+                                <a href="#" class="external tc-icon-ball socialicon-facebook43 color-facebook"></a>
+                                <a href="#" class="external tc-icon-ball socialicon-google109 color-google"></a>
+
+                            </div>
+                        </div>
+                    </div>--><!-- .tc-footer | ENDS -->
+    </div><!-- .page-content | ENDS -->
 </div>
+
 
