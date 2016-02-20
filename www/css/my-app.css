@@ -66,10 +66,15 @@
 .col-30.button-big{
     width:inherit;
 }
+.card-footer{
+    height: 15px;
+}
 .card-footer a.link{
     color:#e91e63;
     text-align: center;
+    font-weight: 400;
     font-size: 14px;
+    text-align: center;
 }
 a.item-content{
 }
@@ -411,13 +416,14 @@ html.pixel-ratio-2 .input-field:after{
 
 
 .demo-card-header-pic .card-header {
-    height: 35vw;
+    height: 55vw;
     background-size: cover;
     background-position: center;
 }
 .card-content{
-    padding:10px;
-    height:15vw;
+    text-align: center;
+    padding:5px;
+    height:10vw;
     font-size:80%;
 }
 
@@ -2390,6 +2396,7 @@ h3 + .tc-comment-item{
 
 .tc-product .details{
     position: absolute;
+    margin-top: 5px;
     width: 50%;
     right: 0;
     bottom: 10px;
