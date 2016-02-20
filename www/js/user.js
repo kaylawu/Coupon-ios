@@ -21,6 +21,7 @@ requirejs.config({
         propertyParser: 'lib/require/propertyParser',
         font: 'lib/require/font',
         domReady: 'lib/require/domReady'
+
     }
 });
 
@@ -40,6 +41,7 @@ require(['jquery', 'business/userBusiness'], function ($, user) {
 
         theApp.onPageInit('main_index',function(){
 
+            console.log("main_index int");
            user.getInitData();
 
            $$(".infinite-scroll").on('infinite', user.refreshPage);

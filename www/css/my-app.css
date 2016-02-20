@@ -203,10 +203,10 @@ h1,h2,h3,h4,h5,h6{
     transition: opacity .25s ease;
 }
 
-.navbar-through .page-content,
-.navbar-fixed .page-content {
-    padding-top: 0;
-}
+/*.navbar-through .page-content,*/
+/*.navbar-fixed .page-content {*/
+    /*padding-top: 0;*/
+/*}*/
 
 .navbar-fixed .page-content.messages-content {
     padding-top: 53px;

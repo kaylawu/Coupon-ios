@@ -19,24 +19,32 @@ requirejs.config({
         propertyParser  : 'lib/require/propertyParser',
         font            : 'lib/require/font',
         domReady        : 'lib/require/domReady'
+
+
     }
 });
 
 
-require(['jquery', 'framework7', 'business/loginBusiness'], function ($, Framework7, login) {
+require(['jquery', 'business/businessBusiness'], function ($, business) {
 
             console.log("init-app");
-            // Initialize your app
-            var theApp = new window.Framework7({
-                swipeBackPage:false
+
+                var theApp = business.theApp;
+                // Export selectors engine
+                var $$ = Dom7;
+                // Add view
+                var mainView = theApp.addView('.view-main', {
+                    dynamicNavbar: true
+                });
+        
+            theApp.onPageInit('index',function(){
+
+                $('#btnScan').click(function(){
+                    business.scan();
+                });
             });
 
-            // Export selectors engine
-            var $$ = Dom7;
-
-            // Add view
-    var mainView = theApp.addView('.view-main', {});
-
+            theApp.init();
 
         });
 

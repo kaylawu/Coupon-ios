@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2016/1/27 0027.
  */
-define(["jquery","../services/loginService"],function($,service){
+define(["jquery","../services/loginService"],function($, service){
 
 
     var theApp = service.theApp;

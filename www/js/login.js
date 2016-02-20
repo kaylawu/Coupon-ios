@@ -12,6 +12,7 @@ requirejs.config({
         jquery: 'lib/jquery-1.11.3.min',
         framework7: 'lib/framework7.min',
         dpanels: 'lib/3d.panels.min'
+
     }
 });
 
@@ -51,15 +52,7 @@ require(['jquery', 'business/loginBusiness'], function ($, login) {
             $("#forgetPassword-submit").click(login.forgetPassword);
         });
 
-        //theApp.onPageBack('forget_password', function (page) {
-        //    console.log("forget_password back");
-        //    page.view.showToolbar();
-        //});
-        //
-        //theApp.onPageBack('register', function (page) {
-        //    console.log("forget_password back");
-        //    page.view.showToolbar();
-        //});
+
 
         theApp.init();
     });

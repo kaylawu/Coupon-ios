@@ -2,10 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
     <title>Sweipe - Mobile HTML Web App Ready Theme</title>
     <meta name="author" content="ThemingCool"/>
     <meta name="description" content=""/>
@@ -19,27 +20,28 @@
     <link rel="stylesheet" href="../css/my-app.css"/>
 
 </head>
-<body class="primary-bg">
+<body>
+<div class="statusbar-overlay"></div>
 <!-- Views-->
 <div class="views">
     <!-- Your main view, should have "view-main" class-->
     <div class="view view-main">
         <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-fixed">
+        <div class="pages navbar-through toolbar-through">
+            <!-- Top Navbar-->
+            <div class="navbar no-border transparent">
+                <div class="navbar-inner">
+
+                </div>
+            </div>
             <!-- Page, data-page contains page name-->
             <div data-page="index" class="page">
-                <!-- Top Navbar-->
-                <div class="navbar no-border transparent">
-                    <div class="navbar-inner">
-
-                    </div>
-                </div>
                 <!-- Scrollable page content-->
                 <div class="page-content">
                     <div class="ph-content">
                         <div class="content-block">
-                            <p><a href="scanVoucher.html"
-                                  class="button button-big color-black ">Scan Coupon</a></p>
+                            <p><a href="#"
+                                  class="button button-big color-black" id="btnScan">Scan Coupon</a></p>
 
                             <p><a href="scanUser.html" class="button button-big color-black">Scan User</a></p>
                             <p><a href="businessSettings.html" class="button button-big color-black">Settings </a></p>
@@ -51,39 +53,40 @@
             </div>
 
 
-            <div class="content-inner contact-information">
-                <!--            <p><i class="uiicon-tack2"></i><span>Address: Lipsum Street Lorem Way PO 60009 Dolor/ALASKA</span></p>
-                            <p><i class="uiicon-smartphone23"></i><span>Phone: <a class="external" href="tel:+000000000">+1 234 56 78</a></span></p>
-                            <p><i class="uiicon-print44"></i><span>Fax: +1 876 54 32</span></p>
-                            <p><i class="uiicon-email108"></i><span>E-Mail: <a class="external" href="mailto:mymail@address.com">sweipe@themingcool.com</a></span></p>
-                        </div>
+            <!--<div class="content-inner contact-information">-->
+            <!--&lt;!&ndash;            <p><i class="uiicon-tack2"></i><span>Address: Lipsum Street Lorem Way PO 60009 Dolor/ALASKA</span></p>-->
+            <!--<p><i class="uiicon-smartphone23"></i><span>Phone: <a class="external" href="tel:+000000000">+1 234 56 78</a></span></p>-->
+            <!--<p><i class="uiicon-print44"></i><span>Fax: +1 876 54 32</span></p>-->
+            <!--<p><i class="uiicon-email108"></i><span>E-Mail: <a class="external" href="mailto:mymail@address.com">sweipe@themingcool.com</a></span></p>-->
+            <!--</div>-->
 
-                        <div class="content-inner">
-                            <p>
-                                <a href="#" class="external tc-icon-ball socialicon-facebook43 color-facebook"></a>
-                                <a href="#" class="external tc-icon-ball socialicon-google109 color-google"></a>
-                                <a href="#" class="external tc-icon-ball socialicon-twitter34 color-twitter"></a>
-                                <a href="#" class="external tc-icon-ball socialicon-pinterest26 color-pinterest"></a>
-                            </p>
-                        </div>-->
-            </div>
-        </div>
+            <!--<div class="content-inner">-->
+            <!--<p>-->
+            <!--<a href="#" class="external tc-icon-ball socialicon-facebook43 color-facebook"></a>-->
+            <!--<a href="#" class="external tc-icon-ball socialicon-google109 color-google"></a>-->
+            <!--<a href="#" class="external tc-icon-ball socialicon-twitter34 color-twitter"></a>-->
+            <!--<a href="#" class="external tc-icon-ball socialicon-pinterest26 color-pinterest"></a>-->
+            <!--</p>-->
+            <!--</div>&ndash;&gt;-->
+            <!--</div>-->
+            <!--</div>-->
 
-        <!-- Links popover -->
-        <!--<div class="popover popover-links">
-            <div class="popover-angle"></div>
-            <div class="popover-inner">
-                <div class="list-block">
-                    <ul>
-                        <li><a href="#" class="list-button item-link">Add to Cart</a></li>
-                        <li><a href="#" class="list-button item-link">Add to Wishlist</a></li>
-                    </ul>
+            <!-- Links popover -->
+            <!--<div class="popover popover-links">
+                <div class="popover-angle"></div>
+                <div class="popover-inner">
+                    <div class="list-block">
+                        <ul>
+                            <li><a href="#" class="list-button item-link">Add to Cart</a></li>
+                            <li><a href="#" class="list-button item-link">Add to Wishlist</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </div>-->
+            </div>-->
+        </div>
     </div>
 </div>
-
+<script type="text/javascript" src="../cordova.js"></script>
 <script data-main="../js/business" src="../js/require.min.js"></script>
 </body>
 </html>
