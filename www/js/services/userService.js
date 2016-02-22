@@ -25,12 +25,12 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
               $('#textCurrentPassword').val('');
               $('#textNewPassowrd').val('');
               theApp.hidePreloader();
-              theApp.alert('Success reset password');
+              theApp.alert("Success reset password", "Congratulation");
           }else if(data.result == 'wrong_old_password'){
               $('#textCurrentPassword').val('');
               $('#textNewPassowrd').val('');
               theApp.hidePreloader();
-              theApp.alert('you input a wrong current password');
+              theApp.alert("Current password is incorrect!", "Warning");
           }
       };
 
@@ -40,10 +40,10 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
               $('#textCurrentPassword').val('');
               $('#textNewPassowrd').val('');
               theApp.hidePreloader();
-              theApp.alert('Reset password fail');
+              theApp.alert("Reset password fail", "Warning");
           }else{
                  theApp.hidePreloader();
-                 theApp.alert('System error');
+                 theApp.alert("System error", "Error");
                  console.log(data);
              }
 
@@ -64,7 +64,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
       var updateAddressError = function (data) {
           theApp.hidePreloader();
           if(data.result == 'fail'){
-              theApp.alert('Update fail');
+              theApp.alert("Update fail", "Warning");
           }
       };
       var updateAddress = function(username,address){
@@ -92,7 +92,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
     var updatePhoneError = function (data) {
         theApp.hidePreloader();
         if(data.result == 'fail'){
-            theApp.alert('Update fail');
+            theApp.alert("Update fail", "Warning");
         }
     };
     var updatePhone = function(username,phone){
@@ -120,7 +120,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
     };
 
     var getUserProfileError = function(data){
-        theApp.alert("System Get Error");
+        theApp.alert("System Error", "Warning");
         console.log(data);
     };
 
@@ -141,7 +141,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
     };
 
     var getMerchantCountError = function(data){
-        theApp.alert("System get error");
+        theApp.alert("System error", "Error");
         console.log(data);
     };
 
@@ -172,9 +172,9 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
     var getInitMerchantsError = function(data){
         console.log("system error");
         if(data.result == 'error'){
-            theApp.alert('System get error');
+            theApp.alert("System error", "Error");
         }else if(data.result == 'out_of_index'){
-            theApp.alert('out of index');
+            theApp.alert("Out of index", "Error");
         }
     };
 
@@ -216,9 +216,9 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
     var getFreshMechantsError = function(data){
         console.log("system error");
         if(data.result == 'error'){
-            theApp.alert('System get error');
+            theApp.alert("System error", "Error");
         }else if(data.result == 'out_of_index'){
-            theApp.alert('out of index');
+            theApp.alert("Out of index", "Error");
         }
         localStorage.setItem("mechantsScroll",false);
     };
