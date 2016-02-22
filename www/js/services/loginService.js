@@ -27,19 +27,19 @@ define(["jquery","framework7"],function($,Framework7){
 
                 window.location.replace("_USER/userhome.html");
             } else {
-                theApp.alert("Your phone do not support this version");
+                theApp.alert("Your phone do not support this version", "Warning");
             }
 
 
         } else if (data.result == 'fail') {
-            theApp.alert("Failed to login! Please try again.");
+            theApp.alert("Failed to login! Please try again.", "Warning");
         }
     };
 
     var loginError = function(data){
         console.log(data);
 
-        theApp.alert('Error occurs!');
+        theApp.alert("Error occurs!", "Error");
     };
     var userLogin = function(e,p){
 
@@ -58,7 +58,7 @@ define(["jquery","framework7"],function($,Framework7){
     var registerSuccess = function(data) {
 
         if (data.result == 'success') {
-            theApp.alert("Registration successfully!","Congraduation");
+            theApp.alert("Registration successfully!","Congraduation", "Warning");
         } else if (data.result == 'user_exists') {
             $('.input').val("");
             theApp.alert("User existed!","Warning");
@@ -89,18 +89,18 @@ define(["jquery","framework7"],function($,Framework7){
     //user forget_password
     var forgetPasswordSuccess = function(data){
         if(data.result == 'success'){
-            theApp.alert('New Password has sent yout email');
+            theApp.alert("New Password has sent yout email", "");
         }
 
     };
 
     var forgetPasswordError = function(data){
         if(data.result == 'fail'){
-            theApp.alert('send email fail');
+            theApp.alert('send email fail', "Warning");
         }else if(data.result == 'email_not_exist'){
-            theApp.alert('email not exist');
+            theApp.alert('email not exist', "Warning");
         }else{
-            theApp.alert('System get error');
+            theApp.alert('System get error', "Error");
             console.log(data);
         }
     };

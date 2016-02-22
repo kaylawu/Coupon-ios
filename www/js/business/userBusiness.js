@@ -71,7 +71,7 @@ define(["jquery", "../services/userService"], function ($, service) {
         if(address == ''){
             $('#textUpdateAddress').val('');
             theApp.hidePreloader();
-            theApp.alert('Input your new address');
+            theApp.alert('Input your new address', "Warning");
         }else{
 
             service.updateAddress(localStorage.getItem('username'),address);
@@ -85,13 +85,13 @@ define(["jquery", "../services/userService"], function ($, service) {
         if(phone == ''){
             $('#textUserPhoneNum').val('');
             theApp.hidePreloader();
-            theApp.alert('Input your new address');
+            theApp.alert('Input your new address', "Warning");
         }else if(phoneNumFormat.test(phone)){
             service.updatePhone(localStorage.getItem('username'),phone);
         }else{
             $('#textUserPhoneNum').val('');
             theApp.hidePreloader();
-            theApp.alert('Please input australian phone number');
+            theApp.alert('Please input australian phone number', "Warning");
         }
     };
 
@@ -101,10 +101,10 @@ define(["jquery", "../services/userService"], function ($, service) {
         var newPassword = $('#textNewPassowrd').val();
         if(oldPassword == ''){
             theApp.hidePreloader();
-            theApp.alert('Input old password');
+            theApp.alert('Input old password', "Warning");
         }else if(newPassword == ''){
             theApp.hidePreloader();
-            theApp.alert('Input new password');
+            theApp.alert('Input new password', "Warning");
         }else {
             service.resetPasswrod(localStorage.getItem('username'),oldPassword,newPassword);
         }

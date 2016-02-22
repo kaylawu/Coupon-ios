@@ -16,7 +16,7 @@ define(["jquery","../services/loginService"],function($, service){
         if (username == "123" && password == "123") {
             window.location.replace("_BUSINESS/businesshome.html");
         } else {
-            alert("Invalid username or password!!!!");
+            alert("Invalid username or password!!!!", "Warning");
         }
     };
 
@@ -27,7 +27,7 @@ define(["jquery","../services/loginService"],function($, service){
         var password = $("#user-password").val();
         console.log(email,password);
         if(email == '' || password == ''){
-            theApp.alert("Please enter your email and passwrod");
+            theApp.alert("Please enter your email and passwrod", "Warning");
         }
         else{
             service.userLogin(email,password);
@@ -41,11 +41,11 @@ define(["jquery","../services/loginService"],function($, service){
         var password = $("#register-password").val();
         console.log(email+ " "+ password);
         if(email == '' || password == ''){
-            theApp.alert("Please input email and password");
+            theApp.alert("Please input email and password", "Warning");
         }
         else if(!emailReg.test(email)){
             console.log("invalid email");
-            theApp.alert("Please input a valid email");
+            theApp.alert("Please input a valid email", "Warning");
         }
         else {
             service.register(email, password);
@@ -57,11 +57,11 @@ define(["jquery","../services/loginService"],function($, service){
         var email = $('#forgetPassword-email').val();
         console.log(email);
         if(email == ''){
-            theApp.alert("Please input email");
+            theApp.alert("Please input email", "Warning");
         }
         else if(!emailReg.test(email)){
             console.log("invalid email");
-            theApp.alert("Please input a valid email");
+            theApp.alert("Please input a valid email", "Warning");
         }
         else {
             service.forgetPassword(email);
