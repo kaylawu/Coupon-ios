@@ -109,7 +109,7 @@ define(["jquery","framework7"],function($,Framework7){
         console.log('input forget password service');
         $.ajax({
             type: "POST",
-            url: baseUrl+"/user/forgotpassword",
+            url: baseUrl+"user/forgotpassword",
             data: {email: email},
             success:forgetPasswordSuccess,
             error:forgetPasswordError
