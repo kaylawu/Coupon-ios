@@ -36,6 +36,23 @@ define(["jquery","framework7"],function($,Framework7){
         }
     };
 
+    var businessLoginSuccess = function(data){
+        if (data.result == 'success') {
+            if(typeof(Storage) !== "undefined") {
+
+                localStorage.setItem("username",data.username);
+
+                window.location.replace("_BUSINESS/businesshome.html");
+            } else {
+                theApp.alert("Your phone do not support this version", "Warning");
+            }
+
+
+        } else if (data.result == 'fail') {
+            theApp.alert("Failed to login! Please try again.", "Warning");
+        }
+    };
+
     var loginError = function(data){
         console.log(data);
 
@@ -50,6 +67,18 @@ define(["jquery","framework7"],function($,Framework7){
             data:{email:e,password:p},
             async:false,
             success:loginSuccess,
+            error:loginError
+        });
+    };
+
+    var businessLogin = function(e,p){
+        console.log("login services activated");
+        $.ajax({
+            type:"POST",
+            url:baseUrl+"staff/login",
+            data:{email:e,password:p},
+            async:false,
+            success:businessLoginSuccess,
             error:loginError
         });
     };
@@ -118,6 +147,7 @@ define(["jquery","framework7"],function($,Framework7){
     };
 
     return{
+        businessLogin : businessLogin,
         register : register,
         userLogin : userLogin,
         forgetPassword:forgetPasswrod,

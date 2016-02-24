@@ -10,13 +10,20 @@ define(["jquery","../services/loginService"],function($, service){
     var businessLogin = function (event) {
 
 
-        var username = $("#business-username").val();
+        var email = $("#business-username").val();
         var password = $("#business-password").val();
 
-        if (username == "123" && password == "123") {
-            window.location.replace("_BUSINESS/businesshome.html");
-        } else {
-            alert("Invalid username or password!!!!", "Warning");
+        // if (username == "123" && password == "123") {
+        //     window.location.replace("_BUSINESS/businesshome.html");
+        // } else {
+        //     alert("Invalid username or password!!!!", "Warning");
+        // }
+        if (email == '' || password == '') {
+            theApp.alert("Please enter your email and passwrod", "Warning");
+        }
+        else{
+            console.log(email+ " "+ password);
+            service.businessLogin(email,password)
         }
     };
 
