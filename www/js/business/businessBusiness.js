@@ -2,7 +2,7 @@
 /**
  * Created by henry on 2/19/16.
  */
-define(['jquery', '../services/businessService','../services/mobileBusiness'], function ($, service, mobile) {
+define(['jquery', '../services/businessService','../services/mobileService'], function ($, service, mobile) {
 
     
     var theApp = service.theApp;
@@ -15,6 +15,8 @@ define(['jquery', '../services/businessService','../services/mobileBusiness'], f
      mobile.scan();
 
     };
+
+
 
     return {
         theApp: theApp,

@@ -3,7 +3,7 @@
  */
 "user strict"
 
-define(["jquery", "../services/userService"], function ($, service) {
+define(["jquery", "../services/userService","../services/mobileService"], function ($, service,mobile) {
 
     var theApp = service.theApp;
     var $$ = Dom7;
@@ -126,6 +126,11 @@ define(["jquery", "../services/userService"], function ($, service) {
         }
 };
 
+    var googlemaps = function(){
+        theApp.alert("google map business activated");
+        mobile.googlemaps();
+    };
+
     return {
         theApp: theApp,
         getInitData:getInitData,
@@ -133,6 +138,7 @@ define(["jquery", "../services/userService"], function ($, service) {
         updateAddress:updateAddress,
         updatePhone:updatePhone,
         resetPassword:resetPassword,
-        userProfileInit:userProfileInit
+        userProfileInit:userProfileInit,
+        googlemaps:googlemaps
     }
 });

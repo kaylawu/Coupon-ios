@@ -62,6 +62,7 @@ require(['jquery', 'business/userBusiness'], function ($, user) {
         });
         theApp.onPageInit('mapview',function(){
             console.log('mapview init');
+            user.googlemaps();
         });
         theApp.onPageInit('user-voucher',function(){
             console.log('user-voucher init');
