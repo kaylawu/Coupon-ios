@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/framework7.3dpanels.min.css"/>
     <link rel="stylesheet" href="css/essentials.css">
     <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="res/font-awesome-4.5.0/css/font-awesome.min.css">
 </head>
 <body>
 <div class="statusbar-overlay"></div>
@@ -38,15 +39,17 @@
 
 
             <!-- Page, data-page contains page name-->
-    <div data-page="login" class="page bg-3">
+    <div data-page="login" class="page bg-1">
                 <!-- Scrollable page content-->
-                <div class="page-content vh-center" style="background-color:rgba(0,0,0,.84)">
+                <div class="page-content vh-center" style="background-color:rgba(0,0,0,0.5)">
                     <div class="content-block">
 
                         <!-- End of tab bar -->
                         <div class="tabs">
                             <div id="tab-1" class="tab active">
-                                <h2>Member Login</h2>
+                                <div class ="center">
+                                <img src="../img/sr_user.png"></i><h2>Member Login</h2>
+                              </div>
                                 <div class="tc-divider thick"></div>
 
                                 <div id="userLogin" class="list-block">
@@ -74,14 +77,14 @@
                                     <br/>
                                     <br/>
                                     <p class="buttons-row">
-                                        <button id="user-login" class="button button-big color-green" type="button">
+                                        <button id="user-login" class="button button-big color-grey" type="button">
                                             LOGIN
                                         </button>
                                     </p>
                                 </div>
 
                                 <p class="buttons-row">
-                                    <a class="button button-big" href="register.html">
+                                    <a class="button button-big color-grey" href="register.html">
                                         <small><i class="uiicon-unlocked45"></i>Create account</small>
                                     </a>
                                     <!-- <a class="button text-right external" href="_USER/userhome.html"><small><i class="uiicon-home152"></i>Skip Login</small></a> -->
@@ -95,7 +98,9 @@
                             </div><!--tab1 | ENDS -->
 
                             <div id="tab-2" class="tab">
-                                <h2>Business Login</h2>
+                              <div class ="center">
+                              <img src="../img/business_user.png"></i><h2>Business Login</h2>
+                            </div>
                                 <div class="tc-divider thick"></div>
                                 <!--<h3>Enter your username and password</h3>-->
                                 <div id="businessLogin" class="list-block">
@@ -121,14 +126,13 @@
                                     <br/>
                                     <br/>
                                     <p class="buttons-row">
-                                        <button class="button button-big color-green" id="business-login" type="button">
+                                        <button class="button button-big color-grey" id="business-login" type="button">
                                             LOGIN
                                         </button>
                                     </p>
 
                                 </div>
-                                <p class="buttons-row"><a class="button button-big color-blue"
-                                                          href="../www/about-us.html">
+                                <p class="buttons-row"><a class="button button-big color-grey" href="../www/about-us.html">
                                     <small><i class="uiicon-unlocked45"></i>Create account</small>
                                 </a></p>
                                 <!--<div class="tc-divider thick"></div>-->
@@ -138,10 +142,10 @@
                 </div><!-- .page-content | ENDS -->
             </div>
         </div>
-        <div class="toolbar" style="background-color:rgba(0,0,0,.84)">
+        <div class="toolbar tabbar" style="background-color:rgba(0,0,0,.84)">
             <div class="buttons-row" style="border-radius:0px">
-                <a href="#tab-1" class="tab-link active button ">Memeber Login</a>
-                <a href="#tab-2" class="tab-link button">Business Login</a>
+                <a href="#tab-1" class="tab-link active button glass-button">Memeber Login</a>
+                <a href="#tab-2" class="tab-link button glass-button">Business Login</a>
             </div>
         </div>
     </div>

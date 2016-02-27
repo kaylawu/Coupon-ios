@@ -63,6 +63,11 @@
     float: right;
     height: 15px;
 }
+.center{
+  text-align: center;
+  margin: auto;
+
+}
 .col-30.button-big{
     width:inherit;
 }
@@ -91,6 +96,35 @@ a.item-content{
 .button-list{
     margin-top: 10px;
 }
+
+.color-grey {
+  color: #EEEEEE;
+}
+.color-coffee{
+  color: #BC9B78;
+}
+
+.button.color-grey{
+  color: #EEEEEE;
+
+  border:2px solid #B3B3B3;
+  font-weight:500;
+  background-color: rgba(0,0,0,.3);
+}
+
+.tab-link.active.button.glass-button{
+  background-color:rgba(40,42,53,.5);
+  border:0;
+  border-radius:0px;
+  color:#EEEEEE;
+  font-size: 16px;
+}
+.tab-link.button.glass-button{
+  border-color: rgba(255,255,255,.5);
+  border-radius:0px;
+  color:#B3B3B3;
+  font-size: 16px;
+}
 /**---------------------
   *
   * General
@@ -114,7 +148,7 @@ h1,h2,h3,h4,h5,h6{
     color: rgba(0,0,0,.87);
 }
 .item-inner h3{
-   margin-bottom:5px; 
+   margin-bottom:5px;
 }
 .toolbar-inner a{
     color:black;
@@ -156,6 +190,21 @@ h1,h2,h3,h4,h5,h6{
 .welcome-user{
     width:100px;
     height: 100px;
+}
+
+.content-block.user-profile{
+  margin-top: 9px;
+  background: url("../img/user_bg.png") no-repeat center;
+}
+.user-profile .row .col-100 .tc-user-card{
+  border: 0px;
+}
+
+.content-block-title.progress{
+}
+
+.fa.fa-home{
+  color:white;
 }
 
 /**---------------------
@@ -1283,7 +1332,7 @@ i.rotate-180{
     position:relative;
     display:block;
     background:#ddd;
-    border-radius:10px; 
+    border-radius:10px;
     box-shadow:0 2px 3px rgba(0,0,0,0.2) inset;
     transform-origin:center top;
     transform-style:preserve-3d;
@@ -1919,19 +1968,15 @@ i.rotate-180{
   *
   *---------------------**/
 .bg-1{
-    background: url("#") no-repeat center;
+    background: url("../img/login_bg.png") no-repeat center;
     background-size: cover;
 }
 
 .bg-2{
-    background: url(http://placehold.it/784x853) no-repeat center;
+    background: url("../img/login_bg_02.png") no-repeat center;
     background-size: cover;
 }
 
-.bg-3{
-    background: url(http://placehold.it/784x853) no-repeat center;
-    background-size: cover;
-}
 
 .page[class*="bg-"] .page-content{
     color: #FFF;
@@ -2396,7 +2441,7 @@ h3 + .tc-comment-item{
 
 .tc-product .details{
     position: absolute;
-    margin-top: 5px;
+    top: 5px;
     width: 50%;
     right: 0;
     bottom: 10px;
@@ -2813,7 +2858,7 @@ h3 + .tc-comment-item{
 /*.button.active{
     background: rgba(255, 58, 25, 1);
     border-style: none;
-    
+
 }
 .button.login-button{
     border-style: none;
