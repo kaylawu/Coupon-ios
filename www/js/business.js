@@ -26,7 +26,7 @@ requirejs.config({
 
 
 require(['jquery', 'business/businessBusiness'], function ($, business) {
-
+    require(['dpanels'], function (dpanels) {
             console.log("init-app");
 
                 var theApp = business.theApp;
@@ -44,7 +44,13 @@ require(['jquery', 'business/businessBusiness'], function ($, business) {
                 });
             });
 
+            theApp.onPageInit('business-setting', function(){
+
+                $('#btnResetPasswordBusiness').click(business.resetPassword);
+            });
+
             theApp.init();
 
-        });
+    });
+});
 
