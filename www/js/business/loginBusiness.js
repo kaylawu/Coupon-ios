@@ -76,11 +76,26 @@ define(["jquery","../services/loginService"],function($, service){
 
     };
 
+    var forgetPasswordBusiness = function(){
+        var email = $('#forgetPassword-email-business').val();
+
+        if (email == '') {
+            theApp.alert("Please input email", "Warning");
+        } 
+        else if (!emailReg.test(email)) {
+            theApp.alert("Please input a valid email", "Warning");
+        }
+        else {
+            service.forgetPasswordBusiness(email);
+        }
+    };
+
     return{
         businessLogin : businessLogin,
         userLogin : userLogin,
         register:register,
         forgetPassword:forgetpasswrod,
+        forgetPasswordBusiness : forgetPasswordBusiness,
         theApp : theApp
 
     }

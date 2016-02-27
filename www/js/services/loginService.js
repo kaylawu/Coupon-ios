@@ -146,11 +146,22 @@ define(["jquery","framework7"],function($,Framework7){
 
     };
 
+    var forgetPasswordBusiness = function(email){
+        $.ajax({
+            type: "POST",
+            url: baseUrl+"staff/forgotpassword",
+            data: {email: email},
+            success:forgetPasswordSuccess,
+            error:forgetPasswordError
+        });
+    };
+
     return{
         businessLogin : businessLogin,
         register : register,
         userLogin : userLogin,
         forgetPassword:forgetPasswrod,
+        forgetPasswordBusiness:forgetPasswordBusiness,
         theApp:theApp
     }
 });

@@ -52,7 +52,9 @@ require(['jquery', 'business/loginBusiness'], function ($, login) {
             $("#forgetPassword-submit").click(login.forgetPassword);
         });
 
-
+        theApp.onPageInit('forget_password_business',function(page){
+            $("#forgetPassword-submit-business").click(login.forgetPasswordBusiness);
+        });
 
         theApp.init();
     });
