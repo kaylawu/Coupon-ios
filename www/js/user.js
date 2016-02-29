@@ -42,9 +42,9 @@ require(['jquery', 'business/userBusiness'], function ($, user) {
         theApp.onPageInit('main_index',function(){
 
             console.log("main_index int");
-           user.getInitData();
+            user.getInitData();
 
-           $$(".infinite-scroll").on('infinite', user.refreshPage);
+            $$(".infinite-scroll").on('infinite', user.refreshPage);
 
         });
 
@@ -59,8 +59,10 @@ require(['jquery', 'business/userBusiness'], function ($, user) {
 
         theApp.onPageInit('business-list',function(){
             console.log('businiss-list init');
+
         });
-        theApp.onPageInit('mapview',function(){
+        theApp.onPageAfterAnimation('mapview',function(){
+
             console.log('mapview init');
             user.googlemaps();
         });
@@ -71,7 +73,7 @@ require(['jquery', 'business/userBusiness'], function ($, user) {
             console.log('shopdetail init');
         });
 
-        
+
         theApp.init();
         ///**       ---          /
         // *

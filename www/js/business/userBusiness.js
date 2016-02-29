@@ -127,7 +127,7 @@ define(["jquery", "../services/userService","../services/mobileService"], functi
 };
 
     var googlemaps = function(){
-        theApp.alert("google map business activated");
+        
         mobile.googlemaps();
     };
 

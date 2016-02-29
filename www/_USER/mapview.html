@@ -1,9 +1,8 @@
-<!-- Top Navbar-->
+
 <div class="navbar">
     <div class="navbar-inner">
         <div class="left">
-            <a href="#" class="open-panel" data-panel="left"><i class="uiicon-list91"></i></a>
-
+            <a href="business-list" class="back">back</a>
         </div>
         <form method="get" action="?" class="tc-header-search list-block">
             <div class="item-input item-input-field">
@@ -16,115 +15,45 @@
         </div>
     </div>
 </div>
-<!-- Page, data-page contains page name-->
+
 <div data-page="mapview" class="page">
-    <!-- Scrollable page content-->
+
     <div class="page-content">
-        <div class="content-block">
-            <div class="row">
-                <div class="col-100">
-                    <!--<div class="content-block-inner">
-                        <div class="tc-title-1">
-                            <h5 class="sub-title small-heading">Shops on the Map</h5>
-                        </div>
-                    </div>-->
-                </div><!-- .col-100 | ENDS -->
-            </div><!-- .row | ENDS -->
-
-            <div class="row">
-                <div class="col-100">
-                    <div class="tc-map" id="googleMap"></div><!-- .tc-map | ENDS -->
-                </div><!-- .col-100 | ENDS -->
-            </div><!-- .row | ENDS -->
-
-            <div class="row">
-                <div class="col-100">
-                    <div class="content-block-inner">
-                        <div class="tc-title-1">
-                            <h2 class="title">Mail Us</h2>
-                            <h5 class="sub-title small-heading">Php Ajax Contact Form</h5>
-                        </div>
-                    </div>
-                </div><!-- .col-100 | ENDS -->
-            </div><!-- .row | ENDS -->
-
-            <div class="row">
-                <div class="col-100">
-                    <div class="content-block-inner">
-                        <p>Please fill the form below and send it. We will contact you back as soon as possible.</p>
-                        <form method="post" action="?" class="tc-contact-form list-block inputs-list">
-                            <ul>
-                                <li>
-                                    <div class="item-content">
-                                        <div class="item-inner">
-                                            <div class="item-title label">Name</div>
-                                            <div class="item-input">
-                                                <input name="name" type="text" placeholder="Your name" required/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="item-content">
-                                        <div class="item-inner">
-                                            <div class="item-title label">E-mail</div>
-                                            <div class="item-input">
-                                                <input name="email" type="email" placeholder="mymail@address.com"
-                                                       required/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="item-content">
-                                        <div class="item-inner">
-                                            <div class="item-title label">About</div>
-                                            <div class="item-input">
-                                                <select name="about">
-                                                    <option>Support</option>
-                                                    <option>Information</option>
-                                                    <option>Billing</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="item-content">
-                                        <div class="item-inner">
-                                            <div class="item-title label">Details</div>
-                                            <div class="item-input">
-                                                <textarea name="details" class="resizable"
-                                                          placeholder="Detailed Message" required></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <p class="buttons-row">
-                                        <button class="button button-raised button-fill color-green" type="submit">
-                                            Send
-                                        </button>
-                                    </p>
-                                </li>
-                            </ul>
-                        </form><!-- .list-block | ENDS -->
-                    </div><!-- .content-block-inner | ENDS -->
-                </div><!-- .col-100 | ENDS -->
-            </div><!-- .row | ENDS -->
-        </div><!-- .content-block | ENDS -->
-
-        <div class="content-block tc-footer text-center primary-bg">
-            <div class="content-block-inner">
-                <span>Copyright 2015 by ThemingCool</span>
-                <div>
-                    <a href="#" class="external tc-icon-ball socialicon-facebook43 color-facebook"></a>
-                    <a href="#" class="external tc-icon-ball socialicon-google109 color-google"></a>
-                    <a href="#" class="external tc-icon-ball socialicon-twitter34 color-twitter"></a>
-                    <a href="#" class="external tc-icon-ball socialicon-pinterest26 color-pinterest"></a>
-                    <a href="#" class="external tc-icon-ball socialicon-dribbble11 color-dribbble"></a>
-                </div>
-            </div><!-- .content-block-inner | ENDS -->
-        </div><!-- .tc-footer | ENDS -->
-    </div><!-- .page-content | ENDS -->
+        <div class="tc-map" id="map_canvas"></div>
+    </div>
 </div>
+<!---->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="utf-8" />-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <script type="text/javascript" src="../cordova.js"></script>-->
+<!--    <script type="text/javascript">-->
+<!--        var map;-->
+<!--        document.addEventListener("deviceready", function() {-->
+<!--            var div = document.getElementById("map_canvas");-->
+<!---->
+<!--            // Initialize the map view-->
+<!--            map = plugin.google.maps.Map.getMap(div);-->
+<!---->
+<!--            // Wait until the map is ready status.-->
+<!--            map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);-->
+<!--        }, false);-->
+<!---->
+<!--        function onMapReady() {-->
+<!--            var button = document.getElementById("button");-->
+<!--            button.addEventListener("click", onBtnClicked, false);-->
+<!--        }-->
+<!---->
+<!--        function onBtnClicked() {-->
+<!--            map.showDialog();-->
+<!--        }-->
+<!--    </script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h3>PhoneGap-GoogleMaps-Plugin</h3>-->
+<!--<div style="width:100%;height:400px" id="map_canvas"></div>-->
+<!--<button id="button">Full Screen</button>-->
+<!--</body>-->
+<!--</html>-->

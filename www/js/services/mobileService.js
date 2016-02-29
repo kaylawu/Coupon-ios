@@ -3,7 +3,7 @@
  */
 "use strict"
 
-define([],function(){
+define(["jquery"],function($){
 
     var scan = function()
     {
@@ -13,7 +13,7 @@ define([],function(){
                 {
                     if(result.format == "QR_CODE")
                     {
-                       alert(result.text);
+                        alert(result.text);
                     }
                 }
             },
@@ -30,25 +30,34 @@ define([],function(){
         document.addEventListener("deviceready", function() {
 
 
+            var div = document.getElementById("map_canvas");
 
-            // Define a div tag with id="map_canvas"
-            var mapDiv = $('#googlemap');
-            mapDiv.append('hello world');
-//                                  var map = plugin.google.maps.Map.getMap();
-//                                  alert(map);
+            // Initialize the map view
+            var map = plugin.google.maps.Map.getMap(div,{
+                'backgroundColor': 'black',
+                'mapType': plugin.google.maps.MapTypeId.HYBRID,
+                'controls': {
+                    'compass': true,
+                    'myLocationButton': true,
+                    'indoorPicker': true,
+                    'zoom': true
+                },
+                'gestures': {
+                    'scroll': true,
+                    'tilt': true,
+                    'rotate': true,
+                    'zoom': true
+                }
+            });
 
-
-            // Initialize the map plugin
-//                                  var map = plugin.google.maps.Map.getMap();
-//                                  map.addEventListener(plugin.google.maps.event.MAP_READY, function onMapInit(map) {
-//                                                       // The map is initialized, then show a map dialog
-//                                                       map.showDialog();
-//                                                       });
-
-//
-//            // You have to wait the MAP_READY event.
-//            map.on(plugin.google.maps.event.MAP_READY, onMapInit);
+            // Wait until the map is ready status.
+            map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
         });
+
+    };
+
+    var onMapReady= function(){
+
     };
 
 
