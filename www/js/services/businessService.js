@@ -56,7 +56,7 @@ define(['jquery', 'framework7'], function ($, Framework7) {
       };
 
     return{
-        theApp:theApp
+        theApp:theApp,
         resetPassword:resetPassword
     }
 
