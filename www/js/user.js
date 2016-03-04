@@ -62,7 +62,6 @@ require(['jquery', 'business/userBusiness'], function ($, user) {
 
         });
         theApp.onPageAfterAnimation('mapview',function(){
-
             console.log('mapview init');
             user.googlemaps();
         });

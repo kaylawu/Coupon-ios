@@ -5,7 +5,7 @@ define(["jquery","../services/loginService"],function($, service){
 
 
     var theApp = service.theApp;
-
+    var mainView = service.mainView;
     var emailReg = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/i;
     var businessLogin = function (event) {
 
@@ -43,20 +43,21 @@ define(["jquery","../services/loginService"],function($, service){
     };
 
     var register = function(data) {
-        console.log("register activated");
-        var email = $("#register-email").val() ;
-        var password = $("#register-password").val();
-        console.log(email+ " "+ password);
-        if(email == '' || password == ''){
-            theApp.alert("Please input email and password", "Warning");
-        }
-        else if(!emailReg.test(email)){
-            console.log("invalid email");
-            theApp.alert("Please input a valid email", "Warning");
-        }
-        else {
-            service.register(email, password);
-        }
+        mainView.router.loadPage('userinfo.html');
+        //console.log("register activated");
+        //var email = $("#register-email").val() ;
+        //var password = $("#register-password").val();
+        //console.log(email+ " "+ password);
+        //if(email == '' || password == ''){
+        //    theApp.alert("Please input email and password", "Warning");
+        //}
+        //else if(!emailReg.test(email)){
+        //    console.log("invalid email");
+        //    theApp.alert("Please input a valid email", "Warning");
+        //}
+        //else {
+        //    service.register(email, password);
+        //}
     };
 
     var forgetpasswrod = function(){
@@ -96,7 +97,7 @@ define(["jquery","../services/loginService"],function($, service){
         register:register,
         forgetPassword:forgetpasswrod,
         forgetPasswordBusiness : forgetPasswordBusiness,
-        theApp : theApp
-
+        theApp : theApp,
+        mainView:mainView
     }
 });

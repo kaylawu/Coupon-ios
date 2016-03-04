@@ -12,6 +12,9 @@ define(["jquery","framework7"],function($,Framework7){
         init: false
     });
 
+    var mainView = theApp.addView('.view-main', {
+        dynamicNavbar: true
+    });
     // Export selectors engine
     var $$ = Dom7;
 
@@ -162,6 +165,7 @@ define(["jquery","framework7"],function($,Framework7){
         userLogin : userLogin,
         forgetPassword:forgetPasswrod,
         forgetPasswordBusiness:forgetPasswordBusiness,
-        theApp:theApp
+        theApp:theApp,
+        mainView:mainView
     }
 });

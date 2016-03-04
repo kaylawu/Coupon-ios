@@ -35,6 +35,7 @@ define(['jquery', '../services/businessService','../services/mobileService'], fu
     return {
         theApp: theApp,
         resetPassword:resetPassword,
-        scan: scan
+        scan: scan,
+        mainView:service.mainView
     }
 });

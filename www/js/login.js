@@ -24,9 +24,7 @@ require(['jquery', 'business/loginBusiness'], function ($, login) {
         var theApp = login.theApp;
 
         // Add view
-        var mainView = theApp.addView('.view-main', {
-            dynamicNavbar: true
-        });
+        var mainView = login.mainView;
 
         theApp.device.statusBar = true;
         theApp.onPageInit('login', function (page) {
