@@ -497,6 +497,9 @@ html.pixel-ratio-2 .input-field:after{
 a.open-popup{
   color:#6d6d72;
 }
+a.link.back{
+  color: #fff;
+}
 
 /**---------------------
 
