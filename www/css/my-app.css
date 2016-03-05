@@ -75,9 +75,9 @@
     height: 15px;
 }
 .card-footer a.link{
-    color:#e91e63;
+    color:#C98F31;
     text-align: center;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 14px;
     text-align: center;
 }
@@ -142,15 +142,22 @@ body{
     transform: translate3d(-100%,0,0);
 
 }
+.popup-overlay{
+  background: rgba(0,0,0,0);
+}
 /**---------------------
   *
   * Typography
   *
   *---------------------**/
-h1,h2,h3,h4,h5,h6{
+h1,h2,h4,h5,h6{
     font-weight: 400;
-    margin-top: 0;
+    margin-top: 10px;
     color: rgba(0,0,0,.87);
+}
+h3{
+  font-weight: 600;
+  color: #C98F31;
 }
 .item-inner h3{
     margin-bottom:5px;
@@ -476,11 +483,20 @@ html.pixel-ratio-2 .input-field:after{
 }
 .card-content{
     text-align: center;
-    padding:5px;
-    height:10vw;
     font-size:80%;
 }
 
+.card-header{
+  padding:0 0 0 10px;
+}
+.card-header h3{
+  color:#4A4A4A;
+  font-weight: 500;
+  margin:5px 0 5px 5px;
+}
+a.open-popup{
+  color:#6d6d72;
+}
 
 /**---------------------
 
@@ -489,16 +505,12 @@ html.pixel-ratio-2 .input-field:after{
 
 .ph-content{
     margin-top: 150px;
-
-
 }
 
 .ph-content .button-big{
     height:65px;
     line-height:60px;
 }
-
-
 
 
 .scan-tag{
