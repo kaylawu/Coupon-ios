@@ -66,13 +66,13 @@ define(['jquery', 'framework7'], function ($, Framework7) {
     };
 
     var getUserCouponDetailSuccess = function(data){
-        if (data.result == 'no_record') {
-          theApp.alert("No Record", "Error");
-        };
+        
     };
 
     var getUserCouponDetailError = function(data){
-
+      if (data.result == 'no_record') {
+          theApp.alert("No Record", "Error");
+        };
     };
 
     return{
