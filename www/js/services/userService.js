@@ -156,6 +156,24 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
 
     };
 
+    //get all Merchant count
+    var getMerchantCountAll = function(){
+      $.ajax({
+          url:baseUrl+"/user/getmerchantcount",
+          type:"GET",
+          success:getMerchantCountAllSuccess,
+          error:getMerchantCountAllError
+      });
+    };
+
+    var getMerchantCountAllSuccess = function(data){
+        
+    };
+
+    var getMerchantCountAllError = function(data){
+        theApp.alert("System error", "Error");
+    }
+
     //getInitMerchants
     var getInitMerchantsSuccess = function(data){
         var content = '';
