@@ -167,7 +167,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
     };
 
     var getMerchantCountAllSuccess = function(data){
-        
+        localStorage.setItem("userMechantsAll",data.count);
     };
 
     var getMerchantCountAllError = function(data){
@@ -291,7 +291,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
             theApp.alert("Out of index", "Error");
         }
         localStorage.setItem("merchantAllScroll",false);
-    }
+    };
 
     var getFreshMechants = function(username,needItemNum,existItemNum){
         console.log('needItem'+ needItemNum + 'existItem' + existItemNum);
@@ -302,7 +302,6 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
             success:getFreshMechantsSuccess,
             error:getFreshMechantsError
         });
-
     };
 
     var getFreshMechantsAll = function(username, needItem, existItemNum){
