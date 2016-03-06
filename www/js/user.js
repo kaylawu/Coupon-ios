@@ -67,6 +67,7 @@ require(['jquery', 'business/userBusiness'], function ($, user) {
         });
         theApp.onPageInit('user-voucher',function(){
             console.log('user-voucher init');
+            coupon.couponInit();
         });
         theApp.onPageInit('shopdetail',function(){
             console.log('shopdetail init');

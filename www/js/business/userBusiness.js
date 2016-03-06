@@ -131,6 +131,8 @@ define(["jquery", "../services/userService","../services/mobileService"], functi
         mobile.googlemaps();
     };
 
+
+
     return {
         theApp: theApp,
         getInitData:getInitData,
