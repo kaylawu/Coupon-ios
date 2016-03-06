@@ -186,7 +186,6 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         theApp.hidePreloader();
     };
 
-
     var getInitMerchantsError = function(data){
         console.log("system error");
         if(data.result == 'error'){
@@ -204,10 +203,37 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
             success:getInitMerchantsSuccess,
             error:getInitMerchantsError
         });
-
     };
 
+    var getInitMerchantsAllSuccess = function(data){
+      var content = '';
+      _.each(data,function(v,k,list){
+          content += merchantAllHtmlHtmlHelper(v);
+      });
 
+      $('.allMerchants ul').append(content);
+      $('.infinite-scroll-preloader').append('<div class="preloader"></div>');
+      theApp.hidePreloader();
+    }
+
+    var getInitMerchantsAllError = function(data){
+        console.log("system error");
+        if(data.result == 'error'){
+            theApp.alert("System error", "Error");
+        }else if(data.result == 'out_of_index'){
+            theApp.alert("Out of index", "Error");
+        }
+    };
+
+    var getInitMerchantsAll = function(username, needItemNum, existItemNum){
+        $.ajax({
+          url:baseUrl+"/user/getmerchants",
+          type:"GET",
+          data:{username:username,needItemNum:needItemNum,existItemNum:existItemNum},
+          success:getInitMerchantsAllSuccess,
+          error:getInitMerchantsAllError
+        });
+    };
 
     //getFreshMechants
     var getFreshMechantsSuccess = function(data){
@@ -241,6 +267,32 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         localStorage.setItem("mechantsScroll",false);
     };
 
+    var getFreshMechantsAllSuccess = function(data){
+      var content = '';
+      _.each(data,function(v,k,list){
+        if (k == localStorage.getItem("userMechantsAll")) {
+          content += merchantAllHtmlHtmlHelper(v);
+          theApp.detachInfiniteScroll($$('.infinite-scroll'));
+
+          $$('.infinite-scroll-preloader').remove();
+        } else {
+            content += merchantAllHtmlHtmlHelper(v).remove();
+        }
+      });
+      $('.allMerchants ul').append(content);
+      localStorage.setItem("merchantAllScroll", false);
+    };
+
+    var getFreshMechantsAllError = function(data){
+        console.log("system error");
+        if(data.result == 'error'){
+            theApp.alert("System error", "Error");
+        }else if(data.result == 'out_of_index'){
+            theApp.alert("Out of index", "Error");
+        }
+        localStorage.setItem("merchantAllScroll",false);
+    }
+
     var getFreshMechants = function(username,needItemNum,existItemNum){
         console.log('needItem'+ needItemNum + 'existItem' + existItemNum);
         $.ajax({
@@ -253,6 +305,16 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
 
     };
 
+    var getFreshMechantsAll = function(username, needItem, existItemNum){
+      $.ajax({
+        url:baseUrl + "/user/getmerchants",
+        type:"GET",
+        data:{username:username,needItemNum:needItemNum,existItemNum:existItemNum},
+        success:getFreshMechantsAllSuccess,
+        error:getFreshMechantsAllError
+      });
+    };
+
     //private function
     var mechantHtmlHelper = function(v){
         var content = '<li> <div class="item-content"> <div class="item-media"><img class="mechantLoge" src='+imgBaseUrl+ v.logoUrl+'></div>';
@@ -262,17 +324,27 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         return content;
     };
 
+    var merchantAllHtmlHtmlHelper = function(v){
+      var content = '<li> <div class="col-100 tablet-50"> <div class="tc-product"><a href=shopdetail.html?shopId=' + v.merchantId + 'class="title">';
+      content += '<img src=' + imgBaseUrl + v.logoUrl + '/><div class="details"> <div class="head"><h3>' + v.merchantName + '</h3>'
+      content += '<h3>Chatswood</h3> </div> <div class="buttons"> <a href="#"><i class="uiicon-web39 color-orange"></i> Your points:' + v.userPoints + '</a>'
+      content += '<a href="shopdetail.html?shopId=' + v.merchantId + '><i class="uiicon-web38"></i> Details</a>'
+      content += '</div></div></a></div></div>';
+      return content;
+    }
+
     return{
         theApp : theApp,
 
         getMerchantCount:getMerchantCount,
+        getMerchantCountAll:getMerchantCountAll,
         getInitMerchants:getInitMerchants,
+        getInitMerchantsAll:getInitMerchantsAll,
         getUserProfile:getUserProfile,
         updateAddress:updateAddress,
         resetPasswrod:resetPassword,
         getFreshMechants:getFreshMechants,
+        getFreshMechantsAll:getFreshMechantsAll,
         updatePhone:updatePhone
-
-
     }
 });
