@@ -44,6 +44,12 @@ require(['jquery', 'business/loginBusiness'], function ($, login) {
 
         });
 
+        theApp.onPageInit('userInfo',function(page){
+            console.log('userInfo int');
+          console.log(page.query.email + ' ' + page.query.password);
+
+
+        });
         theApp.onPageInit('forget_password',function(page){
             console.log("forget_password init");
             //page.view.hideToolbar();

@@ -43,10 +43,12 @@ define(["jquery","../services/loginService"],function($, service){
     };
 
     var register = function(data) {
-        mainView.router.loadPage('userinfo.html');
+        var email = $("#register-email").val() ;
+        var password = $("#register-password").val();
+
+        mainView.router.loadPage('userInfo.html?email='+email+'&password='+password);
         //console.log("register activated");
-        //var email = $("#register-email").val() ;
-        //var password = $("#register-password").val();
+
         //console.log(email+ " "+ password);
         //if(email == '' || password == ''){
         //    theApp.alert("Please input email and password", "Warning");
