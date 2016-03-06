@@ -32,6 +32,28 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         theApp.alert("System error", "Error");
     };
 
+    var getInitCoupons = function(username,needItemNum,existItemNum){
+        $.ajax({
+            url:baseUrl+"/user/getcoupons";
+            type:"POST",
+            data:{username:username,needItemNum:needItemNum,existItemNum:existItemNum}
+            success:getInitCouponsSuccess,
+            error:getInitCouponsError
+        });
+    };
+
+    var getInitCouponsSuccess = function(data){
+
+    };
+
+    var getInitCouponsError = function(data){
+        if (data.result == 'error') {
+            theApp.alert("System error", "Error");
+        } else if (data.result == 'out_of_index') {
+            theApp.alert("Out of index", "Error")
+        }
+    };
+
     return{
         theApp:theApp,
         getCouponCount:getCouponCount
