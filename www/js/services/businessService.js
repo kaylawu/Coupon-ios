@@ -55,9 +55,30 @@ define(['jquery', 'framework7'], function ($, Framework7) {
          }
       };
 
+    var getUserCouponDetail = function(userCouponId){
+      $.ajax({
+        url:baseUrl + "/user/getusercoupondetails",
+        type:"POST",
+        data:{userCouponId:userCouponId},
+        success:getUserCouponDetailSuccess,
+        error:getUserCouponDetailError
+      });
+    };
+
+    var getUserCouponDetailSuccess = function(data){
+        if (data.result == 'no_record') {
+          theApp.alert("No Record", "Error");
+        };
+    };
+
+    var getUserCouponDetailError = function(data){
+
+    };
+
     return{
         theApp:theApp,
-        resetPassword:resetPassword
+        resetPassword:resetPassword,
+        getUserCouponDetail:getUserCouponDetail
     }
 
 });
