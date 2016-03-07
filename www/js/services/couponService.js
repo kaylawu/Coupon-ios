@@ -61,8 +61,11 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
     };
 
     var couponHtmlHelper = function(v) {
-        //var content = '<li> <div class="card facebook-card"> <div class="card-header no-border center"> <h3>' + v.merchantName + '</h3></div>';
-        //content += '<div class="card-content"> <img src=' + imgBaseUrl + v.
+        var content = '<li> <div class="card facebook-card"> <div class="card-header no-border center"> <h3>' + v.merchantName + '</h3></div>';
+        content += '<div class="card-content"> <img src="../img/five_OFF.png" width="100%"><p>' + v.couponDescription + '</p></div>';
+        content += '<div class="card-footer no-border"><a href="#" data-popup=".popup-qr" class = "open-popup link">Use Voucher</a>';
+        content += '<p><a href="#" data-popup=".popup-terms" class = "open-popup">Terms</a></p><p>Expire: ' + v.expiredDate + '</p>';
+        content += '</div></div></li>';
     };
 
     var userRedeemCoupon = function (username, couponId) {
