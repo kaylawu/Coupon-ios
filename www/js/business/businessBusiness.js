@@ -1,4 +1,4 @@
-"user strict"
+"use strict"
 /**
  * Created by henry on 2/19/16.
  */

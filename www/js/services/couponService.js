@@ -1,4 +1,4 @@
-'user strict'
+"use strict"
 
 define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
 
@@ -34,9 +34,9 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
 
     var getInitCoupons = function(username,needItemNum,existItemNum){
         $.ajax({
-            url:baseUrl+"/user/getcoupons";
+            url:baseUrl+"/user/getcoupons",
             type:"POST",
-            data:{username:username,needItemNum:needItemNum,existItemNum:existItemNum}
+            data:{username:username,needItemNum:needItemNum,existItemNum:existItemNum},
             success:getInitCouponsSuccess,
             error:getInitCouponsError
         });
@@ -61,8 +61,8 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
     };
 
     var couponHtmlHelper = function(v) {
-        var content = '<li> <div class="card facebook-card"> <div class="card-header no-border center"> <h3>' + v.merchantName + '</h3></div>';
-        content += '<div class="card-content"> <img src=' + imgBaseUrl + v. 
+        //var content = '<li> <div class="card facebook-card"> <div class="card-header no-border center"> <h3>' + v.merchantName + '</h3></div>';
+        //content += '<div class="card-content"> <img src=' + imgBaseUrl + v.
     };
 
     var userRedeemCoupon = function (username, couponId) {

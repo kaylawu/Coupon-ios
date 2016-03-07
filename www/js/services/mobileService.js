@@ -1,7 +1,7 @@
 /**
  * Created by henry on 2/20/16.
  */
-"use strict"
+'use strict'
 
 define(["jquery"],function($){
 

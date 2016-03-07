@@ -1,7 +1,7 @@
 /**
  * Created by henry on 16/2/10.
  */
-"user strict"
+"use strict"
 
 define(["jquery", "../services/userService","../services/mobileService"], function ($, service,mobile) {
 

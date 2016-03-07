@@ -1,7 +1,7 @@
 /**
  * Created by henry on 2/19/16.
  */
-"user strict"
+"use strict"
 
 define(['jquery', 'framework7'], function ($, Framework7) {
 
