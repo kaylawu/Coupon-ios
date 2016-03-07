@@ -1,24 +1,72 @@
 "use strict"
 define(["jquery", "../services/merchantService","../services/mobileService"], function ($, service,mobile) {
 
-    var getInitData = function(){
-        theApp.showPreloader();
-        var username = localStorage.getItem("username");
-        service.getMerchantCountAll(username);
+    var theApp = service.theApp;
+
+    var $$ = Dom7;
+    var getInitData = function() {
+
+
+
+        service.getMerchantCountAll();
+        console.log(localStorage.getItem("AllMerchants"));
+
+        var tid = setInterval(pageLoading, 1000);
         console.log("Init Data");
-        var tid = setInterval(pageLoading,1000);
-        function pageLoading(){
-                //Init home page mechants
-                if(localStorage.getItem("userMechants")<=6){
-                    service.getInitMerchants(username,localStorage.getItem("userMechants"),0);
-                    //remove infinite scroll listener
-                    theApp.detachInfiniteScroll($$('.infinite-scroll'));
-                    $$('.infinite-scroll-preloader').remove();
-                }else{
-                    service.getInitMerchants(username,6,0);
+        function pageLoading() {
+            console.log("into pageloading function");
+            if (localStorage.getItem("AllMerchants") !== null) {
+                clearInterval(tid);
+                if (localStorage.getItem("AllMerchants") > 0){
+                    console.log('into the initDATA firest if');
+                    //Init home page mechants
+                    if (localStorage.getItem("AllMerchants") <= 6) {
+                        service.getInitMerchantsAll(localStorage.getItem("username"),localStorage.getItem("AllMerchants"), 0);
+                        //remove infinite scroll listener
+                        theApp.detachInfiniteScroll($$('.infinite-scroll'));
+                        $$('.infinite-scroll-preloader').remove();
+                    } else {
+                        service.getInitMerchantsAll(localStorage.getItem("username"), 6, 0);
+                    }
                 }
             }
+        }
+    };
+
+    var refreshPage = function(){
+
+        console.log("refresh activated");
+        var username = localStorage.getItem("username");
+        // Loading flag
+
+
+        console.log(localStorage.getItem("merchantAllScroll"));
+        // Last loaded index
+        var lastIndex = $$('.allMerchants li').length;
+        console.log(lastIndex);
+        var maxItems = localStorage.getItem('AllMerchants');
+        console.log(maxItems);
+        // Append items per load
+        var itemsPerLoad = 5;
+
+        // Exit, if loading in progress
+        if (JSON.parse(localStorage.getItem("merchantAllScroll"))) return;
+        // Set loading flag
+
+        localStorage.setItem("merchantAllScroll",true);
+
+        if(maxItems - lastIndex >= itemsPerLoad){
+            service.getFreshMechantsAll(username,itemsPerLoad,lastIndex);
+
+        }else{
+            service.getFreshMechantsAll(username,maxItems - lastIndex,lastIndex);
+        }
 
     };
+
+    return{
+            getInitData:getInitData,
+            refreshPage:refreshPage
+    }
 
 });

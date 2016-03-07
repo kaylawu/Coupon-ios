@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
 
@@ -18,8 +18,9 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
 
     //get all Merchant count
     var getMerchantCountAll = function(){
+        console.log("merchant count service activated");
         $.ajax({
-            url:baseUrl+"/user/getmerchantcount",
+            url:baseUrl+"user/getmerchantcount",
             type:"GET",
             success:getMerchantCountAllSuccess,
             error:getMerchantCountAllError
@@ -27,7 +28,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
     };
 
     var getMerchantCountAllSuccess = function(data){
-        localStorage.setItem("userMechantsAll",data.count);
+        localStorage.setItem("AllMerchants",data.count);
     };
 
     var getMerchantCountAllError = function(data){
@@ -42,7 +43,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
             });
         $('.allMerchants ul').append(content);
         $('.infinite-scroll-preloader').append('<div class="preloader"></div>');
-        theApp.hidePreloader();
+
     };
 
     var getInitMerchantsAllError = function(data){
@@ -54,7 +55,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         }
     };
 
-    var getInitMerchantsAll = function(username, needItemNum, existItemNum){
+    var getInitMerchantsAll = function(username,needItemNum,existItemNum){
         $.ajax({
             url:baseUrl+"/user/getmerchants",
             type:"GET",
@@ -68,22 +69,23 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         $.ajax({
             url:baseUrl + "/user/getmerchants",
             type:"GET",
-            data:{username:username,needItemNum:needItemNum,existItemNum:existItemNum},
+            data:{username:username,needItemNum:needItem,existItemNum:existItemNum},
             success:getFreshMechantsAllSuccess,
             error:getFreshMechantsAllError
         });
     };
 
     var getFreshMechantsAllSuccess = function(data){
+        console.log('into getFreshMechantsAll');
         var content = '';
         _.each(data,function(v,k,list){
-            if (k == localStorage.getItem("userMechantsAll")) {
+            console.log(v);
+            if (k == localStorage.getItem("AllMerchants")) {
                 content += merchantAllHtmlHtmlHelper(v);
                 theApp.detachInfiniteScroll($$('.infinite-scroll'));
-
                 $$('.infinite-scroll-preloader').remove();
             } else {
-                content += merchantAllHtmlHtmlHelper(v).remove();
+                content += merchantAllHtmlHtmlHelper(v);
             }
         });
         $('.allMerchants ul').append(content);
@@ -103,7 +105,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
 
     var merchantAllHtmlHtmlHelper = function(v){
         var content = '<li> <div class="col-100 tablet-50"> <div class="tc-product"><a href=shopdetail.html?shopId=' + v.merchantId + 'class="title">';
-        content += '<img src=' + imgBaseUrl + v.logoUrl + '/><div class="details"> <div class="head"><h3>' + v.merchantName + '</h3>';
+        content += '<img src=' + imgBaseUrl + v.logoUrl + '><div class="details"> <div class="head"><h3>' + v.merchantName + '</h3>';
         content += '<h3>Chatswood</h3> </div> <div class="buttons"> <a href="#"><i class="uiicon-web39 color-orange"></i> Your points:' + v.userPoints + '</a>';
         content += '<a href="shopdetail.html?shopId=' + v.merchantId + '><i class="uiicon-web38"></i> Details</a>';
         content += '</div></div></a></div></div></li>';

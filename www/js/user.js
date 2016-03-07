@@ -26,7 +26,7 @@ requirejs.config({
 });
 
 
-require(['jquery', 'business/userBusiness'], function ($, user) {
+require(['jquery', 'business/userBusiness','business/merchantBusiness'], function ($, user,merchant) {
     require(['dpanels'], function (dpanels) {
 
         // Initialize your app
@@ -58,6 +58,9 @@ require(['jquery', 'business/userBusiness'], function ($, user) {
 
         theApp.onPageInit('business-list',function(){
             console.log('businiss-list init');
+            localStorage.getItem('AllMerchants',false);
+            merchant.getInitData();
+            $$(".infinite-scroll").on('infinite', merchant.refreshPage);
 
         });
         theApp.onPageAfterAnimation('mapview',function(){
