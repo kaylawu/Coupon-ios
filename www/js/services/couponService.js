@@ -25,7 +25,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
     };
 
     var getCouponCountSuccess = function(){
-        localStorage.setItem("userCoupons",data.count);
+        localStorage.setItem("ALLUserCoupons",data.count);
     };
 
     var getCouponCountError = function () {
@@ -81,7 +81,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
     var getFreshCouponsSuccess = function(data){
         _.each(data,function(v,k,list){
 
-            if (k == localStorage.getItem("userCoupons")) {
+            if (k == localStorage.getItem("AllUserCoupons")) {
                 content += couponHtmlHelper(v);
                 theApp.detachInfiniteScroll($$('.infinite-scroll'));
 
