@@ -65,22 +65,31 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         content += '<div class="card-content"> <img src=' + imgBaseUrl + v. 
     };
 
-<div class="card facebook-card">
-                        <div class="card-header no-border center">
-                          <h3>Shop Name</h3>
-                        </div>
-                          <div class="card-content">
-                            <img src="../img/voucher_5dollar.png" width="100%">
-                          </div>
-                        <div class="card-footer no-border">
-                            <a href="#" data-popup=".popup-qr" class = "open-popup link">Use Voucher</a>
-                            <p><a href="#" data-popup=".popup-terms" class = "open-popup">Terms</a></p>
-                            <p>Expire: 05/05/2016 </p>
-                        </div>
-                    </div>
+    var userRedeemCoupon = function (username, couponId) {
+        $.ajax({
+            url:baseUrl+"/user/redeemcoupon",
+            type:"POST",
+            success:userRedeemCouponSuccess,
+            error:userRedeemCouponError
+        });
+    }
+
+    var userRedeemCouponSuccess = function (data) {
+        if (data.result == 'success') {
+            theApp.alert("Success received the coupon!", "Congratulation");
+        }
+    };
+
+    var userRedeemCouponError = function (data) {
+        if (data.result == 'fail') {
+            theApp.alert("Fail to recived the coupoon", "System Error");
+        }
+    }
+
     return{
         theApp:theApp,
         getCouponCount:getCouponCount,
-        getInitCoupons:getInitCoupons
+        getInitCoupons:getInitCoupons,
+        userRedeemCoupon:userRedeemCoupon
     }
 });
