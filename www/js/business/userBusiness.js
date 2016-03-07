@@ -16,21 +16,27 @@ define(["jquery", "../services/userService","../services/mobileService"], functi
         service.getUserProfile(username);
         service.getMerchantCount(username);
         console.log("Init Data");
-        var tid = setInterval(pageLoading,1000);
+        var tid = setInterval(pageLoading,500);
         function pageLoading(){
             if(localStorage.getItem("userProfile")!== null && localStorage.getItem("userMechants")!==null){
                 //Stop timer(localStorage stored all profile)
                 clearInterval(tid);
-
-                //Init home page mechants
-                if(localStorage.getItem("userMechants")<=6){
-                    service.getInitMerchants(username,localStorage.getItem("userMechants"),0);
-                    //remove infinite scroll listener
-                    theApp.detachInfiniteScroll($$('.infinite-scroll'));
-                    $$('.infinite-scroll-preloader').remove();
+                if(localStorage.getItem("userMechants")>0)
+                {
+                    //Init home page mechants
+                    if(localStorage.getItem("userMechants")<=6){
+                        console.log(localStorage.getItem("userMechants"));
+                        service.getInitMerchants(username,localStorage.getItem("userMechants"),localStorage.getItem("userMechants"),0);
+                        //remove infinite scroll listener
+                        theApp.detachInfiniteScroll($$('.infinite-scroll'));
+                        $$('.infinite-scroll-preloader').remove();
+                    }else{
+                        service.getInitMerchants(username,6,0);
+                    }
                 }else{
-                    service.getInitMerchants(username,6,0);
+                    theApp.hidePreloader();
                 }
+
             }
         }
     };
