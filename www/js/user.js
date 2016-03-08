@@ -41,6 +41,7 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness'], functio
         //userhome Init
         theApp.onPageInit('user_home',function(){
             console.log("user_home int");
+            console.log(localStorage.getItem('userProfile'));
             user.getInitData();
             $$(".infinite-scroll").on('infinite', user.refreshPage);
         });

@@ -79,6 +79,7 @@ define(["jquery","framework7"],function($,Framework7){
     //getUserProfile
     var getUserProfileSuccess = function(data){
         localStorage.setItem("userProfile",JSON.stringify(data));
+
         window.location.replace("_USER/userhome.html");
         theApp.hidePreloader();
     };

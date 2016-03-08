@@ -11,7 +11,6 @@ define(["jquery", "../services/userService","../services/mobileService"], functi
 
 
     var getInitData = function(){
-
         var username = localStorage.getItem("username");
         service.getMerchantCount(username);
         console.log("Init Data");
