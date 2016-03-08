@@ -6,7 +6,7 @@ define(["jquery", "../services/couponService","../services/mobileService"], func
 	var $$ = Dom7;
 	var getInitData = function() {
 
-		service.getCouponCount();
+		service.getCouponCount(localStorage.getItem("username"), "All");
 
 		var tid = setInterval(pageLoading, 1000);
 

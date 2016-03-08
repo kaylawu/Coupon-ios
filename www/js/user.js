@@ -25,7 +25,7 @@ requirejs.config({
     }
 });
 
-require(['jquery', 'business/userBusiness','business/merchantBusiness'], function ($, user,merchant) {
+require(['jquery', 'business/userBusiness','business/merchantBusiness', 'business/CouponBusiness'], function ($, user,merchant, coupon) {
     require(['dpanels'], function (dpanels) {
 
         // Initialize your app
@@ -71,6 +71,9 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness'], functio
         //user voucher page init
         theApp.onPageInit('user-voucher',function(){
             console.log('user-voucher init');
+            localStorage.getItem("AllUserCoupons",false);
+            coupon.getInitData();
+            $$(".infinite-scroll").on('infinite', coupon.refreshPage);
         });
 
         //shop Detail page init

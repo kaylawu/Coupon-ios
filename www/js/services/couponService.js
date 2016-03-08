@@ -17,19 +17,19 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
     var getCouponCount = function(username, status){
         $.ajax({
             url:baseUrl+"/user/getcouponcount",
-            type:"GET",
+            type:"POST",
             data:{username:username,status:status},
             success:getCouponCountSuccess,
             error:getCouponCountError
         });
     };
 
-    var getCouponCountSuccess = function(){
+    var getCouponCountSuccess = function(data){
         localStorage.setItem("AllUserCoupons",data.count);
     };
 
-    var getCouponCountError = function () {
-        theApp.alert("System error", "Error");
+    var getCouponCountError = function (data) {
+        theApp.alert("System Error", "Error");
     };
 
     var getInitCoupons = function(username,needItemNum,existItemNum){
@@ -54,7 +54,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
 
     var getInitCouponsError = function(data){
         if (data.result == 'error') {
-            theApp.alert("System error", "Error");
+            theApp.alert("System Error", "Error");
         } else if (data.result == 'out_of_index') {
             theApp.alert("Out of index", "Error")
         }
@@ -96,7 +96,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
 
     var getFreshCouponsError = function(data){
         if (data.result == 'error') {
-            theApp.alert("System error", "Error");
+            theApp.alert("System Error", "Error");
         } else if (data.result == 'out_of_index') {
             theApp.alert("Out of index", "Error")
         }
@@ -128,7 +128,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         theApp:theApp,
         getCouponCount:getCouponCount,
         getInitCoupons:getInitCoupons,
-        getFreshCoupons,
+        getFreshCoupons:getFreshCoupons,
         userRedeemCoupon:userRedeemCoupon
     }
 });
