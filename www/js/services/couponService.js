@@ -25,7 +25,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
     };
 
     var getCouponCountSuccess = function(){
-        localStorage.setItem("ALLUserCoupons",data.count);
+        localStorage.setItem("AllUserCoupons",data.count);
     };
 
     var getCouponCountError = function () {
@@ -90,7 +90,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
                 content += couponHtmlHelper(v);
             }
         });
-        $('.userCoupon').append(content);
+        $('.userCoupon ul').append(content);
         localStorage.setItem("couponsScroll",false);
     }
 
