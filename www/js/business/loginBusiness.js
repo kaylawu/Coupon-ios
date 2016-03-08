@@ -11,7 +11,6 @@ define(["jquery","../services/loginService"],function($, service){
     var emailReg = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/i;
     var businessLogin = function (event) {
 
-
         var email = $("#business-username").val();
         var password = $("#business-password").val();
 

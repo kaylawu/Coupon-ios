@@ -114,26 +114,26 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         });
     };
 
-    //getUserProfile
-    var getUserProfileSuccess = function(data){
-        localStorage.setItem("userProfile",JSON.stringify(data));
-    };
-
-    var getUserProfileError = function(data){
-        theApp.alert("System Error", "Warning");
-        console.log(data);
-    };
-
-    var getUserProfile = function(username){
-        $.ajax({
-            url:baseUrl+"/user/getprofile",
-            type:"POST",
-            data:{username:username},
-            success:getUserProfileSuccess,
-            error:getUserProfileError
-        });
-
-    };
+    ////getUserProfile
+    //var getUserProfileSuccess = function(data){
+    //    localStorage.setItem("userProfile",JSON.stringify(data));
+    //};
+    //
+    //var getUserProfileError = function(data){
+    //    theApp.alert("System Error", "Warning");
+    //    console.log(data);
+    //};
+    //
+    //var getUserProfile = function(username){
+    //    $.ajax({
+    //        url:baseUrl+"/user/getprofile",
+    //        type:"POST",
+    //        data:{username:username},
+    //        success:getUserProfileSuccess,
+    //        error:getUserProfileError
+    //    });
+    //
+    //};
 
     //getMerchantCount
     var getMerchantCountSuccess = function(data){
@@ -164,7 +164,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
 
         $('.userPoint ul').append(content);
         $('.infinite-scroll-preloader').append('<div class="preloader"></div>');
-        theApp.hidePreloader();
+
     };
 
     var getInitMerchantsError = function(data){
@@ -246,7 +246,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         theApp : theApp,
         getMerchantCount:getMerchantCount,
         getInitMerchants:getInitMerchants,
-        getUserProfile:getUserProfile,
+        //getUserProfile:getUserProfile,
         updateAddress:updateAddress,
         resetPasswrod:resetPassword,
         getFreshMechants:getFreshMechants,

@@ -11,9 +11,8 @@ define(["jquery", "../services/userService","../services/mobileService"], functi
 
 
     var getInitData = function(){
-        theApp.showPreloader();
+
         var username = localStorage.getItem("username");
-        service.getUserProfile(username);
         service.getMerchantCount(username);
         console.log("Init Data");
         var tid = setInterval(pageLoading,500);
@@ -33,8 +32,6 @@ define(["jquery", "../services/userService","../services/mobileService"], functi
                     }else{
                         service.getInitMerchants(username,6,0);
                     }
-                }else{
-                    theApp.hidePreloader();
                 }
 
             }

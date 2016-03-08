@@ -39,8 +39,8 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness'], functio
         });
 
         //userhome Init
-        theApp.onPageInit('main_index',function(){
-            console.log("main_index int");
+        theApp.onPageInit('user_home',function(){
+            console.log("user_home int");
             user.getInitData();
             $$(".infinite-scroll").on('infinite', user.refreshPage);
         });

@@ -27,14 +27,16 @@ define(["jquery","framework7"],function($,Framework7){
             if(typeof(Storage) !== "undefined") {
 
                 localStorage.setItem("username",data.username);
+                getUserProfile(localStorage.getItem('username'));
 
-                window.location.replace("_USER/userhome.html");
             } else {
+                theApp.hidePreloader();
                 theApp.alert("Your phone do not support this version", "Warning");
             }
 
 
         } else if (data.result == 'fail') {
+            theApp.hidePreloader();
             theApp.alert("Failed to login! Please try again.", "Warning");
         }
     };
@@ -58,11 +60,11 @@ define(["jquery","framework7"],function($,Framework7){
 
     var loginError = function(data){
         console.log(data);
-
+        theApp.hidePreloader();
         theApp.alert("Error occurs!", "Error");
     };
     var userLogin = function(e,p){
-
+        theApp.showPreloader();
         console.log("login services activated");
         $.ajax({
             type:"POST",
@@ -74,6 +76,29 @@ define(["jquery","framework7"],function($,Framework7){
         });
     };
 
+    //getUserProfile
+    var getUserProfileSuccess = function(data){
+        localStorage.setItem("userProfile",JSON.stringify(data));
+        window.location.replace("_USER/userhome.html");
+        theApp.hidePreloader();
+    };
+
+    var getUserProfileError = function(data){
+        theApp.hidePreloader();
+        theApp.alert("System Error", "Warning");
+        console.log(data);
+    };
+
+    var getUserProfile = function(username){
+        $.ajax({
+            url:baseUrl+"/user/getprofile",
+            type:"POST",
+            data:{username:username},
+            success:getUserProfileSuccess,
+            error:getUserProfileError
+        });
+
+    };
     var businessLogin = function(e,p){
         console.log("login services activated");
         $.ajax({
