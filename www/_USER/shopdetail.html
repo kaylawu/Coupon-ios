@@ -20,25 +20,10 @@
         <!-- Scrollable page content-->
         <div class="page-content">
             <!-- Slider container -->
-            <div class="swiper-container swiper-init" data-autoplay="5000" data-speed="400" data-pagination=".swiper-pagination">
-                <div class="swiper-pagination light"></div>
-                <!-- Slides wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <img src="http://placehold.it/400x293" alt=""/>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="http://placehold.it/400x293" alt=""/>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="http://placehold.it/400x293" alt=""/>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="http://placehold.it/400x293" alt=""/>
-                    </div>
-                </div>
-            </div><!-- .swiper-container | ENDS -->
+            <div id="merchantSliders">
+
+            </div>
+
             <div class="toolbar tabbar top-0">
                 <div class="toolbar-inner"><a href="#info-tab" class="active tab-link">Info</a><a href="#offers-tab" class="tab-link">Offers</a><a href="#location-tab" class="tab-link">Location</a></div>
             </div>
@@ -46,15 +31,19 @@
                 <div class="tabs">
                     <div id="info-tab" class="page-content tab active">
                         <div class="content-block">
+                            <h4 class="margin-bottom-0">MERCHANT NAME</h4>
+                            <small id="merchantName"></small>
                             <h4 class="margin-bottom-0">ADDRESS</h4>
-                            <small>3 Dixon Street, Sydney CBD, NSW 2000</small>
-                            <h4 class="margin-bottom-0">OPENING HOURS </h4>
-                            <small>MON-SAT 9:00AM to 9:00PM, SUN 10:00AM to 8:00PM</small>
-                            <h4 class="margin-bottom-0">CONTACT </h4>
-                            <small>02 1234 4321</small>
+                            <small id="merchantAddress"></small>
+                            <!--<h4 class="margin-bottom-0">OPENING HOURS </h4>-->
+                            <!--<small>MON-SAT 9:00AM to 9:00PM, SUN 10:00AM to 8:00PM</small>-->
+                            <h4 class="margin-bottom-0">CONTACT</h4>
+                            <small id="merchantContact"></small>
+                            <h4 class="margin-bottom-0">EMAIL</h4>
+                            <small id="merchantEmail"></small>
                             <div class="tc-divider dark"></div>
                             <h4>Description:</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum mi quis felis scelerisque faucibus. Aliquam ut commodo justo. Mauris vitae pharetra arcu. Sed tincidunt dui.</p>
+                            <p id="merchantDescription"></p>
                         </div>
                     </div>
                     <div id="location-tab" class="page-content tab">
@@ -64,18 +53,16 @@
                     </div>
                     <div id="offers-tab" class="page-content tab">
                         <div class="content-block">
-                        <p><span><i class="uiicon-web39 color-orange"></i><strong>Points to redeem</strong> :</span>
-                        <span> 100 </span></p>
-                        <p><span><i class="uiicon-web39 color-orange"></i><strong>Your points</strong> :</span>
-                        <span> 35 </span></p>
+                        <p id="reddemPoint"></p>
+                        <p id="userPoint"></p>
                             <!-- Slider container -->
             <div class="swiper-container swiper-init" data-autoplay="5000" data-speed="400" data-pagination=".swiper-pagination">
                 <div class="swiper-pagination light"></div>
                 <!-- Slides wrapper --- Coupons -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
-                    <div class="swiper-slide">
-                        <img src="http://placehold.it/400x293" alt=""/>
+                    <div class="swiper-slide" id="couponImage">
+
                     </div>
                 </div>
             </div><!-- .swiper-container | ENDS -->
@@ -87,7 +74,7 @@
                     -->
             <!-- Coupon picker |END -->    
                    <div class ="col-40 content-block">
-                        <p><a href="#" class="button button-big button-fill color-yellow confirm-1">Redeem Coupon</a></p>
+                        <p><input type="button" class="button button-big button-fill color-yellow confirm-1" id="redeem" value="Redeem Coupon"></p>
                     </div>
          
                           <!--  <form method="post" action="?" class="list-block inputs-list">

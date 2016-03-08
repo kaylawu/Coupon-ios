@@ -104,7 +104,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
     };
 
     var merchantAllHtmlHtmlHelper = function(v){
-        var content = '<li> <div class="col-100 tablet-50"> <div class="tc-product"><a href=shopdetail.html?shopId=' + v.merchantId + 'class="title">';
+        var content = '<li> <div class="col-100 tablet-50"> <div class="tc-product"><a href="shopdetail.html?shopId=' + v.merchantId + '" class="title">';
         content += '<img src=' + imgBaseUrl + v.logoUrl + '><div class="details"> <div class="head"><h3>' + v.merchantName + '</h3>';
         content += '<h3>Chatswood</h3> </div> <div class="buttons"> <a href="#"><i class="uiicon-web39 color-orange"></i> Your points:' + v.userPoints + '</a>';
         content += '<a href="shopdetail.html?shopId=' + v.merchantId + '><i class="uiicon-web38"></i> Details</a>';
@@ -112,10 +112,79 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         return content;
     };
 
+    var getMerchantDetail = function(username,shopID){
+        $.ajax({
+            url:baseUrl + "user/getmerchantdetails",
+            type:"GET",
+            data:{merchantId:shopID,username:username},
+            success:getMerchantDetailSuccess,
+            error:getMerchantDetailError
+        });
+    };
+
+    var getMerchantDetailSuccess = function(data){
+        console.log(data.result.sliders);
+        var content = merchantDetailSliderHtmlHelper(data.result.sliders);
+        $('#merchantSliders').append(content);
+        $('#merchantName').append(data.result.name);
+        if(data.result.contact == ''){
+            $('#merchantContact').append('Empty');
+        }else{
+            $('#merchantContact').append(data.result.contact);
+        }
+        $('#merchantAddress').append(data.result.street + ' ,'+data.result.suburb+' ,'+ data.result.state + ' ' +data.result.postcode);
+        if(data.result.merchantDescription == ''){
+            $('#merchantDescription').append('Empty');
+        }else{
+            $('#merchantDescription').append(data.result.merchantDescription);
+        }
+        if(data.result.email == ''){
+            $('#merchantEmail').append('Empty');
+        }else{
+            $('#merchantDescription').append(data.result.email);
+        }
+        if(data.result.reedemPoints >= 0){
+            $('#reddemPoint').append('<span><i class="uiicon-web39 color-orange"></i><strong>Points to redeem</strong> :</span><span>'+ data.result.reedemPoints +'</span>');
+        }else{
+            $('#reddemPoint').append('<span><i class="uiicon-web39 color-orange"></i><strong>Merchant do not provide coupon</strong>');
+        }
+        if(data.result.userPoints >= 0)
+        {
+            $('#userPoint').append('<span><i class="uiicon-web39 color-orange"></i><strong>Points to redeem</strong> :</span><span>'+ data.result.userPoints +'</span>');
+        }else{
+            $('#userPoint').append('<span><i class="uiicon-web39 color-orange"></i><strong>You have not gotten point</strong>');
+        }
+        var mySwiper =  new Swiper('.swiper-container', {
+            preloadImages: false,
+            lazyLoading: true,
+            speed: 500,
+            autoplay:2000,
+            spaceBetween: 40
+        });
+    };
+
+    var getMerchantDetailError = function(data){
+        console.log(data.message);
+    };
+
+    var merchantDetailSliderHtmlHelper = function(sliders){
+        var content = '<div class="swiper-container"><div class="swiper-wrapper" id="merchantSliders">';
+
+        if(sliders.length == 0 || sliders == null){
+             content += '<div class="swiper-slide"><img src="http://placehold.it/400x293" alt=""/></div>';
+        }else{
+            _.each(sliders,function(e,i,list){
+                content += '<div class="swiper-slide"><img src='+imgBaseUrl+e +' alt=""/></div>'
+            });
+        }
+        content +='</div><div class="swiper-pagination color-white"></div></div>';
+        return content;
+    };
     return{
         getFreshMechantsAll:getFreshMechantsAll,
         getInitMerchantsAll:getInitMerchantsAll,
         getMerchantCountAll:getMerchantCountAll,
+        getMerchantDetail:getMerchantDetail,
         theApp:theApp
     }
 

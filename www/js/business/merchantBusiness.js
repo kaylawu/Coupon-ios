@@ -33,6 +33,11 @@ define(["jquery", "../services/merchantService","../services/mobileService"], fu
         }
     };
 
+    var getshopDetail = function(shopID){
+        var username = localStorage.getItem("username");
+        service.getMerchantDetail(username,shopID);
+
+    };
     var refreshPage = function(){
 
         console.log("refresh activated");
@@ -66,7 +71,8 @@ define(["jquery", "../services/merchantService","../services/mobileService"], fu
 
     return{
             getInitData:getInitData,
-            refreshPage:refreshPage
+            refreshPage:refreshPage,
+            getShopDetail:getshopDetail
     }
 
 });

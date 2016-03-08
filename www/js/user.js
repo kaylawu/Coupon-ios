@@ -25,7 +25,6 @@ requirejs.config({
     }
 });
 
-
 require(['jquery', 'business/userBusiness','business/merchantBusiness'], function ($, user,merchant) {
     require(['dpanels'], function (dpanels) {
 
@@ -39,43 +38,52 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness'], functio
             dynamicNavbar: true
         });
 
+        //userhome Init
         theApp.onPageInit('main_index',function(){
-
             console.log("main_index int");
             user.getInitData();
-
             $$(".infinite-scroll").on('infinite', user.refreshPage);
-
         });
 
+        //user setting page init
         theApp.onPageInit('user-setting',function(){
             user.userProfileInit();
             $('#btnUpdatePhoneNum').click(user.updatePhone);
             $('#btnUpdateAddress').click(user.updateAddress);
             $('#btnResetPassword').click(user.resetPassword);
-
         });
 
+        //user shop list init
         theApp.onPageInit('business-list',function(){
             console.log('businiss-list init');
             localStorage.getItem('AllMerchants',false);
             merchant.getInitData();
             $$(".infinite-scroll").on('infinite', merchant.refreshPage);
-
         });
+
+        //googlemap init
         theApp.onPageAfterAnimation('mapview',function(){
             console.log('mapview init');
             user.googlemaps();
         });
+
+        //user voucher page init
         theApp.onPageInit('user-voucher',function(){
             console.log('user-voucher init');
         });
-        theApp.onPageInit('shopdetail',function(){
-            console.log('shopdetail init');
+
+        //shop Detail page init
+        theApp.onPageInit('shopdetail',function(page){
+            var shopID = page.query.shopId;
+            console.log('shopdetail init:' + shopID);
+            merchant.getShopDetail(shopID)
         });
 
-
         theApp.init();
+    });
+
+
+});
         ///**       ---          /
         // *
         // *   infinite scroll
@@ -693,8 +701,5 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness'], functio
         //});
 
 
-    });
 
-
-});
 
