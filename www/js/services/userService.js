@@ -13,6 +13,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
 
       var $$ = Dom7;
 
+
      //Start to write Services
       var baseUrl = "http://47.88.30.91:8080/CouponManagementSystem/";
       var imgBaseUrl = 'http://47.88.30.91:8080';

@@ -27,15 +27,13 @@ define(["jquery"],function($){
     var googlemaps = function()
     {
 
-        document.addEventListener("deviceready", function() {
-
-
+            //alert(result);
             var div = document.getElementById("map_canvas");
-
+            var userLocation = new plugin.google.maps.LatLng(localStorage.getItem('userLatitude'),localStorage.getItem('userLongitude'));
             // Initialize the map view
             var map = plugin.google.maps.Map.getMap(div,{
                 'backgroundColor': 'black',
-                'mapType': plugin.google.maps.MapTypeId.HYBRID,
+                'mapType': plugin.google.maps.MapTypeId.ROADMAP,
                 'controls': {
                     'compass': true,
                     'myLocationButton': true,
@@ -45,14 +43,16 @@ define(["jquery"],function($){
                 'gestures': {
                     'scroll': true,
                     'tilt': true,
-                    'rotate': true,
                     'zoom': true
+                },'camera': {
+                    'latLng': userLocation,
+                    'zoom':15
                 }
             });
 
             // Wait until the map is ready status.
             map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
-        });
+
 
     };
 
@@ -60,11 +60,27 @@ define(["jquery"],function($){
 
     };
 
+    var getUserLocation = function(){
+        document.addEventListener("deviceready", function() {
+            navigator.geolocation.getCurrentPosition(getUserLocationSuccess, getUserLocationError);
+        });
+    };
 
+    var getUserLocationSuccess = function(position){
 
+        localStorage.setItem('userLatitude',position.coords.latitude);
+        localStorage.setItem('userLongitude',position.coords.longitude);
+        googlemaps();
+
+    };
+
+    var getUserLocationError = function(error){
+        alert('code: '    + error.code    + '\n' +
+            'message: ' + error.message + '\n');
+    };
     return{
         scan:scan,
-        googlemaps:googlemaps
+        googlemaps:getUserLocation
     }
 
 

@@ -1,64 +1,64 @@
 /****
-    *
-    *   TABLE OF CONTENTS
-    *
-    *************************
-    *
-    *   --- Override Framework7 Styles
-    *   - General
-    *   - Typography
-    *   - Containers
-    *   - Navbar
-    *   - Panel
-    *   - List Block
-    *   - Form
-    *   - Notifications
-    *   - Popover
-    *
-    *
-    *
-    *   --- Custom CSS Styles
-    *   - Helpers
-    *   - Navbar
-    *   - Slider Captions
-    *   - Header Search
-    *   - Colors
-    *   - Background Colors
-    *   - Icon Info Box
-    *   - Title 1
-    *   - Testimonials Carousel
-    *   - Filters
-    *   - Isotope
-    *   - Grid Showcase
-    *   - Footer
-    *   - Icon Balls
-    *   - Menu List
-    *   - Panel Contact Information
-    *   - Progress Bar
-    *   - Loading Screen
-    *   - Spinner
-    *   - User Card
-    *   - 404
-    *   - Backgrounds
-    *   - Countdown
-    *   - Forms
-    *   - Dividers
-    *   - Contact Map
-    *   - Blog
-    *   - Blog Sidebar
-    *   - Sidebar Recent Projects
-    *   - Pagination
-    *   - Responsive Embed
-    *   - Comment List
-    *   - Product Category
-    *   - Product List
-    *   - Swiper Pagination
-    *   - Size Radio
-    *   - Color Radio
-    *   - Cart Items
-    *   - Infinite scroll
-    *   - Mechants in HomePage
-    *************************/
+ *
+ *   TABLE OF CONTENTS
+ *
+ *************************
+ *
+ *   --- Override Framework7 Styles
+ *   - General
+ *   - Typography
+ *   - Containers
+ *   - Navbar
+ *   - Panel
+ *   - List Block
+ *   - Form
+ *   - Notifications
+ *   - Popover
+ *
+ *
+ *
+ *   --- Custom CSS Styles
+ *   - Helpers
+ *   - Navbar
+ *   - Slider Captions
+ *   - Header Search
+ *   - Colors
+ *   - Background Colors
+ *   - Icon Info Box
+ *   - Title 1
+ *   - Testimonials Carousel
+ *   - Filters
+ *   - Isotope
+ *   - Grid Showcase
+ *   - Footer
+ *   - Icon Balls
+ *   - Menu List
+ *   - Panel Contact Information
+ *   - Progress Bar
+ *   - Loading Screen
+ *   - Spinner
+ *   - User Card
+ *   - 404
+ *   - Backgrounds
+ *   - Countdown
+ *   - Forms
+ *   - Dividers
+ *   - Contact Map
+ *   - Blog
+ *   - Blog Sidebar
+ *   - Sidebar Recent Projects
+ *   - Pagination
+ *   - Responsive Embed
+ *   - Comment List
+ *   - Product Category
+ *   - Product List
+ *   - Swiper Pagination
+ *   - Size Radio
+ *   - Color Radio
+ *   - Cart Items
+ *   - Infinite scroll
+ *   - Mechants in HomePage
+ *************************/
 .small {
     float: right;
     height: 15px;
@@ -126,10 +126,10 @@ a.item-content{
     font-size: 16px;
 }
 /**---------------------
-  *
-  * General
-  *
-  *---------------------**/
+ *
+ * General
+ *
+ *---------------------**/
 body{
     color: rgba(0,0,0,.6);
     font-size: 14px;
@@ -143,21 +143,21 @@ body{
 
 }
 .popup-overlay{
-  background: rgba(0,0,0,0);
+    background: rgba(0,0,0,0);
 }
 /**---------------------
-  *
-  * Typography
-  *
-  *---------------------**/
+ *
+ * Typography
+ *
+ *---------------------**/
 h1,h2,h4,h5,h6{
     font-weight: 400;
     margin-top: 10px;
     color: rgba(0,0,0,.87);
 }
 h3{
-  font-weight: 600;
-  color: #C98F31;
+    font-weight: 600;
+    color: #C98F31;
 }
 .item-inner h3{
     margin-bottom:5px;
@@ -166,10 +166,10 @@ h3{
     color:black;
 }
 /**---------------------
-  *
-  * Containers
-  *
-  *---------------------**/
+ *
+ * Containers
+ *
+ *---------------------**/
 .content-block{
     margin-top: 15px;
     margin-bottom: 15px;
@@ -219,11 +219,14 @@ h3{
     color:white;
 }
 
+.item-text{
+    max-width:75%;
+}
 /**---------------------
-  *
-  * Navbar
-  *
-  *---------------------**/
+ *
+ * Navbar
+ *
+ *---------------------**/
 .navbar {
     background: #000000;
     color:white;
@@ -297,10 +300,10 @@ h3{
 }
 
 /**---------------------
-  *
-  * Panel
-  *
-  *---------------------**/
+ *
+ * Panel
+ *
+ *---------------------**/
 .panel{
     color: rgba(255,255,255,.54);
     font-size: 12px;
@@ -318,10 +321,10 @@ body.panels-3d.with-panel-left-reveal .views{
 
 
 /**---------------------
-  *
-  * List Block
-  *
-  *---------------------**/
+ *
+ * List Block
+ *
+ *---------------------**/
 .list-block:not(.media-list) .item-media{
     min-width: 25px;
     opacity: .54;
@@ -412,10 +415,10 @@ body.panels-3d.with-panel-left-reveal .views{
 
 
 /**---------------------
-  *
-  * Form
-  *
-  *---------------------**/
+ *
+ * Form
+ *
+ *---------------------**/
 .list-block input[type="text"],
 .list-block input[type="password"],
 .list-block input[type="search"],
@@ -439,10 +442,10 @@ html.pixel-ratio-2 .input-field:after{
 
 
 /**---------------------
-  *
-  * Notifications
-  *
-  *---------------------**/
+ *
+ * Notifications
+ *
+ *---------------------**/
 .notifications .item-inner{
     padding-left: 24px;
 }
@@ -450,30 +453,30 @@ html.pixel-ratio-2 .input-field:after{
 
 
 /**---------------------
-  *
-  * Popover
-  *
-  *---------------------**/
+ *
+ * Popover
+ *
+ *---------------------**/
 .popover.popover-links{
     width: 200px;
 }
 
 /**---------------------
 
-    Coupon picker
-*---------------------**/
+ Coupon picker
+ *---------------------**/
 
 /*
-.coupon-picker{
-    font-size: 150%;
+ .coupon-picker{
+ font-size: 150%;
 
-}
-*/
+ }
+ */
 
 /**---------------------
 
-    Coupon cards
-------------------------**/
+ Coupon cards
+ ------------------------**/
 
 
 .demo-card-header-pic .card-header {
@@ -487,24 +490,32 @@ html.pixel-ratio-2 .input-field:after{
 }
 
 .card-header{
-  padding:0 0 0 10px;
+    padding:0 0 0 10px;
 }
 .card-header h3{
-  color:#4A4A4A;
-  font-weight: 500;
-  margin:5px 0 5px 5px;
+    color:#4A4A4A;
+    font-weight: 500;
+    margin:5px 0 5px 5px;
 }
 a.open-popup{
-  color:#6d6d72;
+    color:#6d6d72;
 }
 a.link.back{
-  color: #fff;
+    color: #fff;
 }
 
+/*popup alert window*/
+
+.modal{
+    opacity: 0.95;
+}
+.modal-button{
+    color: #4A4A4A;
+}
 /**---------------------
 
-   Jill cards
-------------------------**/
+ Jill cards
+ ------------------------**/
 
 .ph-content{
     margin-top: 150px;
@@ -529,10 +540,10 @@ a.link.back{
 
 
 /**---------------------
-  *
-  * Swiper Slider
-  *
-  *---------------------**/
+ *
+ * Swiper Slider
+ *
+ *---------------------**/
 .swiper-container img{
     width: 100%;
     display: block;
@@ -581,10 +592,10 @@ a.link.back{
 
 
 /**---------------------
-  *
-  * Helpers
-  *
-  *---------------------**/
+ *
+ * Helpers
+ *
+ *---------------------**/
 *, *:before, *:after{box-sizing: border-box;}
 
 .text-center    {text-align: center;}
@@ -647,10 +658,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Navbar
-  *
-  *---------------------**/
+ *
+ * Navbar
+ *
+ *---------------------**/
 .navbar [class^="uiicon-"]{
     font-size: 27px;
     color: #FFFFFF;
@@ -684,10 +695,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Slider Captions
-  *
-  *---------------------**/
+ *
+ * Slider Captions
+ *
+ *---------------------**/
 .tc-slider-caption-1{
     position: absolute;
     z-index: 5;
@@ -752,10 +763,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Header Search
-  *
-  *---------------------**/
+ *
+ * Header Search
+ *
+ *---------------------**/
 .tc-header-search{
     position: absolute;
     right: 70px;
@@ -805,10 +816,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Colors
-  *
-  *---------------------**/
+ *
+ * Colors
+ *
+ *---------------------**/
 .primary-color{color: #171616;}
 .primary-bg{background-color: #171616 !important;}
 
@@ -863,10 +874,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Background Colors
-  *
-  *---------------------**/
+ *
+ * Background Colors
+ *
+ *---------------------**/
 .cyan{
     background-color: #00BCD4 !important;
     color: #ffFFFF !important;
@@ -1015,10 +1026,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Icon Info Box
-  *
-  *---------------------**/
+ *
+ * Icon Info Box
+ *
+ *---------------------**/
 .tc-icon-info-box i{
     font-size: 30px;
     line-height: 1;
@@ -1057,10 +1068,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Title 1
-  *
-  *---------------------**/
+ *
+ * Title 1
+ *
+ *---------------------**/
 .tc-title-1{
     border-bottom: 1px solid rgba(0,0,0,.12);
     margin: 0 -16px;
@@ -1085,10 +1096,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Testimonials Carousel
-  *
-  *---------------------**/
+ *
+ * Testimonials Carousel
+ *
+ *---------------------**/
 .tc-testimonial-carousel{
     text-align: center;
 }
@@ -1135,10 +1146,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Filters
-  *
-  *---------------------**/
+ *
+ * Filters
+ *
+ *---------------------**/
 .tc-filters{
     opacity: .54;
     border-bottom: 3px solid rgba(0,0,0,.12);
@@ -1183,10 +1194,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Isotope
-  *
-  *---------------------**/
+ *
+ * Isotope
+ *
+ *---------------------**/
 .tc-isotope img{
     width: 100%;
     display: block;
@@ -1195,10 +1206,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Grid Showcase
-  *
-  *---------------------**/
+ *
+ * Grid Showcase
+ *
+ *---------------------**/
 .grid-showcase div[class*="col-"] {
     background: #fff;
     text-align: center;
@@ -1215,10 +1226,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Footer
-  *
-  *---------------------**/
+ *
+ * Footer
+ *
+ *---------------------**/
 .tc-footer{
     width: 100%;
     display: block;
@@ -1236,10 +1247,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Icon Balls
-  *
-  *---------------------**/
+ *
+ * Icon Balls
+ *
+ *---------------------**/
 .tc-icon-ball{
     font-size: 15px;
     line-height: 33px;
@@ -1263,10 +1274,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Menu List
-  *
-  *---------------------**/
+ *
+ * Menu List
+ *
+ *---------------------**/
 .panel .menu-list{
     margin: 15px 0;
 }
@@ -1321,10 +1332,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Panel Contact Information
-  *
-  *---------------------**/
+ *
+ * Panel Contact Information
+ *
+ *---------------------**/
 .contact-information p i{
     font-size: 23px;
     color: rgba(255,255,255,.54);
@@ -1340,10 +1351,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Progress Bar
-  *
-  *---------------------**/
+ *
+ * Progress Bar
+ *
+ *---------------------**/
 .progressbar, .progressbar-infinite, .progressbar-styled .progress
 {
     height: 30px;
@@ -1390,10 +1401,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Loading Screen
-  *
-  *---------------------**/
+ *
+ * Loading Screen
+ *
+ *---------------------**/
 .tc-loading-screen{
     position: fixed;
     top: 0;
@@ -1430,10 +1441,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Spinner
-  *
-  *---------------------**/
+ *
+ * Spinner
+ *
+ *---------------------**/
 .preloader-wrapper {
     display: inline-block;
     position: relative;
@@ -1875,10 +1886,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * User Card
-  *
-  *---------------------**/
+ *
+ * User Card
+ *
+ *---------------------**/
 .tc-user-card{
     position: relative;
     border: 3px solid rgba(255,255,255,.12);
@@ -1936,10 +1947,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * 404
-  *
-  *---------------------**/
+ *
+ * 404
+ *
+ *---------------------**/
 .tc-404 h2{
     font-size: 18px;
     font-weight: 900;
@@ -1983,10 +1994,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Backgrounds
-  *
-  *---------------------**/
+ *
+ * Backgrounds
+ *
+ *---------------------**/
 .bg-1{
     background: url("../img/login_bg.png") no-repeat center;
     background-size: cover;
@@ -2057,10 +2068,10 @@ i.rotate-180{
 
 
 /**---------------------
-  *
-  * Countdown
-  *
-  *---------------------**/
+ *
+ * Countdown
+ *
+ *---------------------**/
 .tc-countdown.horizontal{
     display: table;
     width: 100%;
@@ -2109,10 +2120,10 @@ h2.vertical{
 
 
 /**---------------------
-  *
-  * Forms
-  *
-  *---------------------**/
+ *
+ * Forms
+ *
+ *---------------------**/
 button{
     border: none;
 }
@@ -2153,10 +2164,10 @@ button{
 
 
 /**---------------------
-  *
-  * Dividers
-  *
-  *---------------------**/
+ *
+ * Dividers
+ *
+ *---------------------**/
 .tc-divider{
     margin: 30px 0;
     height: 1px;
@@ -2175,23 +2186,23 @@ button{
 
 
 /**---------------------
-  *
-  * Contact Map
-  *
-  *---------------------**/
+ *
+ * Contact Map
+ *
+ *---------------------**/
 .tc-map{
     display: block!important;
     width: 100%;
-    height: 400px;
-    position:absolute;
-    top:100px;
+    height: 250px;
+    position:relative;
+
 }
 
 /**---------------------
-  *
-  * Blog
-  *
-  *---------------------**/
+ *
+ * Blog
+ *
+ *---------------------**/
 .tc-blog-item .preview{
     display: block;
     margin-bottom: 20px;
@@ -2233,10 +2244,10 @@ button{
 
 
 /**---------------------
-  *
-  * Blog Sidebar
-  *
-  *---------------------**/
+ *
+ * Blog Sidebar
+ *
+ *---------------------**/
 .tc-blog-sidebar-box{
     margin-bottom: 30px;
 }
@@ -2253,10 +2264,10 @@ button{
 
 
 /**---------------------
-  *
-  * Sidebar Recent Projects
-  *
-  *---------------------**/
+ *
+ * Sidebar Recent Projects
+ *
+ *---------------------**/
 .tc-photo-row{
     margin: 0 -2.5px;
 }
@@ -2277,10 +2288,10 @@ button{
 
 
 /**---------------------
-  *
-  * Pagination
-  *
-  *---------------------**/
+ *
+ * Pagination
+ *
+ *---------------------**/
 .tc-pagination{
     text-align: center;
     margin: 15px 0 0 0;
@@ -2318,10 +2329,10 @@ button{
 
 
 /**---------------------
-  *
-  * Responsive Embed
-  *
-  *---------------------**/
+ *
+ * Responsive Embed
+ *
+ *---------------------**/
 .embed-responsive {
     position: relative;
     display: block;
@@ -2344,10 +2355,10 @@ button{
 
 
 /**---------------------
-  *
-  * Comment List
-  *
-  *---------------------**/
+ *
+ * Comment List
+ *
+ *---------------------**/
 .tc-comment-item > small,
 .tc-comment-item > h4{
     line-height: 1.5;
@@ -2392,61 +2403,61 @@ h3 + .tc-comment-item{
 
 
 /**---------------------
-  *
-  * Product Category
-  *
-  *---------------------**/
+ *
+ * Product Category
+ *
+ *---------------------**/
 /*
-.tc-product-categories a,
-.tc-product-categories a img{
-    display: block;
-    max-width: 100%;
-    position: relative;
-}
+ .tc-product-categories a,
+ .tc-product-categories a img{
+ display: block;
+ max-width: 100%;
+ position: relative;
+ }
 
-.tc-product-categories a:before{
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(0,0,0,.54);
-    z-index: 1;
-    content: '';
-}
+ .tc-product-categories a:before{
+ position: absolute;
+ left: 0;
+ top: 0;
+ bottom: 0;
+ right: 0;
+ background-color: rgba(0,0,0,.54);
+ z-index: 1;
+ content: '';
+ }
 
-.tc-product-categories a div{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 2;
-    text-align: center;
+ .tc-product-categories a div{
+ position: absolute;
+ left: 50%;
+ top: 50%;
+ z-index: 2;
+ text-align: center;
 
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
+ -webkit-transform: translate(-50%, -50%);
+ -ms-transform: translate(-50%, -50%);
+ transform: translate(-50%, -50%);
+ }
 
-.tc-product-categories a div h2,
-.tc-product-categories a div span{
-    color: #FFF;
-    line-height: 1;
-    margin: 0;
-}
+ .tc-product-categories a div h2,
+ .tc-product-categories a div span{
+ color: #FFF;
+ line-height: 1;
+ margin: 0;
+ }
 
-.tc-product-categories a div span{
-    opacity: .87;
-    font-size: 90%;
-}
+ .tc-product-categories a div span{
+ opacity: .87;
+ font-size: 90%;
+ }
 
-*/
+ */
 
 
 /**---------------------
-  *
-  * Shop List
-  *
-  *---------------------**/
+ *
+ * Shop List
+ *
+ *---------------------**/
 .tc-product{
     position: relative;
     border-bottom: solid 0.5px rgba(2,2,2,.10);
@@ -2539,10 +2550,10 @@ h3 + .tc-comment-item{
 
 
 /**---------------------
-  *
-  * Swiper Pagination
-  *
-  *---------------------**/
+ *
+ * Swiper Pagination
+ *
+ *---------------------**/
 .swiper-pagination.light .swiper-pagination-bullet{
     background: #fff;
     opacity: .87;
@@ -2555,10 +2566,10 @@ h3 + .tc-comment-item{
 
 
 /**---------------------
-  *
-  * Size Radio
-  *
-  *---------------------**/
+ *
+ * Size Radio
+ *
+ *---------------------**/
 .tc-size-radio{
     position: relative;
     float: left;
@@ -2600,10 +2611,10 @@ h3 + .tc-comment-item{
 
 
 /**---------------------
-  *
-  * Color Radio
-  *
-  *---------------------**/
+ *
+ * Color Radio
+ *
+ *---------------------**/
 .tc-color-radio{
     position: relative;
     float: left;
@@ -2645,10 +2656,10 @@ h3 + .tc-comment-item{
 
 
 /**---------------------
-  *
-  * Cart Items
-  *
-  *---------------------**/
+ *
+ * Cart Items
+ *
+ *---------------------**/
 .tc-cart-item:not(:last-child){
     margin-bottom: 15px;
     padding-bottom: 15px;
@@ -2741,10 +2752,10 @@ h3 + .tc-comment-item{
 
 
 /**---------------------
-  *
-  * Icon List
-  *
-  *---------------------**/
+ *
+ * Icon List
+ *
+ *---------------------**/
 .tc-icon-list li{
     text-align: center;
 }
@@ -2763,10 +2774,10 @@ h3 + .tc-comment-item{
 
 
 /**---------------------
-  *
-  * Infinite scroll
-  *
-  *---------------------**/
+ *
+ * Infinite scroll
+ *
+ *---------------------**/
 
 .infinite-scroll-preloader {
     margin-top:10px;
@@ -2779,28 +2790,28 @@ h3 + .tc-comment-item{
 }
 
 /**---------------------
-  *
-  * Progress box
-  *
-  *---------------------**/
+ *
+ * Progress box
+ *
+ *---------------------**/
 
 /*
-.progress-list li{
-    display: block;
-    height:90px;
-    position:relative;
-    border-bottom: solid;
-    padding-right: 40px;
+ .progress-list li{
+ display: block;
+ height:90px;
+ position:relative;
+ border-bottom: solid;
+ padding-right: 40px;
 
-}
-.progress-list .item-content{
-    padding-left: 0;
-}
-.progress-list .item-inner .item-media{
-    display:inline !important;
-    padding-bottom: 10px;
-}
-*/
+ }
+ .progress-list .item-content{
+ padding-left: 0;
+ }
+ .progress-list .item-inner .item-media{
+ display:inline !important;
+ padding-bottom: 10px;
+ }
+ */
 
 .item-media .item-inner {
     display:inline !important;
@@ -2875,14 +2886,14 @@ h3 + .tc-comment-item{
 }
 
 /*.button.active{
-    background: rgba(255, 58, 25, 1);
-    border-style: none;
+ background: rgba(255, 58, 25, 1);
+ border-style: none;
 
-}
-.button.login-button{
-    border-style: none;
-    border-radius: 0px;
-}*/
+ }
+ .button.login-button{
+ border-style: none;
+ border-radius: 0px;
+ }*/
 
 /*Mechants in HomePage*/
 

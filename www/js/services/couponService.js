@@ -79,6 +79,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
     };
 
     var getFreshCouponsSuccess = function(data){
+        var content = '';
         _.each(data,function(v,k,list){
 
             if (k == localStorage.getItem("AllUserCoupons")) {

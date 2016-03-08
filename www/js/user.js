@@ -60,6 +60,7 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
             localStorage.getItem('AllMerchants',false);
             merchant.getInitData();
             $$(".infinite-scroll").on('infinite', merchant.refreshPage);
+
         });
 
         //googlemap init
