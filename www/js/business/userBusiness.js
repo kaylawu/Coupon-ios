@@ -114,7 +114,7 @@ define(["jquery", "../services/userService","../services/mobileService"], functi
 
     var userProfileInit = function(){
         var userProfile = JSON.parse(localStorage.getItem('userProfile'));
-
+        console.log(userProfile + userProfile.address);
         if(userProfile.address == null)
         {
             $('#currentAddress').append(' Empty ');
@@ -124,7 +124,7 @@ define(["jquery", "../services/userService","../services/mobileService"], functi
         if(userProfile.phone == null){
             $('#currentPhone').append(' Empty ');
         }else{
-            $('#currentAddress').append(userProfile.phone);
+            $('#currentPhone').append(userProfile.phone);
         }
 };
 

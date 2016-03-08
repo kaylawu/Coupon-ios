@@ -76,12 +76,13 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
             data:{username:username,address:address},
             success: function (data) {
                 if(data.result == 'success'){
-                    theApp.hidePreloader();
-                    var userProfile = JSON.parse(localStorage.getItem('userProfile'));
+
                     console.log(address);
-                    userProfile.address = address;
+
                     $('#currentAddress').replaceWith(address);
                     $('#textUpdateAddress').val('');
+                    getUserProfile(username);
+
                 }
             },
             error:updateAddressError
@@ -103,11 +104,10 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
             data:{username:username,phone:phone},
             success:function(data){
                 if(data.result == 'success'){
-                    theApp.hidePreloader();
-                    var userProfile = JSON.parse(localStorage.getItem('userProfile'));
-                    userProfile.phone = phone;
+
                     $('#currentPhone').replaceWith(phone);
                     $('#textUserPhoneNum').val('');
+                    getUserProfile(username);
                 }
             },
             error:updatePhoneError
@@ -242,6 +242,30 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         return content;
     };
 
+
+
+    //getUserProfile
+    var getUserProfileSuccess = function(data){
+        localStorage.setItem("userProfile",JSON.stringify(data));
+        theApp.hidePreloader();
+    };
+
+    var getUserProfileError = function(data){
+        theApp.hidePreloader();
+        theApp.alert("System Error", "Warning");
+        console.log(data);
+    };
+
+    var getUserProfile = function(username){
+        $.ajax({
+            url:baseUrl+"/user/getprofile",
+            type:"POST",
+            data:{username:username},
+            success:getUserProfileSuccess,
+            error:getUserProfileError
+        });
+
+    };
     return{
         theApp : theApp,
         getMerchantCount:getMerchantCount,
