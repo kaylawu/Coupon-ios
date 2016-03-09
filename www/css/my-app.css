@@ -83,6 +83,10 @@
 }
 a.item-content{
 }
+
+.bg-black{
+  background: black;
+}
 .cover {
     object-fit: cover;
     width: 50px;
