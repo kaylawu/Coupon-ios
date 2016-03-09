@@ -52,6 +52,11 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
             $('#btnUpdatePhoneNum').click(user.updatePhone);
             $('#btnUpdateAddress').click(user.updateAddress);
             $('#btnResetPassword').click(user.resetPassword);
+            $('#btnUserLogout').click(function(){
+                console.log('logout');
+                localStorage.clear();
+                window.location.replace("../index.html");
+            });
         });
 
         //user shop list init

@@ -50,7 +50,7 @@ define(["jquery", "../services/couponService","../services/mobileService"], func
 	};
 
 	return {
-		getInitData,
+		getInitData:getInitData,
 		refreshPage:refreshPage
 	}
 });

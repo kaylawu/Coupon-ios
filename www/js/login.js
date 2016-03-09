@@ -27,6 +27,12 @@ require(['jquery', 'business/loginBusiness'], function ($, login) {
         var mainView = login.mainView;
 
         theApp.device.statusBar = true;
+        theApp.onPageBeforeInit('login',function(page){
+            if(localStorage.getItem('username')!= null || localStorage.getItem('userProfile')!=null){
+                window.location.replace("_USER/userhome.html");
+            }
+        });
+
         theApp.onPageInit('login', function (page) {
             console.log("login init");
             $("#business-login").click(login.businessLogin);
