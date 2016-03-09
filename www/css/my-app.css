@@ -149,6 +149,10 @@ body{
 .popup-overlay{
     background: rgba(0,0,0,0);
 }
+
+.bg-non{
+  background: none;
+}
 /**---------------------
  *
  * Typography

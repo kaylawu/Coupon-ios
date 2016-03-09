@@ -12,54 +12,74 @@
         <!-- Scrollable page content-->
         <div class="page-content vh-center">
             <div class="content-block">
-                <div class="row">
-                    <div class="col-100">
-                        <div class="content-block-inner">
-                            <p>Please provide us your information</p>
+              <div class ="center">
+                <h2>Please provide us your information</h2>
+              </div>
+                      <div class="list-block  bg-none">
+                            <ul>
+                              <!-- Text inputs -->
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-inner">
+                                    <div class="item-title label">Name</div>
+                                    <div class="item-input">
+                                      <input type="text" placeholder="Your name">
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="item-content  bg-none">
+                                  <div class="item-inner">
+                                    <div class="item-title label">E-mail</div>
+                                    <div class="item-input">
+                                      <input type="email" placeholder="E-mail">
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
 
-                                <ul>
-                                    <li>
-                                        <div class="item-content">
-                                            <div class="item-inner">
-                                                <div class="item-title label">Name</div>
-                                                <div class="item-input">
-                                                    <input name="name" type="text" placeholder="Your name" required/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="item-content">
-                                            <div class="item-inner">
-                                                <div class="item-title label">Gender</div>
-                                                <div class="item-input">
-                                                    <select name="gender">
-                                                        <option>Female</option>
-                                                        <option>Male</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="item-content">
-                                            <div class="item-inner">
-                                                <div class="item-title label">Mobile Phone</div>
-                                                <div class="item-input">
-                                                    <input name="phone" type="text" placeholder="040 0000 0000" required/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item-content">
-                                            <div class="item-inner">
-                                                <div class="item-title label">Address</div>
-                                                <div class="item-input">
-                                                    <input name="address" type="text" placeholder="" optional/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    
+                              <!-- Select -->
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-inner">
+                                    <div class="item-title label">Gender</div>
+                                    <div class="item-input">
+                                      <select>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+
+                              <!-- Date -->
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-inner">
+                                    <div class="item-title label">Birth date</div>
+                                    <div class="item-input">
+                                      <input type="date" placeholder="Birth day" value="2014-04-30">
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+
+                              <!-- Switch (Checkbox) -->
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-inner">
+                                    <div class="item-title label">Switch</div>
+                                    <div class="item-input">
+                                      <label class="label-switch">
+                                        <input type="checkbox">
+                                        <div class="checkbox"></div>
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
                                     <!--<li>
                                         <div class="item-content">
                                             <div class="item-inner">
@@ -70,15 +90,9 @@
                                             </div>
                                         </div>
                                     </li>-->
-                                    <li>
-                                        <p class="buttons-row"><button class="button button-raised button-fill color-green" type="button">Done</button></p>
-                                    </li>
                                 </ul>
+                                <p class="buttons-row"><button class="button button-raised button-fill color-green" type="button">Done</button></p>
 
                         </div><!-- .content-block-inner | ENDS -->
-                    </div><!-- .col-100 | ENDS -->
-                </div><!-- .row | ENDS -->
-            </div><!-- .content-block | ENDS -->
         </div><!-- .page-content | ENDS -->
         </div><!-- .page-content | ENDS -->
-
