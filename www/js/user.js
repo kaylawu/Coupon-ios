@@ -55,7 +55,7 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
             $('#btnUserLogout').click(function(){
                 console.log('logout');
                 localStorage.clear();
-                window.location.replace("../index.html");
+                    window.location.replace("../index.html");
             });
         });
 

@@ -11,9 +11,7 @@ define(['jquery', '../services/businessService','../services/mobileService'], fu
 
 
     var scan = function () {
-
-     mobile.scan();
-
+        mobile.scan();
     };
 
     var resetPassword = function(){
@@ -31,6 +29,10 @@ define(['jquery', '../services/businessService','../services/mobileService'], fu
         }
     };
 
+    var logout = function(){
+        localStorage.clear();
+        window.location.replace("../index.html");
+    };
 
     return {
         theApp: theApp,

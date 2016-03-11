@@ -28,15 +28,20 @@ require(['jquery', 'business/loginBusiness'], function ($, login) {
 
         theApp.device.statusBar = true;
         theApp.onPageBeforeInit('login',function(page){
-            if(localStorage.getItem('username')!= null || localStorage.getItem('userProfile')!=null){
+            if(localStorage.getItem('username')!= null && localStorage.getItem('userProfile')!=null){
                 window.location.replace("_USER/userhome.html");
+            }else if(localStorage.getItem('staffname')!= null){
+                window.location.replace("_BUSINESS/businesshome.html");
             }
+
         });
 
         theApp.onPageInit('login', function (page) {
             console.log("login init");
             $("#business-login").click(login.businessLogin);
             $("#user-login").click(login.userLogin);
+            $('#forgetPassword-submit').click(login.forgetPassword);
+            $('#forgetPassword-submit-business').click(login.forgetPasswordBusiness);
         });
 
         theApp.onPageInit('register', function (page) {
@@ -47,7 +52,6 @@ require(['jquery', 'business/loginBusiness'], function ($, login) {
 
         theApp.onPageInit('about-us', function (page) {
             console.log("about-us int");
-
         });
 
         theApp.onPageInit('userInfo',function(page){

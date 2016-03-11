@@ -24,7 +24,7 @@ define(["jquery","../services/loginService"],function($, service){
         }
         else{
             console.log(email+ " "+ password);
-            service.businessLogin(email,password)
+            service.businessLogin(email,password);
         }
     };
 
@@ -47,22 +47,32 @@ define(["jquery","../services/loginService"],function($, service){
         var email = $("#register-email").val() ;
         var password = $("#register-password").val();
 
-        mainView.router.loadPage('userInfo.html?email='+email+'&password='+password);
+
         //console.log("register activated");
 
         //console.log(email+ " "+ password);
-        //if(email == '' || password == ''){
-        //    theApp.alert("Please input email and password", "Warning");
-        //}
-        //else if(!emailReg.test(email)){
-        //    console.log("invalid email");
-        //    theApp.alert("Please input a valid email", "Warning");
-        //}
-        //else {
-        //    service.register(email, password);
-        //}
+        if(email == '' || password == ''){
+            theApp.alert("Please input email and password", "Warning");
+        }
+        else if(!emailReg.test(email)){
+            console.log("invalid email");
+            theApp.alert("Please input a valid email", "Warning");
+        }
+        else {
+            mainView.router.loadPage('userInfo.html?email='+email+'&password='+password);
+            //service.register(email, password);
+        }
     };
 
+    var registerCompletion = function(email,password){
+
+        var username = $('#username').val();
+        var userEmail = $('#userEmail').val();
+        var userBOD = $('#userBOD').val();
+        var userGender = $('#user');
+
+
+    };
     var forgetpasswrod = function(){
         console.log('forget passwrod activated');
         var email = $('#forgetPassword-email').val();
@@ -75,12 +85,14 @@ define(["jquery","../services/loginService"],function($, service){
             theApp.alert("Please input a valid email", "Warning");
         }
         else {
+
             service.forgetPassword(email);
         }
 
     };
 
     var forgetPasswordBusiness = function(){
+        console.log('into forget Password Business layer');
         var email = $('#forgetPassword-email-business').val();
 
         if (email == '') {
@@ -90,6 +102,7 @@ define(["jquery","../services/loginService"],function($, service){
             theApp.alert("Please input a valid email", "Warning");
         }
         else {
+
             service.forgetPasswordBusiness(email);
         }
     };

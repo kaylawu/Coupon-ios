@@ -21,6 +21,8 @@ define(["jquery","framework7"],function($,Framework7){
 
 
     var baseUrl = "http://47.88.30.91:8080/CouponManagementSystem/";
+
+
     var loginSuccess = function(data){
 
         if (data.result == 'success') {
@@ -45,7 +47,7 @@ define(["jquery","framework7"],function($,Framework7){
         if (data.result == 'success') {
             if(typeof(Storage) !== "undefined") {
 
-                localStorage.setItem("username",data.username);
+                localStorage.setItem("staffname",data.username);
 
                 window.location.replace("_BUSINESS/businesshome.html");
             } else {
@@ -105,7 +107,6 @@ define(["jquery","framework7"],function($,Framework7){
             type:"POST",
             url:baseUrl+"staff/login",
             data:{email:e,password:p},
-            async:false,
             success:businessLoginSuccess,
             error:loginError
         });
@@ -123,7 +124,6 @@ define(["jquery","framework7"],function($,Framework7){
         } else if (data.result == 'fail') {
             $('.input').val("");
             theApp.alert("Failed to register user! Please try again.","Warning");
-
         }
     };
     var registerError = function(data){
@@ -145,14 +145,12 @@ define(["jquery","framework7"],function($,Framework7){
 
     //user forget_password
     var forgetPasswordSuccess = function(data){
+        console.log('forget password');
+        theApp.hidePreloader();
+        console.log(data);
         if(data.result == 'success'){
             theApp.alert("New Password has sent yout email", "");
-        }
-
-    };
-
-    var forgetPasswordError = function(data){
-        if(data.result == 'fail'){
+        }else if(data.result == 'fail'){
             theApp.alert('send email fail', "Warning");
         }else if(data.result == 'email_not_exist'){
             theApp.alert('email not exist', "Warning");
@@ -162,7 +160,14 @@ define(["jquery","framework7"],function($,Framework7){
         }
     };
 
+    var forgetPasswordError = function(data){
+        console.log('forget password');
+        theApp.hidePreloader();
+        theApp.alert('System Error','');
+    };
+
     var forgetPasswrod = function(email){
+        theApp.showPreloader();
         console.log('input forget password service');
         $.ajax({
             type: "POST",
@@ -175,6 +180,8 @@ define(["jquery","framework7"],function($,Framework7){
     };
 
     var forgetPasswordBusiness = function(email){
+        console.log('into forget Password Business service layer');
+        theApp.showPreloader();
         $.ajax({
             type: "POST",
             url: baseUrl+"staff/forgotpassword",
