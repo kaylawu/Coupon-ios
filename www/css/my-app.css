@@ -150,8 +150,19 @@ body{
     background: rgba(0,0,0,0);
 }
 
-.bg-non{
-  background: none;
+.transparent-window{
+  background-color: #EEEEEE;
+  border-radius: 10px;
+  opacity: 0.5;
+}
+.transparent-window .item-title.label{
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+
+}
+.transparent-window .item-input{
+  color: black;
 }
 /**---------------------
  *
