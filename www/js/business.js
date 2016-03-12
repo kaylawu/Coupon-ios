@@ -47,7 +47,11 @@ require(['jquery', 'business/businessBusiness'], function ($, business) {
             theApp.onPageInit('business-setting', function(){
 
                 $('#btnResetPasswordBusiness').click(business.resetPassword);
-                $('#staffLogout').click(business.logout);
+                $('#staffLogout').click(function(){
+                console.log('logout');
+                localStorage.clear();
+                    window.location.replace("../index.html");
+                });
             });
 
             theApp.init();

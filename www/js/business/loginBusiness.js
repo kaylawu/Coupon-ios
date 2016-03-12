@@ -74,8 +74,8 @@ define(["jquery","../services/loginService"],function($, service){
         var state = $('State').val();
         var mobile = $('mobile').val();
 
-        if (username == '' || userGender == '') {
-            theApp.alert("Please input username or userGender", "Warning");
+        if (username == '' || userGender == '' || userBOD == '') {
+            theApp.alert("Please input Name, Gender or Birthday", "Warning");
         } else {
             service.register(email, password, mobile, username, userGender, userBOD, address, suburb, state);
         }        
@@ -93,7 +93,6 @@ define(["jquery","../services/loginService"],function($, service){
             theApp.alert("Please input a valid email", "Warning");
         }
         else {
-
             service.forgetPassword(email);
         }
 
