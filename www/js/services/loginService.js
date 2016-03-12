@@ -101,6 +101,7 @@ define(["jquery","framework7"],function($,Framework7){
         });
 
     };
+
     var businessLogin = function(e,p){
         console.log("login services activated");
         $.ajax({
@@ -126,17 +127,19 @@ define(["jquery","framework7"],function($,Framework7){
             theApp.alert("Failed to register user! Please try again.","Warning");
         }
     };
+
     var registerError = function(data){
 
         theApp.alert('Error occurs!',"Error");
         console.log(data);
     };
-    var register = function(e,p){
+
+    var register = function(e,p, phone, name, gender, address){
         console.log("service register activated");
         $.ajax({
             type: "POST",
             url: baseUrl+"user/register",
-            data: {email: e, password: p},
+            data: {email: e, password: p, phone:phone, name:name, gender:gender, address:address},
             async :false,
             success:registerSuccess,
             error:registerError

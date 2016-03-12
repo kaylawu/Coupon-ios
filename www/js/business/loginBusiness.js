@@ -69,10 +69,12 @@ define(["jquery","../services/loginService"],function($, service){
         var username = $('#username').val();
         var userEmail = $('#userEmail').val();
         var userBOD = $('#userBOD').val();
-        var userGender = $('#user');
+        var userGender = $('#Gender');
+        // var phone = $('#')
 
-
+        service.register(email, password, username, userEmail, userBOD, userGender);
     };
+
     var forgetpasswrod = function(){
         console.log('forget passwrod activated');
         var email = $('#forgetPassword-email').val();

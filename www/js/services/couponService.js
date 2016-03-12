@@ -93,7 +93,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         });
         $('.userCoupon ul').append(content);
         localStorage.setItem("couponsScroll",false);
-    }
+    };
 
     var getFreshCouponsError = function(data){
         if (data.result == 'error') {
@@ -102,7 +102,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
             theApp.alert("Out of index", "Error")
         }
         localStorage.setItem("couponsScroll",false);
-    }
+    };
 
     var userRedeemCoupon = function (username, couponId) {
         $.ajax({
@@ -111,7 +111,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
             success:userRedeemCouponSuccess,
             error:userRedeemCouponError
         });
-    }
+    };
 
     var userRedeemCouponSuccess = function (data) {
         if (data.result == 'success') {
@@ -123,7 +123,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         if (data.result == 'fail') {
             theApp.alert("Fail to recived the coupoon", "System Error");
         }
-    }
+    };
 
     var userGetCouponTerms = function (couponId) {
         $.ajax({
@@ -133,15 +133,15 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
             success:userGetCouponTermsSuccess,
             error:userGetCouponTermsError
         });
-    }
+    };
 
     var userGetCouponTermsSuccess = function (data) {
         //
-    }
+    };
 
     var userGetCouponTermsError = function () {
         theApp.alert("Fail to get coupon terms!", "System Error");
-    }
+    };
 
     return{
         theApp:theApp,
