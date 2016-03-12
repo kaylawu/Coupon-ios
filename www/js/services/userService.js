@@ -69,12 +69,12 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         }
     };
 
-    var updateAddress = function(username,address){
+    var updateAddress = function(username,address,suburb,state){
 
         $.ajax({
             url:baseUrl+"/user/updateaddress",
             type:"POST",
-            data:{username:username,address:address},
+            data:{username:username,address:address,suburb:suburb,state:state},
             success: function (data) {
                 if(data.result == 'success'){
 
@@ -82,6 +82,9 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
 
                     $('#currentAddress').replaceWith(address);
                     $('#textUpdateAddress').val('');
+                    $('#currentSuburb').replaceWith(suburb);
+                    $('#textUpdateSuburb').val('');
+                    $('#currentState').replaceWith(state);
                     getUserProfile(username);
 
                 }

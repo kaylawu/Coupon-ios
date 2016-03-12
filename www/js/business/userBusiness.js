@@ -71,13 +71,19 @@ define(["jquery", "../services/userService", "../services/mobileService"], funct
     var updateAddress = function () {
         theApp.showPreloader();
         var address = $('#textUpdateAddress').val();
+        var suburb = $('#textUpdateSuburb').val();
+        var state = $('#updateState').val();
+
         if (address == '') {
             $('#textUpdateAddress').val('');
             theApp.hidePreloader();
             theApp.alert('Input your new address', "Warning");
+        } else if(suburb == '') {
+            $('#textUpdateSuburb').val('');
+            theApp.hidePreloader();
+            theApp.alert('Input your new suburb', "Warning");
         } else {
-
-            service.updateAddress(localStorage.getItem('username'), address);
+            service.updateAddress(localStorage.getItem('username'), address, suburb, state);
         }
 
     };
@@ -116,15 +122,29 @@ define(["jquery", "../services/userService", "../services/mobileService"], funct
     var userProfileInit = function () {
         var userProfile = JSON.parse(localStorage.getItem('userProfile'));
         console.log(userProfile + userProfile.address);
+
         if (userProfile.address == null) {
             $('#currentAddress').append(' Empty ');
         } else {
             $('#currentAddress').append(userProfile.address);
         }
+
         if (userProfile.phone == null) {
             $('#currentPhone').append(' Empty ');
         } else {
             $('#currentPhone').append(userProfile.phone);
+        }
+
+        if (userProfile.suburb == null) {
+            $('#currentSuburb').append('Empty');
+        } else {
+            $('#currentSuburb').append(userProfile.suburb);
+        }
+
+        if (userProfile.state == null) {
+            $('#currentState').append('Empty');
+        } else {
+            $('#currentState').append(userProfile.state);
         }
     };
 
