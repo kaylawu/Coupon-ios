@@ -69,10 +69,12 @@ define(["jquery","../services/loginService"],function($, service){
         var username = $('#username').val();
         var userBOD = $('#userBOD').val();
         var userGender = $('#Gender').val();
-        var address = $('Address').val();
-        var suburb = $('Suburb').val();
-        var state = $('State').val();
-        var mobile = $('mobile').val();
+        var address = $('#Address').val();
+        var suburb = $('#Suburb').val();
+        var state = $('#State').val();
+        var mobile = $('#mobile').val();
+        var userEmail = email;
+        var userPassword = password;
 
         if (username == '' || userGender == '' || userBOD == '') {
             theApp.alert("Please input Name, Gender or Birthday", "Warning");
