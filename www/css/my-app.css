@@ -135,6 +135,9 @@ a.item-content{
     font-size:16px;
     color:black !important;
 }
+.padding-left-15{
+  padding-left: 15px;
+}
 /**---------------------
  *
  * General
