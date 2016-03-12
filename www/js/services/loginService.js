@@ -134,12 +134,12 @@ define(["jquery","framework7"],function($,Framework7){
         console.log(data);
     };
 
-    var register = function(e,p, phone, name, gender, address){
+    var register = function(e,p, phone, name, gender, birthday, address, suburb, state){
         console.log("service register activated");
         $.ajax({
             type: "POST",
             url: baseUrl+"user/register",
-            data: {email: e, password: p, phone:phone, name:name, gender:gender, address:address},
+            data: {email: e, password: p, phone:phone, name:name, gender:gender, birthday:birthday, address:address, suburb:suburb, state:state},
             async :false,
             success:registerSuccess,
             error:registerError

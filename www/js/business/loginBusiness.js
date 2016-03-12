@@ -77,7 +77,7 @@ define(["jquery","../services/loginService"],function($, service){
         if (username == '' || userGender == '') {
             theApp.alert("Please input username or userGender", "Warning");
         } else {
-            service.register(email, password, username, userBOD, userGender, address, suburb, state, mobile);
+            service.register(email, password, mobile, username, userGender, userBOD, address, suburb, state);
         }        
     };
 
@@ -122,6 +122,7 @@ define(["jquery","../services/loginService"],function($, service){
         forgetPassword:forgetpasswrod,
         forgetPasswordBusiness : forgetPasswordBusiness,
         theApp : theApp,
+        registerCompletion : registerCompletion,
         mainView:mainView
     }
 });
