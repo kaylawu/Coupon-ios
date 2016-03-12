@@ -173,6 +173,13 @@ body{
 .transparent-window .item-input{
   color: black;
 }
+.transparent-window .item-input input{
+  color: black !important;
+}
+
+.transparent-window .item-input select{
+  color: black !important;
+}
 /**---------------------
  *
  * Typography
