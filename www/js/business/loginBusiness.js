@@ -67,12 +67,18 @@ define(["jquery","../services/loginService"],function($, service){
     var registerCompletion = function(email,password){
 
         var username = $('#username').val();
-        var userEmail = $('#userEmail').val();
         var userBOD = $('#userBOD').val();
-        var userGender = $('#Gender');
-        // var phone = $('#')
+        var userGender = $('#Gender').val();
+        var address = $('Address').val();
+        var suburb = $('Suburb').val();
+        var state = $('State').val();
+        var mobile = $('mobile').val();
 
-        service.register(email, password, username, userEmail, userBOD, userGender);
+        if (username == '' || userGender == '') {
+            theApp.alert("Please input username or userGender", "Warning");
+        } else {
+            service.register(email, password, username, userBOD, userGender, address, suburb, state, mobile);
+        }        
     };
 
     var forgetpasswrod = function(){
