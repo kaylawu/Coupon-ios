@@ -135,13 +135,12 @@ define(["jquery","framework7"],function($,Framework7){
     };
 
     var register = function(e,p, phone, name, gender, birthday, address, suburb, state){
-        theApp.alert("service register activated");
+        
         console.log(e, p, phone, name, gender, birthday, address, suburb, state);
         $.ajax({
             type: "POST",
             url: baseUrl+"user/register",
             data: {email: e, password: p, phone:phone, name:name, gender:gender, birthday:birthday, address:address, suburb:suburb, state:state},
-            //async :false,
             success:registerSuccess,
             error:registerError
         });
