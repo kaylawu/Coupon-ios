@@ -110,9 +110,9 @@ a.item-content{
 
 .button.color-grey{
     color: #EEEEEE;
-
     border:2px solid #B3B3B3;
     font-weight:500;
+    font-size: 18px;
     background-color: rgba(0,0,0,.3);
 }
 
@@ -130,10 +130,7 @@ a.item-content{
     font-size: 16px;
 }
 
-.item-input input{
-    font-size:16px;
-    color:black;
-}
+
 .list-block.transparent-window input[type ="text"]{
     font-size:16px;
     color:black !important;
@@ -546,7 +543,7 @@ a.link.back{
  ------------------------**/
 
 .ph-content{
-    margin-top: 150px;
+    margin-top: 20%;
 }
 
 .ph-content .button-big{
@@ -2034,6 +2031,11 @@ i.rotate-180{
 .bg-2{
     background: url("../img/login_bg_02.png") no-repeat center;
     background-size: cover;
+}
+
+.bg-bus{
+  background: url("../img/bus-home.png") no-repeat center;
+  background-size: cover;
 }
 
 
