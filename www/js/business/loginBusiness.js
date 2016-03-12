@@ -9,6 +9,7 @@ define(["jquery","../services/loginService"],function($, service){
     var theApp = service.theApp;
     var mainView = service.mainView;
     var emailReg = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/i;
+    var phoneNumFormat = /04[\d]{8}/g;
     var businessLogin = function (event) {
 
         var email = $("#business-username").val();
@@ -73,11 +74,11 @@ define(["jquery","../services/loginService"],function($, service){
         var suburb = $('#Suburb').val();
         var state = $('#State').val();
         var mobile = $('#mobile').val();
-        var userEmail = email;
-        var userPassword = password;
 
         if (username == '' || userGender == '' || userBOD == '') {
             theApp.alert("Please input Name, Gender or Birthday", "Warning");
+        } else if(!phoneNumFormat.test(mobile)) {
+            theApp.alert("Invalid mobile format", "Warning");
         } else {
             service.register(email, password, mobile, username, userGender, userBOD, address, suburb, state);
         }        

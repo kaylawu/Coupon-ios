@@ -57,7 +57,7 @@ require(['jquery', 'business/loginBusiness'], function ($, login) {
         theApp.onPageInit('userInfo',function(page){
             console.log('userInfo int');
           console.log(page.query.email + ' ' + page.query.password);
-            $("#register-done").click(login.registerCompletion);
+            $("#register-done").click(login.registerCompletion(page.query.email, page.query.password));
         });
 
         theApp.onPageInit('forget_password',function(page){
