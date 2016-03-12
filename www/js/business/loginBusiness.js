@@ -65,8 +65,10 @@ define(["jquery","../services/loginService"],function($, service){
         }
     };
 
-    var registerCompletion = function(email,password){
+    var registerCompletion = function(){
 
+        var email = localStorage.getItem('registerEmail');
+        var password = localStorage.getItem('registerPassword');
         var username = $('#username').val();
         var userBOD = $('#userBOD').val();
         var userGender = $('#Gender').val();
@@ -75,10 +77,13 @@ define(["jquery","../services/loginService"],function($, service){
         var state = $('#State').val();
         var mobile = $('#mobile').val();
 
+        localStorage.removeItem('registerEmail');
+        localStorage.removeItem('registerPassword');
+
         if (username == '' || userGender == '' || userBOD == '') {
             theApp.alert("Please input Name, Gender or Birthday", "Warning");
         } else if(!phoneNumFormat.test(mobile)) {
-            theApp.alert("Invalid mobile format", "Warning");
+            theApp.alert("Invalid mobile number", "Warning");
         } else {
             service.register(email, password, mobile, username, userGender, userBOD, address, suburb, state);
         }        
