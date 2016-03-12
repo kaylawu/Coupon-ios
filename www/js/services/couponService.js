@@ -125,11 +125,30 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         }
     }
 
+    var userGetCouponTerms = function (couponId) {
+        $.ajax({
+            url:baseUrl+"/user/getcouponterms",
+            type:"GET",
+            data:{couponId:couponId},
+            success:userGetCouponTermsSuccess,
+            error:userGetCouponTermsError
+        });
+    }
+
+    var userGetCouponTermsSuccess = function (data) {
+        //
+    }
+
+    var userGetCouponTermsError = function () {
+        theApp.alert("Fail to get coupon terms!", "System Error");
+    }
+
     return{
         theApp:theApp,
         getCouponCount:getCouponCount,
         getInitCoupons:getInitCoupons,
         getFreshCoupons:getFreshCoupons,
-        userRedeemCoupon:userRedeemCoupon
+        userRedeemCoupon:userRedeemCoupon,
+        userGetCouponTerms:userGetCouponTerms
     }
 });
