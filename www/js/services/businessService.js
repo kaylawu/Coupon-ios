@@ -68,13 +68,13 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
           theApp.alert("Success to use voucher", "Congratulation");
           localStorage.removeItem('couponId');
           window.location.replace("businesshome.html");
-        };
+        }
       };
 
       var staffUseCouponError = function(data){
         if (data.result == "fail") {
           theApp.alert("Fail to use voucher", "Error");
-        };
+        }
       };
 
     var getUserCouponDetail = function(userCouponId){
@@ -94,7 +94,7 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
     var getUserCouponDetailError = function(data){
       if (data.result == 'no_record') {
           theApp.alert("No Record", "Error");
-        };
+        }
     };
 
     return{

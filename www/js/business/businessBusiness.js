@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 /**
  * Created by henry on 2/19/16.
  */
@@ -45,7 +45,7 @@ define(['jquery', '../services/businessService','../services/mobileService'], fu
 
     var useCoupon = function() {
         service.staffUseCoupon(localStorage.getItem('couponId'));
-    }
+    };
 
     return {
         theApp: theApp,

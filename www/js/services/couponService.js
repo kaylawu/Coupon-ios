@@ -126,10 +126,7 @@ define(['jquery', '../services/frameworkService','underscore'], function ($, Fra
             theApp.alert("Fail to recived the coupoon", "System Error");
         }
     };
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 
     var userGetCouponTerms = function (couponId) {
         $.ajax({
@@ -148,10 +145,7 @@ define(['jquery', '../services/frameworkService','underscore'], function ($, Fra
     var userGetCouponTermsError = function () {
         theApp.alert("Fail to get coupon terms!", "System Error");
     };
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 
     return{
         theApp:theApp,

@@ -18,9 +18,8 @@ requirejs.config({
         async           : 'lib/require/async',
         propertyParser  : 'lib/require/propertyParser',
         font            : 'lib/require/font',
-        domReady        : 'lib/require/domReady'
-
-
+        domReady        : 'lib/require/domReady',
+        underscore:'lib/underscore-min'
     }
 });
 

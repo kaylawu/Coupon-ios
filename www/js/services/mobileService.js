@@ -39,9 +39,9 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
                     {
                         var username = result.text;
                         theApp.router.pageLoad('scanUser.html?username=' + username);
-                    };
-                };
-            }
+                    }
+                }
+            },
 
             function (error) {
                 alert("Scanning failed: " + Error);
@@ -162,6 +162,8 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
                 }, function(marker) {
                     marker.showInfoWindow();
                 });
+
+                $$('#btnredeem').click(coupon.redeemCoupon);
                 $$('#info-tab').on('show', function () {
                     map.setVisible(false);
                 });
@@ -205,12 +207,40 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
             'message: ' + error.message + '\n');
     };
 
+    var mobileImage = function(){
+        document.addEventListener("deviceready", onDeviceReady, false);
 
+        function onDeviceReady() {
+            navigator.camera.getPicture(uploadPhoto,
+                function(message) { alert('get picture failed'); },
+                { quality: 50, destinationType:    navigator.camera.DestinationType.FILE_URI,
+                    sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY }
+            );
+        }
+    };
+
+    var uploadPhoto = function (imageURI) {
+        alert('upload Phonto');
+        //var options = new FileUploadOptions();
+        //options.fileKey="file";
+        //options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+        //options.mimeType="image/jpeg";
+        //
+        //var params = {};
+        //params.value1 = "test";
+        //params.value2 = "param";
+        //
+        //options.params = params;
+        //
+        //var ft = new FileTransfer();
+        //ft.upload(imageURI, encodeURI("http://some.server.com/upload.php"), win, fail, options);
+    };
     return{
         scan:scan,
         scanUser:scanUser,
         googlemaps:getUserLocation,
-        googlemapsForShopDetail:googlemapForShopDetail
+        googlemapsForShopDetail:googlemapForShopDetail,
+        mobileImage:mobileImage
 
     }
 
