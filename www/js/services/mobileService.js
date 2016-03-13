@@ -18,7 +18,8 @@ define(["jquery",'../services/frameworkService'],function($,Framework7){
                 {
                     if(result.format == "QR_CODE")
                     {
-                        alert(result.text);
+                        var couponId = result.text;
+                        theApp.router.pageLoad('scanVoucher.html?couponId=' + couponId);
                     }
                 }
             },

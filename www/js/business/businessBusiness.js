@@ -43,11 +43,17 @@ define(['jquery', '../services/businessService','../services/mobileService'], fu
         }
     };
 
+    var useCoupon = function() {
+        service.staffUseCoupon(localStorage.getItem('couponId'));
+    }
+
     return {
         theApp: theApp,
         resetPassword:resetPassword,
         scan: scan,
         scanUser: scanUser,
+        addPoints: addPoints,
+        useCoupon: useCoupon,
         mainView:service.mainView
     }
 });

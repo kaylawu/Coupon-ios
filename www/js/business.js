@@ -62,7 +62,15 @@ require(['jquery', 'business/businessBusiness'], function ($, business) {
                 $('#addPoints').click(business.addPoints);
                 $('#cecelAddPoints').click(function(){
                     localStorage.removeItem('username');
-                })
+                });
+            });
+
+            theApp.onPageInit('scan-voucher', function(){
+                localStorage.setItem("couponId", page.query.couponId);
+                $('#useCoupon').click(business.useCoupon);
+                $('#cancelUseCoupon').click(function(){
+                    localStorage.removeItem('couponId');
+                });
             });
 
             theApp.init();
