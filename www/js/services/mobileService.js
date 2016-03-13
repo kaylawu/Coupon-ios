@@ -18,8 +18,8 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
                 {
                     if(result.format == "QR_CODE")
                     {
-                        var couponId = result.text;
-                        mainView.router.pageLoad('scanVoucher.html?couponId=' + couponId);
+                        localStorage.setItem("scanCouponId", result.text);
+                        window.location.href = "scanVoucher.html";
                     }
                 }
             },
@@ -37,19 +37,11 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
                 {
                     if (result.format == "QR_CODE") 
                     {
-                        var username = result.text;
-<<<<<<< HEAD
-                        theApp.router.pageLoad('scanUser.html?username=' + username);
+                        localStorage.setItem("scanUsername", result.text);
+                        window.location.href = "scanUser.html";
                     }
                 }
             },
-=======
-                        mainView.router.pageLoad('scanUser.html?username=' + username);
-                    };
-                };
-            }
->>>>>>> origin/master
-
             function (error) {
                 alert("Scanning failed: " + Error);
             }
