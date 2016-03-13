@@ -18,20 +18,16 @@ define(['jquery', '../services/businessService','../services/mobileService'], fu
         theApp.showPreloader();
         var oldPassword = $('#textCurrentPasswordBusiness').val();
         var newPassword = $('#textNewPassowrdBusiness').val();
+
         if(oldPassword == ''){
             theApp.hidePreloader();
             theApp.alert('Input old password', "Warning");
         }else if(newPassword == ''){
             theApp.hidePreloader();
             theApp.alert('Input new password', "Warning");
-        }else {
-            service.resetPassword(localStorage.getItem('username'),oldPassword,newPassword);
+        } else {
+            service.resetPassword(localStorage.getItem('staffname'),oldPassword,newPassword);
         }
-    };
-
-    var logout = function(){
-        localStorage.clear();
-        window.location.replace("../index.html");
     };
 
     return {
