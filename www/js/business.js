@@ -42,6 +42,10 @@ require(['jquery', 'business/businessBusiness'], function ($, business) {
                 $('#btnScan').click(function(){
                     business.scan();
                 });
+
+                $('#btnScanUser').click(function(){
+                    business.scanUser();
+                });
             });
 
             theApp.onPageInit('business-setting', function(){
