@@ -232,6 +232,13 @@ body{
 .transparent-window .item-input select{
   color: black !important;
 }
+
+/*.swiper-container img{
+
+}
+.swiper-slider img{
+  width: 100%;
+}*/
 /**---------------------
  *
  * Typography
@@ -308,6 +315,9 @@ h3{
 
 .item-text{
     max-width:75%;
+}
+.page-content .bus-info{
+  padding-top:10px;
 }
 /**---------------------
  *

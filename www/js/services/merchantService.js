@@ -86,7 +86,7 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
         $('.allMerchants ul').append(content);
         localStorage.setItem("merchantAllScroll", false);
     };
-    
+
     var getFreshMechantsAllError = function (data) {
         console.log("system error");
         if (data.result == 'error') {
@@ -162,7 +162,7 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
             if (data.result.reedemPoints >= 0) {
                 $('#reddemPoint').append('<span><i class="uiicon-web39 color-orange"></i><strong>Points to redeem</strong> :</span><span>' + data.result.reedemPoints + '</span>');
             } else {
-                $('#reddemPoint').append('<span><i class="uiicon-web39 color-orange"></i><strong>Merchant do not provide coupon</strong>');
+                $('#reddemPoint').append('<span><i class="uiicon-web39 color-orange"></i><strong>No vaild voucher</strong>');
             }
 
             if (data.result.couponId > 0) {

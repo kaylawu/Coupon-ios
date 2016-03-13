@@ -21,28 +21,24 @@
     <div class="page-content">
         <!-- Slider container -->
         <div id="merchantSliders">
-
         </div>
-
         <div class="toolbar tabbar top-0">
-            <div class="toolbar-inner"><a href="#info-tab" class="active tab-link">Info</a><a href="#offers-tab"
-                                                                                              class="tab-link">Offers</a><a
-                    href="#location-tab" class="tab-link">Location</a></div>
+            <div class="toolbar-inner"><a href="#info-tab" class="active tab-link">Info</a>
+              <a href="#offers-tab" class="tab-link">Offers</a>
+                <a href="#location-tab" class="tab-link">Location</a>
+              </div>
         </div>
-
             <div class="tabs">
-                <div id="info-tab" class="page-content tab active">
+                <div id="info-tab" class="page-content tab active bus-info">
                     <div class="content-block">
-                        <h4 class="margin-bottom-0">MERCHANT NAME</h4>
+                        <h4 class="margin-bottom-0">Business name</h4>
                         <small id="merchantName"></small>
-                        <h4 class="margin-bottom-0">ADDRESS</h4>
+                        <h4 class="margin-bottom-0">Address</h4>
                         <small id="merchantAddress"></small>
                         <!--<h4 class="margin-bottom-0">OPENING HOURS </h4>-->
                         <!--<small>MON-SAT 9:00AM to 9:00PM, SUN 10:00AM to 8:00PM</small>-->
-                        <h4 class="margin-bottom-0">CONTACT</h4>
-                        <small id="merchantContact"></small>
-                        <h4 class="margin-bottom-0">EMAIL</h4>
-                        <small id="merchantEmail"></small>
+                        <h4 class="margin-bottom-0">Contact</h4>
+                        <small id="merchantContact">02 000 0004</small>
                         <div class="tc-divider dark"></div>
                         <h4>Description:</h4>
                         <p id="merchantDescription"></p>
@@ -59,17 +55,9 @@
                         <p id="couponImageInShopDetial"></p>
 
                     </div>
-                    <!-- Slider container -->
-
-                    <!-- Coupon picker 生效以后格式有bug-->
-                    <!--   <div class ="col-100">
-                           <input type="text" placeholder="Pick a Coupon" readonly id="coupon-picker">
-                       </div>
-                       -->
-                    <!-- Coupon picker |END -->
                     <div class="col-40 content-block">
                         <input id="couponID" type="hidden" readonly>
-                        <p><input type="button" class="button button-big button-fill color-yellow confirm-1" id="btnredeem"
+                        <p><input type="button" class="button button-big color-black confirm-1" id="btnredeem"
                                   value="Redeem Coupon"></p>
                     </div>
 
