@@ -1293,7 +1293,9 @@ i.rotate-180{
     margin-bottom: 15px;
 }
 
-.grid-showcase .content-block-title{padding: 0 16px}
+.grid-showcase .content-block-title{
+  padding: 0 16px
+}
 
 
 
@@ -1998,20 +2000,21 @@ i.rotate-180{
 
 .tc-user-card .details{
     position: absolute;
-    margin-top: 10px;
-    bottom: 35px;
+    margin-top: 40%;
+    bottom: 20px;
     left: 110px;
 }
 
 .tc-user-card .details h2{
     color: #000;
-    font-weight: 300;
+    font-weight: 400;
     margin-left: 10px;
     opacity: .87;
     line-height: 1;
 }
 
 .tc-user-card .details span{
+    margin-left: 10px;
     color: #FFF;
     opacity: .74;
 }
