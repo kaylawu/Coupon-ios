@@ -19,7 +19,7 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
                     if(result.format == "QR_CODE")
                     {
                         var couponId = result.text;
-                        theApp.router.pageLoad('scanVoucher.html?couponId=' + couponId);
+                        mainView.router.pageLoad('scanVoucher.html?couponId=' + couponId);
                     }
                 }
             },
@@ -38,7 +38,7 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
                     if (result.format == "QR_CODE") 
                     {
                         var username = result.text;
-                        theApp.router.pageLoad('scanUser.html?username=' + username);
+                        mainView.router.pageLoad('scanUser.html?username=' + username);
                     };
                 };
             }
