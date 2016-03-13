@@ -95,6 +95,7 @@ define(["jquery","../services/frameworkService"],function($,Framework7){
         });
 
     };
+
     var businessLogin = function(e,p){
         console.log("login services activated");
         $.ajax({
@@ -120,18 +121,20 @@ define(["jquery","../services/frameworkService"],function($,Framework7){
             theApp.alert("Failed to register user! Please try again.","Warning");
         }
     };
+
     var registerError = function(data){
 
         theApp.alert('Error occurs!',"Error");
         console.log(data);
     };
-    var register = function(e,p){
-        console.log("service register activated");
+
+    var register = function(e,p, phone, name, gender, birthday, address, suburb, state){
+        
+        console.log(e, p, phone, name, gender, birthday, address, suburb, state);
         $.ajax({
             type: "POST",
             url: baseUrl+"user/register",
-            data: {email: e, password: p},
-            async :false,
+            data: {email: e, password: p, phone:phone, name:name, gender:gender, birthday:birthday, address:address, suburb:suburb, state:state},
             success:registerSuccess,
             error:registerError
         });

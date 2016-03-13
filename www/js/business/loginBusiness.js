@@ -9,6 +9,7 @@ define(["jquery","../services/loginService"],function($, service){
     var theApp = service.theApp;
     var mainView = service.mainView;
     var emailReg = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/i;
+    var phoneNumFormat = /04[\d]{8}/g;
     var businessLogin = function (event) {
 
         var email = $("#business-username").val();
@@ -64,15 +65,30 @@ define(["jquery","../services/loginService"],function($, service){
         }
     };
 
-    var registerCompletion = function(email,password){
+    var registerCompletion = function(){
 
+        var email = localStorage.getItem('registerEmail');
+        var password = localStorage.getItem('registerPassword');
         var username = $('#username').val();
-        var userEmail = $('#userEmail').val();
         var userBOD = $('#userBOD').val();
-        var userGender = $('#user');
+        var userGender = $('#Gender').val();
+        var address = $('#Address').val();
+        var suburb = $('#Suburb').val();
+        var state = $('#State').val();
+        var mobile = $('#mobile').val();
 
+        localStorage.removeItem('registerEmail');
+        localStorage.removeItem('registerPassword');
 
+        if (username == '' || userGender == '' || userBOD == '') {
+            theApp.alert("Please input Name, Gender or Birthday", "Warning");
+        } else if(!phoneNumFormat.test(mobile)) {
+            theApp.alert("Invalid mobile number", "Warning");
+        } else {
+            service.register(email, password, mobile, username, userGender, userBOD, address, suburb, state);
+        }        
     };
+
     var forgetpasswrod = function(){
         console.log('forget passwrod activated');
         var email = $('#forgetPassword-email').val();
@@ -85,7 +101,6 @@ define(["jquery","../services/loginService"],function($, service){
             theApp.alert("Please input a valid email", "Warning");
         }
         else {
-
             service.forgetPassword(email);
         }
 
@@ -114,6 +129,7 @@ define(["jquery","../services/loginService"],function($, service){
         forgetPassword:forgetpasswrod,
         forgetPasswordBusiness : forgetPasswordBusiness,
         theApp : theApp,
+        registerCompletion : registerCompletion,
         mainView:mainView
     }
 });

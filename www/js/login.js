@@ -55,11 +55,13 @@ require(['jquery', 'business/loginBusiness'], function ($, login) {
         });
 
         theApp.onPageInit('userInfo',function(page){
-            console.log('userInfo int');
-          console.log(page.query.email + ' ' + page.query.password);
 
+            localStorage.setItem("registerEmail", page.query.email);
+            localStorage.setItem("registerPassword", page.query.password);
 
+            $("#register-done").click(login.registerCompletion);
         });
+
         theApp.onPageInit('forget_password',function(page){
             console.log("forget_password init");
             //page.view.hideToolbar();
