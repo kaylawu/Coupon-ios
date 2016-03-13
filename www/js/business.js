@@ -42,6 +42,10 @@ require(['jquery', 'business/businessBusiness'], function ($, business) {
                 $('#btnScan').click(function(){
                     business.scan();
                 });
+
+                $('#btnScanUser').click(function(){
+                    business.scanUser();
+                });
             });
 
             theApp.onPageInit('business-setting', function(){
@@ -51,6 +55,10 @@ require(['jquery', 'business/businessBusiness'], function ($, business) {
                 localStorage.clear();
                     window.location.replace("../index.html");
                 });
+            });
+
+            theApp.onPageInit('scanUser',function(){
+                $('#addPoints').click(business.addPoints);
             });
 
             theApp.init();

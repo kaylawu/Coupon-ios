@@ -14,6 +14,10 @@ define(['jquery', '../services/businessService','../services/mobileService'], fu
         mobile.scan();
     };
 
+    var scanUser = function() {
+        mobile.scanUser();
+    };
+
     var resetPassword = function(){
         theApp.showPreloader();
         var oldPassword = $('#textCurrentPasswordBusiness').val();
@@ -30,10 +34,15 @@ define(['jquery', '../services/businessService','../services/mobileService'], fu
         }
     };
 
+    // var addPoints = function() {
+        
+    // }
+
     return {
         theApp: theApp,
         resetPassword:resetPassword,
         scan: scan,
+        scanUser: scanUser,
         mainView:service.mainView
     }
 });
