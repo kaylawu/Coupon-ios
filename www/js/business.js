@@ -57,6 +57,10 @@ require(['jquery', 'business/businessBusiness'], function ($, business) {
                 });
             });
 
+            theApp.onPageInit('scanUser',function(){
+                $('#addPoints').click(business.addPoints);
+            });
+
             theApp.init();
 
     });

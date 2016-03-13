@@ -34,6 +34,10 @@ define(['jquery', '../services/businessService','../services/mobileService'], fu
         }
     };
 
+    // var addPoints = function() {
+        
+    // }
+
     return {
         theApp: theApp,
         resetPassword:resetPassword,
