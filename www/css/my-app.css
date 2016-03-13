@@ -122,6 +122,21 @@ a.item-content{
   width: 30%;
   height: 30px;
 }
+.button.filter-button{
+  width: 90px;
+  overflow: hidden;
+  border: 2px solid #E0001B;
+  border-radius: 8px;
+  /* Popluar: */
+  font-family: Avenir-Roman;
+  font-size: 17px;
+  color: #BF8048;
+}
+.button.filter-button.active-state{
+  font-size: 17px;
+  background-color:
+  font-weight: bold;
+}
 
 .tab-link.active.button.glass-button{
     background-color:rgba(40,42,53,.5);

@@ -67,6 +67,10 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
             merchant.getInitData();
             $$(".infinite-scroll").on('infinite', merchant.refreshPage);
 
+            // $('#showhide').click(function showhide(element) {
+            //   document.getElementById(element).style.display =
+            //   (document.getElementById(element).style.display == "none") ? "" : "none";
+            // });
         });
 
         //googlemap init
@@ -75,6 +79,8 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
             user.googlemaps();
 
         });
+
+
 
         //theApp.onPageBack('mapview',function(){
         //    var map = plugin.google.maps.Map.getMap();
@@ -744,7 +750,3 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
         //        });
         //    });
         //});
-
-
-
-
