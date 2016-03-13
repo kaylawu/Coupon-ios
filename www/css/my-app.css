@@ -139,9 +139,14 @@ a.item-content{
 
 
 .list-block.transparent-window input[type ="text"]{
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #C98F31;
+}
+
+/*.list-block.transparent-window input[type ="text"]:focus{
     font-size:16px;
     color:black !important;
-}
+}*/
 .padding-left-15{
   padding-left: 15px;
 }
@@ -155,6 +160,13 @@ a.item-content{
   appearance: none;
   box-shadow: none;
   border-radius: none;
+  padding: 10px;
+  border: solid 5px #c9c9c9;
+  transition: border 0.3s;
+}
+.item-input.reward-points input[type ="text"]:focus{
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #C98F31;
 }
 .item-title.label{
   font-size: 16px;
