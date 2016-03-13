@@ -139,9 +139,14 @@ a.item-content{
 
 
 .list-block.transparent-window input[type ="text"]{
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #C98F31;
+}
+
+/*.list-block.transparent-window input[type ="text"]:focus{
     font-size:16px;
     color:black !important;
-}
+}*/
 .padding-left-15{
   padding-left: 15px;
 }
@@ -155,6 +160,13 @@ a.item-content{
   appearance: none;
   box-shadow: none;
   border-radius: none;
+  padding: 10px;
+  border: solid 5px #c9c9c9;
+  transition: border 0.3s;
+}
+.item-input.reward-points input[type ="text"]:focus{
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #C98F31;
 }
 .item-title.label{
   font-size: 16px;
@@ -1281,7 +1293,9 @@ i.rotate-180{
     margin-bottom: 15px;
 }
 
-.grid-showcase .content-block-title{padding: 0 16px}
+.grid-showcase .content-block-title{
+  padding: 0 16px
+}
 
 
 
@@ -1986,20 +2000,21 @@ i.rotate-180{
 
 .tc-user-card .details{
     position: absolute;
-    margin-top: 10px;
-    bottom: 35px;
+    margin-top: 40%;
+    bottom: 20px;
     left: 110px;
 }
 
 .tc-user-card .details h2{
     color: #000;
-    font-weight: 300;
+    font-weight: 400;
     margin-left: 10px;
     opacity: .87;
     line-height: 1;
 }
 
 .tc-user-card .details span{
+    margin-left: 10px;
     color: #FFF;
     opacity: .74;
 }
