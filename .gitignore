@@ -14,3 +14,7 @@
 .idea/workspace.xml
 
 .idea/workspace.xml
+
+*.json
+
+platforms/platforms.json
