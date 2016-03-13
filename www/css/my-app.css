@@ -71,6 +71,14 @@
 .col-30.button-big{
     width:inherit;
 }
+.button-medium{
+  width: 70% !important;
+  margin: auto;
+  height: 40px;
+  font-size: 16px;
+  border:2px solid #4D4D4D;
+  font-weight: 500;
+}
 .card-footer{
     height: 15px;
 }
@@ -3020,4 +3028,5 @@ h3 + .tc-comment-item{
 .mechantLoge{
     height: 40px !important;
     width: 40px !important;
+    margin-right: 10px;
 }
