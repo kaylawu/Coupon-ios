@@ -561,6 +561,20 @@ html.pixel-ratio-2 .input-field:after{
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
 }
+
+.tag.used{
+    position: absolute;
+    right: 0;
+    top: 20px;
+    z-index: 4;
+    padding: 0 10px;
+    border-radius: 0 2.5px 2.5px 0;
+    color: #FFF;
+    font-size: 150%;
+    line-height: 2.2;
+    background-color: #F44336;
+    opacity: .90;
+}
 /**---------------------
 
  Coupon cards
@@ -2643,19 +2657,7 @@ h3 + .tc-comment-item{
     opacity: .90;
 }
 
-.tag.used{
-    position: absolute;
-    right: 0;
-    top: 20px;
-    z-index: 4;
-    padding: 0 10px;
-    border-radius: 0 2.5px 2.5px 0;
-    color: #FFF;
-    font-size: 150%;
-    line-height: 2.2;
-    background-color: #F44336;
-    opacity: .90;
-}
+
 
 /**---------------------
  *
