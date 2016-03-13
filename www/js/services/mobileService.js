@@ -28,6 +28,46 @@ define(["jquery",'../services/frameworkService'],function($,Framework7){
         );
     };
 
+    var scanUser = function()
+    {
+        cordova.plugins.barcodeScanner.scan(
+            function (result) {
+                if (!result.cancelled) 
+                {
+                    if (result.format == "QR_CODE") 
+                    {
+                        var username = result.text;
+                        getUserProfile(username);
+                        window.location.replace("scanUser.html");
+                    };
+                };
+            }
+
+            function (error) {
+                alert("Scanning failed: " + Error);
+            }
+        );
+    };
+
+    var getUserProfile = function(username){
+        $.ajax({
+            url:baseUrl+"/user/getprofile",
+            type:"POST",
+            data:{username:username},
+            success:getUserProfileSuccess,
+            error:getUserProfileError
+    });
+
+    var getUserProfileSuccess = function(data){
+        localStorage.setItem("userProfile",JSON.stringify(data));
+        theApp.hidePreloader();
+    };
+
+    var getUserProfileError = function(data){
+        theApp.hidePreloader();
+        theApp.alert("System Error", "Warning");
+        console.log(data);
+    };
 
     var googlemaps = function()
     {
@@ -137,6 +177,8 @@ define(["jquery",'../services/frameworkService'],function($,Framework7){
 
     return{
         scan:scan,
+        scanUser:scanUser,
+        getUserProfile:getUserProfile,
         googlemaps:getUserLocation,
         googlemapsForShopDetail:googlemapForShopDetail
 
