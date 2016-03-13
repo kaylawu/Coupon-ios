@@ -1,7 +1,7 @@
 /**
  * Created by henry on 2/19/16.
  */
-"use strict"
+"use strict";
 
 define(['jquery', '../services/frameworkService'], function ($, Framework7) {
 

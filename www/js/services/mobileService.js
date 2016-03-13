@@ -3,7 +3,7 @@
  */
 'use strict';
 
-define(["jquery",'../services/frameworkService'],function($,Framework7){
+define(["jquery",'../services/frameworkService','../services/merchantService'],function($,Framework7,service){
 
     var theApp = Framework7.theApp;
 
@@ -58,14 +58,65 @@ define(["jquery",'../services/frameworkService'],function($,Framework7){
             map.addEventListener(plugin.google.maps.event.MAP_READY, function(map){
                 //map.setDiv(div);
                 theApp.onPageBack('mapview',function(){
-
                     map.remove();
                 });
+                getInitDataByRadius(map);
+                $$(".infinite-scroll").on('infinite', refreshPageByRadius(map));
             });
-
     };
 
+    var getInitDataByRadius = function(map){
+        alert('googlemap init data');
+        service.getMerchantCountbyRadius();
+        var tid = setInterval(pageLoading, 1000);
 
+        function pageLoading() {
+
+            if (localStorage.getItem("AllMerchantsByRadius") !== null) {
+                clearInterval(tid);
+                alert('mechants number is :'+localStorage.getItem("AllMerchantsByRadius"));
+                if (localStorage.getItem("AllMerchantsByRadius") > 0){
+
+                    //Init home page mechants
+                    if (localStorage.getItem("AllMerchantsByRadius") <= 6) {
+                        service.getInitMerchantsAllByRadius(localStorage.getItem("AllMerchantsByRadius"), 0,map);
+                        //remove infinite scroll listener
+                        theApp.detachInfiniteScroll($$('.infinite-scroll'));
+                        $$('.infinite-scroll-preloader').remove();
+                    } else {
+                        service.getInitMerchantsAllByRadius( 6, 0, map);
+                    }
+                }
+            }
+        }
+    };
+
+    var refreshPageByRadius = function(map){
+
+        var username = localStorage.getItem("username");
+
+        // Last loaded index
+        var lastIndex = $$('.allMerchantsByRadius li').length;
+
+        var maxItems = localStorage.getItem('AllMerchantsByRadius');
+
+        // Append items per load
+        var itemsPerLoad = 5;
+
+        // Exit, if loading in progress
+        if (JSON.parse(localStorage.getItem("merchantAllScroll"))) return;
+        // Set loading flag
+
+        localStorage.setItem("merchantAllScroll",true);
+
+        if(maxItems - lastIndex >= itemsPerLoad){
+            service.getFreshMechantsAll(itemsPerLoad,lastIndex,map);
+
+        }else{
+            service.getFreshMechantsAll(maxItems - lastIndex,lastIndex,map);
+        }
+
+    };
     var googlemapForShopDetail = function(a,l){
         //alert(result);
         alert(a+l);

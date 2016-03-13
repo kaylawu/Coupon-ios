@@ -70,6 +70,7 @@ define(["jquery", "../services/merchantService","../services/mobileService"], fu
     };
 
 
+
     return{
             getInitData:getInitData,
             refreshPage:refreshPage,

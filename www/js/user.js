@@ -72,23 +72,12 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
         //googlemap init
         theApp.onPageAfterAnimation('mapview',function(){
             console.log('mapview init');
+            localStorage.setItem('radius',5);
             user.googlemaps();
 
         });
 
-        //theApp.onPageBack('mapview',function(){
-        //    var map = plugin.google.maps.Map.getMap();
-        //    map.remove();
-        //
-        //});
-        //
-        //theApp.onPageBack('shopdetail',function(){
-        //    var map = plugin.google.maps.Map.getMap();
-        //    map.remove();
-        //});
-        //user voucher page init
         theApp.onPageInit('user-voucher',function(){
-
             console.log('user-voucher init');
             localStorage.getItem("AllUserCoupons",false);
             coupon.getInitData();
@@ -101,25 +90,7 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
             var map = plugin.google.maps.Map.getMap();
             console.log('shopdetail init:' + shopID);
             merchant.getShopDetail(shopID);
-            //$$('#info-tab').on('show', function () {
-            //    var map = plugin.google.maps.Map.getMap();
-            //    map.setVisible(false);
-            //
-            //});
-            //
-            //$$('#offers-tab').on('show', function () {
-            //    var map = plugin.google.maps.Map.getMap();
-            //    map.setVisible(false);
-            //
-            //
-            //});
-            //
-            //$$('#location-tab').on('show', function () {
-            //    var map = plugin.google.maps.Map.getMap();
-            //    map.setVisible(true);
-            //
-            //});
-            //$('#redeem').click(merchant.userRedeemCoupon())
+
         });
 
         theApp.init();

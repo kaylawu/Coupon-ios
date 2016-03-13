@@ -30,7 +30,6 @@ define(["jquery","../services/loginService"],function($, service){
     };
 
     var userLogin = function (event) {
-
         console.log("userLogin Business activated");
         var email = $("#user-username").val();
         var password = $("#user-password").val();
@@ -41,7 +40,6 @@ define(["jquery","../services/loginService"],function($, service){
         else{
             service.userLogin(email,password);
         }
-
     };
 
     var register = function(data) {

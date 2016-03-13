@@ -14,7 +14,7 @@ define(["jquery","../services/frameworkService"],function($,Framework7){
 
 
 
-    var baseUrl = "http://47.88.30.91:8080/CouponManagementSystem/";
+        var baseUrl = "http://47.88.30.91:8080/CouponManagementSystem/";
 
 
     var loginSuccess = function(data){
