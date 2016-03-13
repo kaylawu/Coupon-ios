@@ -101,6 +101,8 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
             var map = plugin.google.maps.Map.getMap();
             console.log('shopdetail init:' + shopID);
             merchant.getShopDetail(shopID);
+
+            $$('#btnredeem').click(coupon.redeemCoupon);
             //$$('#info-tab').on('show', function () {
             //    var map = plugin.google.maps.Map.getMap();
             //    map.setVisible(false);
