@@ -67,6 +67,10 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
             merchant.getInitData();
             $$(".infinite-scroll").on('infinite', merchant.refreshPage);
 
+            // $('#showhide').click(function showhide(element) {
+            //   document.getElementById(element).style.display =
+            //   (document.getElementById(element).style.display == "none") ? "" : "none";
+            // });
         });
 
         //googlemap init
@@ -77,6 +81,22 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
 
         });
 
+<<<<<<< HEAD
+=======
+
+
+        //theApp.onPageBack('mapview',function(){
+        //    var map = plugin.google.maps.Map.getMap();
+        //    map.remove();
+        //
+        //});
+        //
+        //theApp.onPageBack('shopdetail',function(){
+        //    var map = plugin.google.maps.Map.getMap();
+        //    map.remove();
+        //});
+        //user voucher page init
+>>>>>>> origin/master
         theApp.onPageInit('user-voucher',function(){
             console.log('user-voucher init');
             localStorage.getItem("AllUserCoupons",false);
@@ -91,6 +111,29 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
             console.log('shopdetail init:' + shopID);
             merchant.getShopDetail(shopID);
 
+<<<<<<< HEAD
+=======
+            $$('#btnredeem').click(coupon.redeemCoupon);
+            //$$('#info-tab').on('show', function () {
+            //    var map = plugin.google.maps.Map.getMap();
+            //    map.setVisible(false);
+            //
+            //});
+            //
+            //$$('#offers-tab').on('show', function () {
+            //    var map = plugin.google.maps.Map.getMap();
+            //    map.setVisible(false);
+            //
+            //
+            //});
+            //
+            //$$('#location-tab').on('show', function () {
+            //    var map = plugin.google.maps.Map.getMap();
+            //    map.setVisible(true);
+            //
+            //});
+            //$('#redeem').click(merchant.userRedeemCoupon())
+>>>>>>> origin/master
         });
 
         theApp.init();
@@ -713,7 +756,3 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
         //        });
         //    });
         //});
-
-
-
-

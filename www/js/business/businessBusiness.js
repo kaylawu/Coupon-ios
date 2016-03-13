@@ -14,30 +14,46 @@ define(['jquery', '../services/businessService','../services/mobileService'], fu
         mobile.scan();
     };
 
+    var scanUser = function() {
+        mobile.scanUser();
+    };
+
     var resetPassword = function(){
         theApp.showPreloader();
         var oldPassword = $('#textCurrentPasswordBusiness').val();
         var newPassword = $('#textNewPassowrdBusiness').val();
+
         if(oldPassword == ''){
             theApp.hidePreloader();
             theApp.alert('Input old password', "Warning");
         }else if(newPassword == ''){
             theApp.hidePreloader();
             theApp.alert('Input new password', "Warning");
-        }else {
-            service.resetPassword(localStorage.getItem('username'),oldPassword,newPassword);
+        } else {
+            service.resetPassword(localStorage.getItem('staffname'),oldPassword,newPassword);
         }
     };
 
-    var logout = function(){
-        localStorage.clear();
-        window.location.replace("../index.html");
+    var addPoints = function() {
+        var points = $('#textAddPoints').val();
+        if ($.isNumeric(points)) {
+            service.addPoints(localStorage.getItem('username'), Math.ceil(points));
+        } else {
+            theApp.alert("Invalid points", "Warning");
+        }
     };
+
+    var useCoupon = function() {
+        service.staffUseCoupon(localStorage.getItem('couponId'));
+    }
 
     return {
         theApp: theApp,
         resetPassword:resetPassword,
         scan: scan,
+        scanUser: scanUser,
+        addPoints: addPoints,
+        useCoupon: useCoupon,
         mainView:service.mainView
     }
 });

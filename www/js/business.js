@@ -42,6 +42,10 @@ require(['jquery', 'business/businessBusiness'], function ($, business) {
                 $('#btnScan').click(function(){
                     business.scan();
                 });
+
+                $('#btnScanUser').click(function(){
+                    business.scanUser();
+                });
             });
 
             theApp.onPageInit('business-setting', function(){
@@ -50,6 +54,22 @@ require(['jquery', 'business/businessBusiness'], function ($, business) {
                 console.log('logout');
                 localStorage.clear();
                     window.location.replace("../index.html");
+                });
+            });
+
+            theApp.onPageInit('scanUser',function(){
+                localStorage.setItem("username", page.query.username);
+                $('#addPoints').click(business.addPoints);
+                $('#cecelAddPoints').click(function(){
+                    localStorage.removeItem('username');
+                });
+            });
+
+            theApp.onPageInit('scan-voucher', function(){
+                localStorage.setItem("couponId", page.query.couponId);
+                $('#useCoupon').click(business.useCoupon);
+                $('#cancelUseCoupon').click(function(){
+                    localStorage.removeItem('couponId');
                 });
             });
 

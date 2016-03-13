@@ -49,8 +49,17 @@ define(["jquery", "../services/couponService","../services/mobileService"], func
 		}
 	};
 
+	var redeemCoupon = function() {
+		var username = localStorage.getItem("username");
+
+		var couponId = $('#couponID').val();
+
+		service.userRedeemCoupon(username, couponId);
+	}
+
 	return {
 		getInitData:getInitData,
-		refreshPage:refreshPage
+		refreshPage:refreshPage,
+		redeemCoupon:redeemCoupon
 	}
 });

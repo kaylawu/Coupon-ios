@@ -18,7 +18,8 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
                 {
                     if(result.format == "QR_CODE")
                     {
-                        alert(result.text);
+                        var couponId = result.text;
+                        theApp.router.pageLoad('scanVoucher.html?couponId=' + couponId);
                     }
                 }
             },
@@ -28,6 +29,25 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
         );
     };
 
+    var scanUser = function()
+    {
+        cordova.plugins.barcodeScanner.scan(
+            function (result) {
+                if (!result.cancelled) 
+                {
+                    if (result.format == "QR_CODE") 
+                    {
+                        var username = result.text;
+                        theApp.router.pageLoad('scanUser.html?username=' + username);
+                    };
+                };
+            }
+
+            function (error) {
+                alert("Scanning failed: " + Error);
+            }
+        );
+    };
 
     var googlemaps = function()
     {
@@ -188,6 +208,7 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
 
     return{
         scan:scan,
+        scanUser:scanUser,
         googlemaps:getUserLocation,
         googlemapsForShopDetail:googlemapForShopDetail
 

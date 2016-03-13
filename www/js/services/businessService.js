@@ -53,6 +53,30 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
          }
       };
 
+      var staffUseCoupon = function(couponId) {
+        $.ajax({
+          url:baseUrl + "/staff/usecoupon",
+          type:"POST",
+          data:{couponId:couponId},
+          success:staffUseCouponSuccess,
+          error:staffUseCouponError
+        });
+      };
+
+      var staffUseCouponSuccess = function(data){
+        if (data.result == "success") {
+          theApp.alert("Success to use voucher", "Congratulation");
+          localStorage.removeItem('couponId');
+          window.location.replace("businesshome.html");
+        };
+      };
+
+      var staffUseCouponError = function(data){
+        if (data.result == "fail") {
+          theApp.alert("Fail to use voucher", "Error");
+        };
+      };
+
     var getUserCouponDetail = function(userCouponId){
       $.ajax({
         url:baseUrl + "/user/getusercoupondetails",
@@ -76,7 +100,8 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
     return{
         theApp:theApp,
         resetPassword:resetPassword,
-        getUserCouponDetail:getUserCouponDetail
+        getUserCouponDetail:getUserCouponDetail,
+        staffUseCoupon:staffUseCoupon
     }
 
 });

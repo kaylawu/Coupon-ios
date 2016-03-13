@@ -15,8 +15,14 @@
 
 .idea/workspace.xml
 
+<<<<<<< HEAD
 platforms/ios/www/userInfo.html
 
 *.png
 
 platforms/ios/www/userInfo.html
+=======
+*.json
+
+platforms/platforms.json
+>>>>>>> origin/master

@@ -98,9 +98,18 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
     };
 
     var merchantAllHtmlHtmlHelper = function (v) {
+
+        var points;
+
+        if (v.userPoints == -1) {
+            points = 0
+        } else {
+            points = v.userPoints;
+        }
+
         var content = '<li> <div class="col-100 tablet-50"> <div class="tc-product"><a href="shopdetail.html?shopId=' + v.merchantId + '" class="title">';
         content += '<img src=' + imgBaseUrl + v.logoUrl + '><div class="details"> <div class="head"><h3>' + v.merchantName + '</h3>';
-        content += '<h3>Chatswood</h3> </div> <div class="buttons"> <a href="#"><i class="uiicon-web39 color-orange"></i> Your points:' + v.userPoints + '</a>';
+        content += '<h3>Chatswood</h3> </div> <div class="buttons"> <a href="#"><i class="uiicon-web39 color-orange"></i> Your points:' + points + '</a>';
         content += '<a href="shopdetail.html?shopId=' + v.merchantId + '"><i class="uiicon-web38"></i> Details</a>';
         content += '</div></div></a></div></div></li>';
         return content;
