@@ -58,7 +58,11 @@ require(['jquery', 'business/businessBusiness'], function ($, business) {
             });
 
             theApp.onPageInit('scanUser',function(){
+                localStorage.setItem("username", page.query.username);
                 $('#addPoints').click(business.addPoints);
+                $('#cecelAddPoints').click(function(){
+                    localStorage.removeItem('username');
+                })
             });
 
             theApp.init();
