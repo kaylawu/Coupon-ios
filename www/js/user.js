@@ -33,17 +33,18 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
         var theApp = user.theApp;
         // Export selectors engine
         var $$ = Dom7;
-        // Add view
-        var mainView = theApp.addView('.view-main', {
-            dynamicNavbar: true
-        });
 
         //userhome Init
         theApp.onPageInit('user_home',function(){
-            console.log("user_home int");
-            console.log(localStorage.getItem('userProfile'));
-            user.getInitData();
-            $$(".infinite-scroll").on('infinite', user.refreshPage);
+            if(localStorage.getItem('userProfile') == null || localStorage.getItem('username')==null){
+                window.location.replace("../index.html");
+            }else{
+                console.log("user_home int");
+                console.log(localStorage.getItem('userProfile'));
+                user.getInitData();
+                $$(".infinite-scroll").on('infinite', user.refreshPage);
+            }
+
         });
 
         //user setting page init
@@ -72,10 +73,22 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
         theApp.onPageAfterAnimation('mapview',function(){
             console.log('mapview init');
             user.googlemaps();
+
         });
 
+        //theApp.onPageBack('mapview',function(){
+        //    var map = plugin.google.maps.Map.getMap();
+        //    map.remove();
+        //
+        //});
+        //
+        //theApp.onPageBack('shopdetail',function(){
+        //    var map = plugin.google.maps.Map.getMap();
+        //    map.remove();
+        //});
         //user voucher page init
         theApp.onPageInit('user-voucher',function(){
+
             console.log('user-voucher init');
             localStorage.getItem("AllUserCoupons",false);
             coupon.getInitData();
@@ -85,8 +98,28 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
         //shop Detail page init
         theApp.onPageInit('shopdetail',function(page){
             var shopID = page.query.shopId;
+            var map = plugin.google.maps.Map.getMap();
             console.log('shopdetail init:' + shopID);
-            merchant.getShopDetail(shopID)
+            merchant.getShopDetail(shopID);
+            //$$('#info-tab').on('show', function () {
+            //    var map = plugin.google.maps.Map.getMap();
+            //    map.setVisible(false);
+            //
+            //});
+            //
+            //$$('#offers-tab').on('show', function () {
+            //    var map = plugin.google.maps.Map.getMap();
+            //    map.setVisible(false);
+            //
+            //
+            //});
+            //
+            //$$('#location-tab').on('show', function () {
+            //    var map = plugin.google.maps.Map.getMap();
+            //    map.setVisible(true);
+            //
+            //});
+            //$('#redeem').click(merchant.userRedeemCoupon())
         });
 
         theApp.init();

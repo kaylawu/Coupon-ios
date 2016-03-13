@@ -1,18 +1,17 @@
 /**
  * Created by henry on 16/2/10.
  */
-'use strict'
+'use strict';
 
-define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
+define(['jquery', '../services/frameworkService','underscore'], function ($, Framework7,_) {
 
       //AppInit
-      var theApp = new window.Framework7({
-         swipeBackPage: true,
-         init: false
-      });
+      var theApp = Framework7.theApp;
 
       var $$ = Dom7;
 
+    // Add view
+    var mainView = Framework7.mainView;
 
      //Start to write Services
       var baseUrl = "http://47.88.30.91:8080/CouponManagementSystem/";
@@ -114,27 +113,6 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
             error:updatePhoneError
         });
     };
-
-    ////getUserProfile
-    //var getUserProfileSuccess = function(data){
-    //    localStorage.setItem("userProfile",JSON.stringify(data));
-    //};
-    //
-    //var getUserProfileError = function(data){
-    //    theApp.alert("System Error", "Warning");
-    //    console.log(data);
-    //};
-    //
-    //var getUserProfile = function(username){
-    //    $.ajax({
-    //        url:baseUrl+"/user/getprofile",
-    //        type:"POST",
-    //        data:{username:username},
-    //        success:getUserProfileSuccess,
-    //        error:getUserProfileError
-    //    });
-    //
-    //};
 
     //getMerchantCount
     var getMerchantCountSuccess = function(data){

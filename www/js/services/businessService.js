@@ -3,13 +3,11 @@
  */
 "use strict"
 
-define(['jquery', 'framework7'], function ($, Framework7) {
+define(['jquery', '../services/frameworkService'], function ($, Framework7) {
 
     // Initialize your app
-    var theApp = new window.Framework7({
-        swipeBackPage: true,
-        init: false
-    });
+    var theApp = Framework7.theApp;
+
     console.log('service init');
     // Export selectors engine
     var $$ = Dom7;

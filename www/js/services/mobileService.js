@@ -1,10 +1,15 @@
 /**
  * Created by henry on 2/20/16.
  */
-'use strict'
+'use strict';
 
-define(["jquery"],function($){
+define(["jquery",'../services/frameworkService'],function($,Framework7){
 
+    var theApp = Framework7.theApp;
+
+    var mainView = Framework7.mainView;
+
+    var $$ = Dom7;
     var scan = function()
     {
         cordova.plugins.barcodeScanner.scan(
@@ -26,13 +31,12 @@ define(["jquery"],function($){
 
     var googlemaps = function()
     {
-
             //alert(result);
             var div = document.getElementById("map_canvas");
             var userLocation = new plugin.google.maps.LatLng(localStorage.getItem('userLatitude'),localStorage.getItem('userLongitude'));
             // Initialize the map view
             var map = plugin.google.maps.Map.getMap(div,{
-                'backgroundColor': 'black',
+
                 'mapType': plugin.google.maps.MapTypeId.ROADMAP,
                 'controls': {
                     'compass': true,
@@ -46,19 +50,70 @@ define(["jquery"],function($){
                     'zoom': true
                 },'camera': {
                     'latLng': userLocation,
-                    'zoom':15
+                    'zoom':13
                 }
             });
 
             // Wait until the map is ready status.
-            map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
+            map.addEventListener(plugin.google.maps.event.MAP_READY, function(map){
+                //map.setDiv(div);
+                theApp.onPageBack('mapview',function(){
 
+                    map.remove();
+                });
+            });
 
     };
 
-    var onMapReady= function(){
+
+    var googlemapForShopDetail = function(a,l){
+        //alert(result);
+        alert(a+l);
+        document.addEventListener("deviceready", function() {
+
+            var div = document.getElementById("map_canvas1");
+            var shopLocation = new plugin.google.maps.LatLng(a, l);
+            // Initialize the map view
+            var map = plugin.google.maps.Map.getMap();
+
+            // Wait until the map is ready status.
+            map.addEventListener(plugin.google.maps.event.MAP_READY, function(map){
+                map.setDiv(div);
+                map.setBackgroundColor('white');
+                map.moveCamera({
+                    'target':shopLocation,
+                    'zoom':15
+                });
+
+                map.addMarker({
+                    'position': new plugin.google.maps.LatLng(a, l)
+
+                }, function(marker) {
+                    marker.showInfoWindow();
+                });
+                $$('#info-tab').on('show', function () {
+                    map.setVisible(false);
+                });
+
+                $$('#offers-tab').on('show', function () {
+                    map.setVisible(false);
+                });
+
+                $$('#location-tab').on('show', function () {
+                    map.setVisible(true);
+                    mao.refreshLayout();
+                });
+
+                theApp.onPageBack('shopdetail',function(){
+
+                    map.remove();
+                });
+
+            });
+        });
 
     };
+
 
     var getUserLocation = function(){
         document.addEventListener("deviceready", function() {
@@ -78,9 +133,13 @@ define(["jquery"],function($){
         alert('code: '    + error.code    + '\n' +
             'message: ' + error.message + '\n');
     };
+
+
     return{
         scan:scan,
-        googlemaps:getUserLocation
+        googlemaps:getUserLocation,
+        googlemapsForShopDetail:googlemapForShopDetail
+
     }
 
 

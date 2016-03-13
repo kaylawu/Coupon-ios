@@ -2,19 +2,13 @@
 /**
  * Created by yequan on 2016/2/1.
  */
-define(["jquery","framework7"],function($,Framework7){
+define(["jquery","../services/frameworkService"],function($,Framework7){
 
 
     // Initialize your app
-    var theApp = new window.Framework7({
-        swipeBackPage: false,
+    var theApp = Framework7.theApp;
 
-        init: false
-    });
-
-    var mainView = theApp.addView('.view-main', {
-        dynamicNavbar: true
-    });
+    var mainView = Framework7.mainView;
     // Export selectors engine
     var $$ = Dom7;
 

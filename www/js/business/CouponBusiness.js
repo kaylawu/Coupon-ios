@@ -5,7 +5,7 @@ define(["jquery", "../services/couponService","../services/mobileService"], func
 
 	var $$ = Dom7;
 	var getInitData = function() {
-
+		console.log('into user init data');
 		service.getCouponCount(localStorage.getItem("username"), "All");
 
 		var tid = setInterval(pageLoading, 1000);
@@ -13,7 +13,7 @@ define(["jquery", "../services/couponService","../services/mobileService"], func
 		function pageLoading() {
 			if (localStorage.getItem("AllUserCoupons") !== null) {
 				clearInterval(tid);
-
+				console.log('into pageloading');
 				if (localStorage.getItem("AllUserCoupons") > 0) {
 
 					if (localStorage.getItem("AllUserCoupons") <= 6) {

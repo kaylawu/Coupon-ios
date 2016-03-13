@@ -1,14 +1,14 @@
 "use strict"
 
-define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
+define(['jquery', '../services/frameworkService','underscore'], function ($, Framework7,_) {
 
         //AppInit
-        var theApp = new window.Framework7({
-            swipeBackPage: true,
-            init: false
-        });
+        var theApp = Framework7.theApp;
+
 
         var $$ = Dom7;
+
+
 
     //Start to write Services
     var baseUrl = 'http://47.88.30.91:8080/CouponManagementSystem';
@@ -43,6 +43,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
     };
 
     var getInitCouponsSuccess = function(data){
+        console.log("into Coupon init success");
         var content = '';
         _.each(data,function(v,k,list) {
             content += couponHtmlHelper(v);
@@ -93,7 +94,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         });
         $('.userCoupon ul').append(content);
         localStorage.setItem("couponsScroll",false);
-    }
+    };
 
     var getFreshCouponsError = function(data){
         if (data.result == 'error') {
@@ -102,7 +103,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
             theApp.alert("Out of index", "Error")
         }
         localStorage.setItem("couponsScroll",false);
-    }
+    };
 
     var userRedeemCoupon = function (username, couponId) {
         $.ajax({
@@ -111,7 +112,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
             success:userRedeemCouponSuccess,
             error:userRedeemCouponError
         });
-    }
+    };
 
     var userRedeemCouponSuccess = function (data) {
         if (data.result == 'success') {
@@ -123,7 +124,7 @@ define(['jquery', 'framework7','underscore'], function ($, Framework7,_) {
         if (data.result == 'fail') {
             theApp.alert("Fail to recived the coupoon", "System Error");
         }
-    }
+    };
 
     return{
         theApp:theApp,
