@@ -550,16 +550,31 @@ html.pixel-ratio-2 .input-field:after{
 
 /**---------------------
 
- Coupon picker
+ Voucher expiry / used style
  *---------------------**/
 
-/*
- .coupon-picker{
- font-size: 150%;
+.facebook-card.used{
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+.facebook-card.expired{
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
 
- }
- */
-
+.tag.used{
+    position: absolute;
+    right: 0;
+    top: 20px;
+    z-index: 4;
+    padding: 0 10px;
+    border-radius: 0 2.5px 2.5px 0;
+    color: #FFF;
+    font-size: 150%;
+    line-height: 2.2;
+    background-color: #F44336;
+    opacity: .90;
+}
 /**---------------------
 
  Coupon cards
