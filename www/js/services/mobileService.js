@@ -24,7 +24,7 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
                 }
             },
             function (error) {
-                alert("Scanning failed: " + error);
+                theApp.alert("Scanning failed: " + error);
             }
         );
     };

@@ -41,10 +41,11 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
             }else{
                 console.log("user_home int");
                 console.log(localStorage.getItem('userProfile'));
+
+                //userhome Initialize
                 user.getInitData();
                 $$(".infinite-scroll").on('infinite', user.refreshPage);
             }
-
         });
 
         //user setting page init
@@ -77,7 +78,6 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
             localStorage.setItem('radius',5);
             user.googlemaps();
         });
-
 
 
         theApp.onPageInit('user-voucher',function(){

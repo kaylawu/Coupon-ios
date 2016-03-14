@@ -12,10 +12,24 @@ define(["jquery", "../services/userService", "../services/mobileService"], funct
 
 
     var getInitData = function () {
+
+        //variables declaration
+        var userProfile = JSON.parse(localStorage.getItem('userProfile'));
         var username = localStorage.getItem("username");
-        service.getMerchantCount(username);
-        console.log("Init Data");
         var tid = setInterval(pageLoading, 500);
+
+        //set username and userImage
+
+        $('#username').html(userProfile.name);
+
+        if(userProfile.profilePicUrl != ''){
+            $('#userProfileImage').attr('src',userProfile.profilePicUrl);
+        }
+
+        //execute API to get user Merchants
+        service.getMerchantCount(username);
+        console.log(localStorage.getItem('userMechants'));
+
 
         function pageLoading() {
             if (localStorage.getItem("userProfile") !== null && localStorage.getItem("userMechants") !== null) {
@@ -25,7 +39,7 @@ define(["jquery", "../services/userService", "../services/mobileService"], funct
                     //Init home page mechants
                     if (localStorage.getItem("userMechants") <= 6) {
                         console.log(localStorage.getItem("userMechants"));
-                        service.getInitMerchants(username, localStorage.getItem("userMechants"), localStorage.getItem("userMechants"), 0);
+                        service.getInitMerchants(username, localStorage.getItem("userMechants"), 0);
                         //remove infinite scroll listener
                         theApp.detachInfiniteScroll($$('.infinite-scroll'));
                         $$('.infinite-scroll-preloader').remove();

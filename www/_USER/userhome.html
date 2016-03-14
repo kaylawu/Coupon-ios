@@ -2,11 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
     <title>Sweipe - Mobile HTML Web App Ready Theme</title>
     <meta name="author" content="ThemingCool"/>
     <meta name="description" content=""/>
@@ -45,8 +47,7 @@
                 <ul>
 
 
-                    <li class="nav-menu"><a href="userhome.html" class="close-panel with-animation"
-                                            data-reload="true" data-ignore-cache="true">
+                    <li class="nav-menu"><a href="userhome.html" class="close-panel with-animation">
 
                         <div class="item-inner">
                             <div class="item-title"><i class="fa fa-home fa-2x"></i>Home</div>
@@ -115,119 +116,120 @@
             </div>
             <div class="page" data-page="user_home">
                 <!-- Scrollable page content-->
-                <div class="page-content infinite-scroll" data-distance="10"  style="background-color:rgba(0,0,0,.04)">
-                    <div class="content-block user-profile" >
+                <div class="page-content infinite-scroll" data-distance="10" style="background-color:rgba(0,0,0,.04)">
+                    <div class="content-block user-profile">
                         <div class="row">
                             <div class="col-100">
                                 <div class="tc-user-card">
                                     <div class="avatar">
-                                      <img src="../img/profile_pic.png" alt="">
-                                      <div class="details">
-                                        <h2>Kelly</h2>
-                                        <span>Total points:</span>
-                                    </div>
-                                </div><!-- .tc-user-card | ENDS -->
-                            </div><!-- .col-100 | ENDS -->
-                        </div><!-- .row | ENDS -->
-                    </div>
-                  </div> <!-- .content-block | ENDS -->
+                                        <img id="userProfileImage" src="../img/profile_pic.png">
+                                        <div class="details">
+                                            <h2 id='username'></h2>
+                                            <span>Total points:<span id="userTotalPoint"></span></span>
+                                        </div>
+                                    </div><!-- .tc-user-card | ENDS -->
+                                </div><!-- .col-100 | ENDS -->
+                            </div><!-- .row | ENDS -->
+                        </div>
+                    </div> <!-- .content-block | ENDS -->
 
                     <div class="content-block-title center">
-                      <img src="../img/reward-progress.png" style="height:45px"><p>Your Progress</p>
+                        <img src="../img/reward-progress.png" style="height:45px">
+                        <p>Your Progress</p>
                     </div>
                     <div class="list-block media-list userPoint">
                         <ul>
                             <!--<li>-->
-                                <!--<div class="item-content">-->
+                            <!--<div class="item-content">-->
 
-                                    <!--<div class="item-media"><img src=../img/logo.png></div>-->
-                                    <!--<div class="item-inner">-->
-                                        <!--<h3>Red Chill Sichuan</h3>-->
-                                        <!--<div class="progress-box" data-percent="47">-->
-                                            <!--<div class="bar" style="transition-duration: 300ms; width: 47%;">-->
-                                                <!--<div class="progress">47%</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
+                            <!--<div class="item-media"><img src=../img/logo.png></div>-->
+                            <!--<div class="item-inner">-->
+                            <!--<h3>Red Chill Sichuan</h3>-->
+                            <!--<div class="progress-box" data-percent="47">-->
+                            <!--<div class="bar" style="transition-duration: 300ms; width: 47%;">-->
+                            <!--<div class="progress">47%</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
                             <!--</li>-->
                             <!--<li>-->
-                                <!--<div class="item-content">-->
-                                    <!--<div class="item-media"><img src=../img/logo.png></div>-->
-                                    <!--<div class="item-inner">-->
-                                        <!--<h3>New Shanghai</h3>-->
-                                        <!--<div class="progress-box" data-percent="57">-->
-                                            <!--<div class="bar" style="transition-duration: 300ms; width: 57%;">-->
-                                                <!--<div class="progress">57%</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
+                            <!--<div class="item-content">-->
+                            <!--<div class="item-media"><img src=../img/logo.png></div>-->
+                            <!--<div class="item-inner">-->
+                            <!--<h3>New Shanghai</h3>-->
+                            <!--<div class="progress-box" data-percent="57">-->
+                            <!--<div class="bar" style="transition-duration: 300ms; width: 57%;">-->
+                            <!--<div class="progress">57%</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
                             <!--</li>-->
                             <!--<li>-->
-                                <!--<div class="item-content">-->
-                                    <!--<div class="item-media"><img src=../img/logo.png></div>-->
-                                    <!--<div class="item-inner">-->
-                                        <!--<h3>Easyway</h3>-->
-                                        <!--<div class="progress-box" data-percent="80">-->
-                                            <!--<div class="bar" style="transition-duration: 300ms; width: 80%;">-->
-                                                <!--<div class="progress">80%</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
+                            <!--<div class="item-content">-->
+                            <!--<div class="item-media"><img src=../img/logo.png></div>-->
+                            <!--<div class="item-inner">-->
+                            <!--<h3>Easyway</h3>-->
+                            <!--<div class="progress-box" data-percent="80">-->
+                            <!--<div class="bar" style="transition-duration: 300ms; width: 80%;">-->
+                            <!--<div class="progress">80%</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
                             <!--</li>-->
                             <!--<li>-->
-                                <!--<div class="item-content">-->
-                                    <!--<div class="item-media"><img src=../img/logo.png></div>-->
-                                    <!--<div class="item-inner">-->
-                                        <!--<h3>Chatime</h3>-->
-                                        <!--<div class="progress-box" data-percent="30">-->
-                                            <!--<div class="bar" style="transition-duration: 300ms; width: 30%;">-->
-                                                <!--<div class="progress">30%</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
+                            <!--<div class="item-content">-->
+                            <!--<div class="item-media"><img src=../img/logo.png></div>-->
+                            <!--<div class="item-inner">-->
+                            <!--<h3>Chatime</h3>-->
+                            <!--<div class="progress-box" data-percent="30">-->
+                            <!--<div class="bar" style="transition-duration: 300ms; width: 30%;">-->
+                            <!--<div class="progress">30%</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
                             <!--</li>-->
                             <!--<li>-->
-                                <!--<div class="item-content">-->
-                                    <!--<div class="item-media"><img src=../img/logo.png></div>-->
-                                    <!--<div class="item-inner">-->
-                                        <!--<h3>New world</h3>-->
-                                        <!--<div class="progress-box" data-percent="10">-->
-                                            <!--<div class="bar" style="transition-duration: 300ms; width: 10%;">-->
-                                                <!--<div class="progress">10%</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
+                            <!--<div class="item-content">-->
+                            <!--<div class="item-media"><img src=../img/logo.png></div>-->
+                            <!--<div class="item-inner">-->
+                            <!--<h3>New world</h3>-->
+                            <!--<div class="progress-box" data-percent="10">-->
+                            <!--<div class="bar" style="transition-duration: 300ms; width: 10%;">-->
+                            <!--<div class="progress">10%</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
                             <!--</li>-->
                             <!--<li>-->
-                                <!--<div class="item-content">-->
-                                    <!--<div class="item-media"><img src=../img/logo.png></div>-->
-                                    <!--<div class="item-inner">-->
-                                        <!--<h3>Chatime</h3>-->
-                                        <!--<div class="progress-box" data-percent="47">-->
-                                            <!--<div class="bar" style="transition-duration: 300ms; width: 47%;">-->
-                                                <!--<div class="progress">57%</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
+                            <!--<div class="item-content">-->
+                            <!--<div class="item-media"><img src=../img/logo.png></div>-->
+                            <!--<div class="item-inner">-->
+                            <!--<h3>Chatime</h3>-->
+                            <!--<div class="progress-box" data-percent="47">-->
+                            <!--<div class="bar" style="transition-duration: 300ms; width: 47%;">-->
+                            <!--<div class="progress">57%</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
                             <!--</li>-->
                             <!--<li>-->
-                                <!--<div class="item-content">-->
-                                    <!--<div class="item-media"><img src=../img/logo.png></div>-->
-                                    <!--<div class="item-inner">-->
-                                        <!--<h3>New world</h3>-->
-                                        <!--<div class="progress-box" data-percent="47">-->
-                                            <!--<div class="bar" style="transition-duration: 300ms; width: 47%;">-->
-                                                <!--<div class="progress">57%</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
+                            <!--<div class="item-content">-->
+                            <!--<div class="item-media"><img src=../img/logo.png></div>-->
+                            <!--<div class="item-inner">-->
+                            <!--<h3>New world</h3>-->
+                            <!--<div class="progress-box" data-percent="47">-->
+                            <!--<div class="bar" style="transition-duration: 300ms; width: 47%;">-->
+                            <!--<div class="progress">57%</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
                             <!--</li>-->
 
                         </ul>
@@ -236,7 +238,6 @@
                     <div class="infinite-scroll-preloader">
                         <!--<div class="preloader"></div>-->
                     </div>
-
 
 
                     <!--                     <div class ="infinite-scroll infinite-scroll-top">
@@ -342,60 +343,60 @@
 </div>
 <!--&lt;!&ndash; Loading Screen &ndash;&gt;-->
 <!--<div class="tc-loading-screen vh-center">-->
-    <!--<div>-->
-        <!--<div class="big">Page is Loading</div>-->
-        <!--<div class="small">Please Wait...</div>-->
+<!--<div>-->
+<!--<div class="big">Page is Loading</div>-->
+<!--<div class="small">Please Wait...</div>-->
 
-        <!--<div class="preloader-wrapper active">-->
-            <!--<div class="spinner-layer spinner-blue">-->
-                <!--<div class="circle-clipper left">-->
-                    <!--<div class="circle"></div>-->
-                <!--</div>-->
-                <!--<div class="gap-patch">-->
-                    <!--<div class="circle"></div>-->
-                <!--</div>-->
-                <!--<div class="circle-clipper right">-->
-                    <!--<div class="circle"></div>-->
-                <!--</div>-->
-            <!--</div>-->
+<!--<div class="preloader-wrapper active">-->
+<!--<div class="spinner-layer spinner-blue">-->
+<!--<div class="circle-clipper left">-->
+<!--<div class="circle"></div>-->
+<!--</div>-->
+<!--<div class="gap-patch">-->
+<!--<div class="circle"></div>-->
+<!--</div>-->
+<!--<div class="circle-clipper right">-->
+<!--<div class="circle"></div>-->
+<!--</div>-->
+<!--</div>-->
 
-            <!--<div class="spinner-layer spinner-red">-->
-                <!--<div class="circle-clipper left">-->
-                    <!--<div class="circle"></div>-->
-                <!--</div>-->
-                <!--<div class="gap-patch">-->
-                    <!--<div class="circle"></div>-->
-                <!--</div>-->
-                <!--<div class="circle-clipper right">-->
-                    <!--<div class="circle"></div>-->
-                <!--</div>-->
-            <!--</div>-->
+<!--<div class="spinner-layer spinner-red">-->
+<!--<div class="circle-clipper left">-->
+<!--<div class="circle"></div>-->
+<!--</div>-->
+<!--<div class="gap-patch">-->
+<!--<div class="circle"></div>-->
+<!--</div>-->
+<!--<div class="circle-clipper right">-->
+<!--<div class="circle"></div>-->
+<!--</div>-->
+<!--</div>-->
 
-            <!--<div class="spinner-layer spinner-yellow">-->
-                <!--<div class="circle-clipper left">-->
-                    <!--<div class="circle"></div>-->
-                <!--</div>-->
-                <!--<div class="gap-patch">-->
-                    <!--<div class="circle"></div>-->
-                <!--</div>-->
-                <!--<div class="circle-clipper right">-->
-                    <!--<div class="circle"></div>-->
-                <!--</div>-->
-            <!--</div>-->
+<!--<div class="spinner-layer spinner-yellow">-->
+<!--<div class="circle-clipper left">-->
+<!--<div class="circle"></div>-->
+<!--</div>-->
+<!--<div class="gap-patch">-->
+<!--<div class="circle"></div>-->
+<!--</div>-->
+<!--<div class="circle-clipper right">-->
+<!--<div class="circle"></div>-->
+<!--</div>-->
+<!--</div>-->
 
-            <!--<div class="spinner-layer spinner-green">-->
-                <!--<div class="circle-clipper left">-->
-                    <!--<div class="circle"></div>-->
-                <!--</div>-->
-                <!--<div class="gap-patch">-->
-                    <!--<div class="circle"></div>-->
-                <!--</div>-->
-                <!--<div class="circle-clipper right">-->
-                    <!--<div class="circle"></div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
+<!--<div class="spinner-layer spinner-green">-->
+<!--<div class="circle-clipper left">-->
+<!--<div class="circle"></div>-->
+<!--</div>-->
+<!--<div class="gap-patch">-->
+<!--<div class="circle"></div>-->
+<!--</div>-->
+<!--<div class="circle-clipper right">-->
+<!--<div class="circle"></div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 <!--</div>&lt;!&ndash; .tc-loading-screen | ENDS &ndash;&gt;-->
 <script type="text/javascript" src="../cordova.js"></script>
 <script data-main="../js/user" src="../js/require.min.js"></script>

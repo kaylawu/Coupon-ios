@@ -169,7 +169,6 @@ define(['jquery', '../services/frameworkService','underscore'], function ($, Fra
     };
 
 
-
     //getFreshMechants
     var getFreshMechantsSuccess = function(data){
         var content = '';
@@ -217,9 +216,11 @@ define(['jquery', '../services/frameworkService','underscore'], function ($, Fra
 
     //private function
     var mechantHtmlHelper = function(v){
+        var point = v.points % 100;
+        var multiple = Math.floor(v.points/100);
         var content = '<li> <div class="item-content"> <div class="item-media"><img class="mechantLoge" src='+imgBaseUrl+ v.logoUrl+'></div>';
-        content +='<div class="item-inner"> <h3>'+ v.merchantName+'</h3> <div class="progress-box" data-percent="47">';
-        content += '<div class="bar" style="transition-duration: 300ms; width: 47%;"> <div class="progress">47%</div></div>';
+        content +='<div class="item-inner"> <h3>'+ v.merchantName+'</h3><p>'+ multiple +'</p> <div class="progress-box" data-percent="' + point +'%">';
+        content += '<div class="bar" style="transition-duration: 300ms; width: '+ point +'%;"> <div class="progress">'+point+'%</div></div>';
         content += '</div></div></div></li>';
         return content;
     };
