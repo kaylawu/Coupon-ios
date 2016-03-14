@@ -37,7 +37,7 @@ define(['jquery', '../services/businessService','../services/mobileService'], fu
     var addPoints = function() {
         var points = $('#textAddPoints').val();
         if ($.isNumeric(points)) {
-            service.addPoints(localStorage.getItem('scanUsername'), points);
+            service.staffAddPoints(points, localStorage.getItem('scanUsername'), localStorage.getItem('staffname'));
         } else {
             theApp.alert("Invalid points", "Warning");
         }

@@ -40,6 +40,7 @@ require(['jquery', 'business/businessBusiness'], function ($, business) {
                 $('#addPoints').click(business.addPoints);
                 $('#cecelAddPoints').click(function(){
                     localStorage.removeItem('scanUsername');
+                    window.location.replace("businesshome.html");
                 });
             });
 

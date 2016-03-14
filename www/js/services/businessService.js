@@ -53,11 +53,11 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
          }
       };
 
-      var staffUseCoupon = function(couponId) {
+      var staffUseCoupon = function(userCouponId) {
         $.ajax({
           url:baseUrl + "/staff/usecoupon",
           type:"POST",
-          data:{couponId:couponId},
+          data:{userCouponId:userCouponId},
           success:staffUseCouponSuccess,
           error:staffUseCouponError
         });
@@ -66,7 +66,7 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
       var staffUseCouponSuccess = function(data){
         if (data.result == "success") {
           theApp.alert("Success to use voucher", "Congratulation");
-          localStorage.removeItem('couponId');
+          localStorage.removeItem('scanCouponId');
           window.location.replace("businesshome.html");
         }
       };
@@ -75,6 +75,30 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
         if (data.result == "fail") {
           theApp.alert("Fail to use voucher", "Error");
         }
+      };
+
+      var staffAddPoints = function(amount, username, staffname){
+        $.ajax({
+          url:baseUrl + "/staff/addpoints",
+          type:"POST",
+          data:{amount:amount, username:username, staffname:staffname},
+          success:staffAddPointsSuccess,
+          error:staffAddPointsError
+        });
+      };
+
+      var staffUseCouponSuccess = function(data){
+        if (data.result == "success") {
+          theApp.alert("Success to add points", "Congratulation"),
+          localStorage.removeItem('scanUsername');
+          window.location.replace("businesshome.html");
+        };
+      };
+
+      var staffUseCouponError = function(data){
+        if (data.result == "fail") {
+          theApp.alert("Fail to add points", "Error");
+        };
       };
 
     var getUserCouponDetail = function(userCouponId){
