@@ -87,7 +87,7 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
         });
       };
 
-      var staffUseCouponSuccess = function(data){
+      var staffAddPointsSuccess = function(data){
         if (data.result == "success") {
           theApp.alert("Success to add points", "Congratulation"),
           localStorage.removeItem('scanUsername');
@@ -95,7 +95,7 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
         };
       };
 
-      var staffUseCouponError = function(data){
+      var staffAddPointsError = function(data){
         if (data.result == "fail") {
           theApp.alert("Fail to add points", "Error");
         };
@@ -125,7 +125,8 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
         theApp:theApp,
         resetPassword:resetPassword,
         getUserCouponDetail:getUserCouponDetail,
-        staffUseCoupon:staffUseCoupon
+        staffUseCoupon:staffUseCoupon,
+        staffAddPoints:staffAddPoints
     }
 
 });
