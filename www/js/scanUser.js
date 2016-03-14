@@ -36,12 +36,10 @@ require(['jquery', 'business/businessBusiness'], function ($, business) {
                     dynamicNavbar: true
                 });
 
-            theApp.onPageInit('scan-voucher', function(){
-                //var couponId = localStorage.getItem("scanCouponId");
-                $('#useCoupon').click(business.useCoupon);
-                $('#cancelUseCoupon').click(function(){
-                    localStorage.removeItem('scanCouponId');
-                    window.location.replace("businesshome.html");
+            theApp.onPageInit('scanUser',function(){
+                $('#addPoints').click(business.addPoints);
+                $('#cecelAddPoints').click(function(){
+                    localStorage.removeItem('scanUsername');
                 });
             });
 

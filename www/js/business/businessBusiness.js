@@ -37,14 +37,14 @@ define(['jquery', '../services/businessService','../services/mobileService'], fu
     var addPoints = function() {
         var points = $('#textAddPoints').val();
         if ($.isNumeric(points)) {
-            service.addPoints(localStorage.getItem('username'), points);
+            service.addPoints(localStorage.getItem('scanUsername'), points);
         } else {
             theApp.alert("Invalid points", "Warning");
         }
     };
 
     var useCoupon = function() {
-        service.staffUseCoupon(localStorage.getItem('couponId'));
+        service.staffUseCoupon(localStorage.getItem('scanCouponId'));
     };
 
     return {
