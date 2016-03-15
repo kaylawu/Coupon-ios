@@ -206,7 +206,7 @@ a.item-content{
 body{
     color: rgba(0,0,0,.6);
     font-size: 14px;
-    line-height: 30px;
+    line-height: 20px;
     -webkit-font-smoothing: antialiased;
 }
 .page-on-left {
@@ -240,7 +240,11 @@ body{
 .transparent-window .item-input select{
   color: black !important;
 }
-
+p.score{
+  font-size: 12px;
+  margin-top:5px;
+  display: inline;
+}
 /*.swiper-container img{
 
 }
@@ -503,7 +507,7 @@ body.panels-3d.with-panel-left-reveal .views{
 .item-media img {
     width: auto;
     height: auto;
-    max-width: 40px;
+    max-width: 50px;
     border-radius: 50%;
 }
 
@@ -2953,6 +2957,7 @@ h3 + .tc-comment-item{
     display: block;
     /* margin: 10px 10px 35px;*/
     max-width: 100%;
+    margin-top: 10px;
     padding: 0;
     position: relative;
 }
@@ -3026,7 +3031,7 @@ h3 + .tc-comment-item{
 /*Mechants in HomePage*/
 
 .mechantLoge{
-    height: 40px !important;
-    width: 40px !important;
+    height: 50px !important;
+    width: 50px !important;
     margin-right: 10px;
 }

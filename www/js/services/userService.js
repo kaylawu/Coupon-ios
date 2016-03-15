@@ -219,7 +219,7 @@ define(['jquery', '../services/frameworkService','underscore'], function ($, Fra
         var point = v.points % 100;
         var multiple = Math.floor(v.points/100);
         var content = '<li> <div class="item-content"> <div class="item-media"><img class="mechantLoge" src='+imgBaseUrl+ v.logoUrl+'></div>';
-        content +='<div class="item-inner"> <h3>'+ v.merchantName+'</h3><p>'+ multiple +'</p> <div class="progress-box" data-percent="' + point +'%">';
+        content +='<div class="item-inner"> <h3>'+ v.merchantName+'</h3><i class="uiicon-web39 color-orange"><p class="score">Points: '+ multiple +'</p></i><div class="progress-box" data-percent="' + point +'%">';
         content += '<div class="bar" style="transition-duration: 300ms; width: '+ point +'%;"> <div class="progress">'+point+'%</div></div>';
         content += '</div></div></div></li>';
         return content;
