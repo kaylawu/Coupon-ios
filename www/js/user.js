@@ -62,14 +62,12 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
             });
 
         });
-
         //user shop list init
         theApp.onPageInit('business-list',function(){
             console.log('businiss-list init');
             localStorage.getItem('AllMerchants',false);
             merchant.getInitData();
             $$(".infinite-scroll").on('infinite', merchant.refreshPage);
-
         });
 
         //googlemap init
@@ -78,7 +76,6 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
             localStorage.setItem('radius',5);
             user.googlemaps();
         });
-
 
         theApp.onPageInit('user-voucher',function(){
             console.log('user-voucher init');
@@ -94,9 +91,16 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
             merchant.getShopDetail(shopID);
         });
 
+        theApp.onPageInit('uploadImage',function(){
+            $('#albumn').click(alert('albumn open'));
+            $('#camera').click(alert('camera open'));
+            var userProfile = JSON.parse(localStorage.getItem('userProfile'));
+            if(userProfile.profilePicUrl != ''){
+                $('#uploadImageUserImage').attr('src',userProfile.profilePicUrl);
+            }
+        });
         theApp.init();
     });
-
 
 });
         ///**       ---          /
