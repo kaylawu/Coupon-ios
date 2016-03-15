@@ -24,7 +24,7 @@ requirejs.config({
 });
 
 
-require(['jquery', 'business/businessBusiness'], function ($, business) {
+require(['jquery', 'business/scanUserBusiness'], function ($, business) {
     require(['dpanels'], function (dpanels) {
             console.log("init-app");
 
