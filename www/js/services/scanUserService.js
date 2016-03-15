@@ -26,16 +26,16 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
 
       var staffAddPointsSuccess = function(data){
         if (data.result == "success") {
-          theApp.alert("Success to add points", "Congratulation"),
+          theApp.alert("Success to add points", "Congratulation");
           localStorage.removeItem('scanUsername');
           window.location.replace("businesshome.html");
-        };
+        }
       };
 
       var staffAddPointsError = function(data){
         if (data.result == "fail") {
           theApp.alert("Fail to add points", "Error");
-        };
+        }
       };
 
     return{

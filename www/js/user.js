@@ -85,15 +85,15 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
         });
 
         //shop Detail page init
-        theApp.onPageInit('shopdetail',function(page){
+        theApp.onPageAfterAnimation('shopdetail',function(page){
             var shopID = page.query.shopId;
             console.log('shopdetail init:' + shopID);
             merchant.getShopDetail(shopID);
         });
 
         theApp.onPageInit('uploadImage',function(){
-            $('#albumn').click(alert('albumn open'));
-            $('#camera').click(alert('camera open'));
+            $('#btnCamera').click(user.uploadImageFromCamera);
+            $('#btnAlbumn').click(user.uploadImageFromAlbum);
             var userProfile = JSON.parse(localStorage.getItem('userProfile'));
             if(userProfile.profilePicUrl != ''){
                 $('#uploadImageUserImage').attr('src',userProfile.profilePicUrl);

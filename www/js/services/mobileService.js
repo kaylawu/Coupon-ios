@@ -3,21 +3,21 @@
  */
 'use strict';
 
-define(["jquery",'../services/frameworkService','../services/merchantService'],function($,Framework7,service){
+define(["jquery", '../services/frameworkService', '../services/googlemapService'], function ($, Framework7, service) {
 
     var theApp = Framework7.theApp;
 
     var mainView = Framework7.mainView;
 
+
+    var baseUrl = "http://47.88.30.91:8080/CouponManagementSystem/";
+    var imgBaseUrl = 'http://47.88.30.91:8080';
     var $$ = Dom7;
-    var scan = function()
-    {
+    var scan = function () {
         cordova.plugins.barcodeScanner.scan(
             function (result) {
-                if(!result.cancelled)
-                {
-                    if(result.format == "QR_CODE")
-                    {
+                if (!result.cancelled) {
+                    if (result.format == "QR_CODE") {
                         localStorage.setItem("scanCouponId", result.text);
                         window.location.href = "scanVoucher.html";
                     }
@@ -29,14 +29,11 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
         );
     };
 
-    var scanUser = function()
-    {
+    var scanUser = function () {
         cordova.plugins.barcodeScanner.scan(
             function (result) {
-                if (!result.cancelled) 
-                {
-                    if (result.format == "QR_CODE") 
-                    {
+                if (!result.cancelled) {
+                    if (result.format == "QR_CODE") {
                         localStorage.setItem("scanUsername", result.text);
                         window.location.href = "scanUser.html";
                     }
@@ -48,44 +45,45 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
         );
     };
 
-    var googlemaps = function()
-    {
-            //alert(result);
-            var div = document.getElementById("map_canvas");
-            var userLocation = new plugin.google.maps.LatLng(localStorage.getItem('userLatitude'),localStorage.getItem('userLongitude'));
-            // Initialize the map view
-            var map = plugin.google.maps.Map.getMap(div,{
+    var googlemaps = function () {
 
-                'mapType': plugin.google.maps.MapTypeId.ROADMAP,
-                'controls': {
-                    'compass': true,
-                    'myLocationButton': true,
-                    'indoorPicker': true,
-                    'zoom': true
-                },
-                'gestures': {
-                    'scroll': true,
-                    'tilt': true,
-                    'zoom': true
-                },'camera': {
-                    'latLng': userLocation,
-                    'zoom':13
-                }
+        //alert(result);
+        var div = document.getElementById("map_canvas");
+        var userLocation = new plugin.google.maps.LatLng(localStorage.getItem('userLatitude'), localStorage.getItem('userLongitude'));
+        // Initialize the map view
+        var map = plugin.google.maps.Map.getMap({
+
+            'mapType': plugin.google.maps.MapTypeId.ROADMAP,
+            'controls': {
+                'compass': true,
+                'myLocationButton': true,
+                'zoom': true
+            },
+            'gestures': {
+                'scroll': true,
+                'tilt': true,
+                'zoom': true
+            }, 'camera': {
+                'latLng': userLocation,
+                'zoom': 13
+            }
+        });
+
+        // Wait until the map is ready status.
+        map.addEventListener(plugin.google.maps.event.MAP_READY, function (map) {
+            map.setBackgroundColor('white');
+            map.setDiv(div);
+            getInitDataByRadius(map);
+            theApp.onPageBack('mapview', function () {
+                map.remove();
             });
 
-            // Wait until the map is ready status.
-            map.addEventListener(plugin.google.maps.event.MAP_READY, function(map){
-                //map.setDiv(div);
-                theApp.onPageBack('mapview',function(){
-                    map.remove();
-                });
-                getInitDataByRadius(map);
-                $$(".infinite-scroll").on('infinite', refreshPageByRadius(map));
-            });
+            $$(".infinite-scroll").on('infinite', refreshPageByRadius(map));
+        });
     };
 
-    var getInitDataByRadius = function(map){
-        alert('googlemap init data');
+    var getInitDataByRadius = function (map) {
+
         service.getMerchantCountbyRadius();
         var tid = setInterval(pageLoading, 1000);
 
@@ -93,24 +91,24 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
 
             if (localStorage.getItem("AllMerchantsByRadius") !== null) {
                 clearInterval(tid);
-                alert('mechants number is :'+localStorage.getItem("AllMerchantsByRadius"));
-                if (localStorage.getItem("AllMerchantsByRadius") > 0){
+                alert('mechants number is :' + localStorage.getItem("AllMerchantsByRadius"));
+                if (localStorage.getItem("AllMerchantsByRadius") > 0) {
 
                     //Init home page mechants
                     if (localStorage.getItem("AllMerchantsByRadius") <= 6) {
-                        service.getInitMerchantsAllByRadius(localStorage.getItem("AllMerchantsByRadius"), 0,map);
+                        service.getInitMerchantsAllByRadius(localStorage.getItem("AllMerchantsByRadius"), 0, map);
                         //remove infinite scroll listener
                         theApp.detachInfiniteScroll($$('.infinite-scroll'));
                         $$('.infinite-scroll-preloader').remove();
                     } else {
-                        service.getInitMerchantsAllByRadius( 6, 0, map);
+                        service.getInitMerchantsAllByRadius(6, 0, map);
                     }
                 }
             }
         }
     };
 
-    var refreshPageByRadius = function(map){
+    var refreshPageByRadius = function (map) {
 
         var username = localStorage.getItem("username");
 
@@ -126,20 +124,20 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
         if (JSON.parse(localStorage.getItem("merchantAllScroll"))) return;
         // Set loading flag
 
-        localStorage.setItem("merchantAllScroll",true);
+        localStorage.setItem("merchantAllScroll", true);
 
-        if(maxItems - lastIndex >= itemsPerLoad){
-            service.getFreshMechantsAll(itemsPerLoad,lastIndex,map);
+        if (maxItems - lastIndex >= itemsPerLoad) {
+            service.getFreshMechantsAll(itemsPerLoad, lastIndex, map);
 
-        }else{
-            service.getFreshMechantsAll(maxItems - lastIndex,lastIndex,map);
+        } else {
+            service.getFreshMechantsAll(maxItems - lastIndex, lastIndex, map);
         }
 
     };
-    var googlemapForShopDetail = function(a,l){
-        //alert(result);
-        alert(a+l);
-        document.addEventListener("deviceready", function() {
+    var googlemapForShopDetail = function (a, l) {
+
+
+        document.addEventListener("deviceready", function () {
 
             var div = document.getElementById("map_canvas1");
             var shopLocation = new plugin.google.maps.LatLng(a, l);
@@ -147,18 +145,18 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
             var map = plugin.google.maps.Map.getMap();
 
             // Wait until the map is ready status.
-            map.addEventListener(plugin.google.maps.event.MAP_READY, function(map){
-                map.setDiv(div);
+            map.addEventListener(plugin.google.maps.event.MAP_READY, function (map) {
                 map.setBackgroundColor('white');
+                map.setDiv(div);
                 map.moveCamera({
-                    'target':shopLocation,
-                    'zoom':15
+                    'target': shopLocation,
+                    'zoom': 15
                 });
 
                 map.addMarker({
                     'position': new plugin.google.maps.LatLng(a, l)
 
-                }, function(marker) {
+                }, function (marker) {
                     marker.showInfoWindow();
                 });
 
@@ -173,11 +171,10 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
 
                 $$('#location-tab').on('show', function () {
                     map.setVisible(true);
-                    mao.refreshLayout();
+
                 });
 
-                theApp.onPageBack('shopdetail',function(){
-
+                theApp.onPageBack('shopdetail', function () {
                     map.remove();
                 });
 
@@ -187,62 +184,91 @@ define(["jquery",'../services/frameworkService','../services/merchantService'],f
     };
 
 
-    var getUserLocation = function(){
-        document.addEventListener("deviceready", function() {
+    var getUserLocation = function () {
+        document.addEventListener("deviceready", function () {
             navigator.geolocation.getCurrentPosition(getUserLocationSuccess, getUserLocationError);
         });
     };
 
-    var getUserLocationSuccess = function(position){
+    var getUserLocationSuccess = function (position) {
 
-        localStorage.setItem('userLatitude',position.coords.latitude);
-        localStorage.setItem('userLongitude',position.coords.longitude);
+        localStorage.setItem('userLatitude', position.coords.latitude);
+        localStorage.setItem('userLongitude', position.coords.longitude);
         googlemaps();
 
     };
 
-    var getUserLocationError = function(error){
-        alert('code: '    + error.code    + '\n' +
+    var getUserLocationError = function (error) {
+        alert('code: ' + error.code + '\n' +
             'message: ' + error.message + '\n');
     };
 
-    var mobileImage = function(){
-        document.addEventListener("deviceready", onDeviceReady, false);
+    var updateImageFromLibrary = function () {
 
-        function onDeviceReady() {
-            navigator.camera.getPicture(uploadPhoto,
-                function(message) { alert('get picture failed'); },
-                { quality: 50, destinationType:    navigator.camera.DestinationType.FILE_URI,
-                    sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY }
-            );
-        }
+
+
+        // Retrieve image file location from specified source
+        navigator.camera.getPicture(uploadPhoto,
+            function (message) {
+               console.log('get image fail');
+            },
+            {
+                quality: 50,
+                destinationType: navigator.camera.DestinationType.FILE_URI,
+                sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+            }
+        );
+
     };
 
-    var uploadPhoto = function (imageURI) {
-        alert('upload Phonto');
-        //var options = new FileUploadOptions();
-        //options.fileKey="file";
-        //options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
-        //options.mimeType="image/jpeg";
-        //
-        //var params = {};
-        //params.value1 = "test";
-        //params.value2 = "param";
-        //
-        //options.params = params;
-        //
-        //var ft = new FileTransfer();
-        //ft.upload(imageURI, encodeURI("http://some.server.com/upload.php"), win, fail, options);
-    };
-    return{
-        scan:scan,
-        scanUser:scanUser,
-        googlemaps:getUserLocation,
-        googlemapsForShopDetail:googlemapForShopDetail,
-        mobileImage:mobileImage
+    function uploadPhoto(imageURI) {
+        alert('into upload function');
+        var options = new FileUploadOptions();
+        options.fileKey = "file";
+        options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
+        options.mimeType = "image/jpeg";
 
+        var ft = new FileTransfer();
+        ft.upload(imageURI, encodeURI(baseUrl+"user/updateprofilepic"), win, fail, options);
     }
 
+    function win(r) {
+        //console.log("Code = " + r.responseCode);
+        //console.log("Response = " + r.response);
+        //console.log("Sent = " + r.bytesSent);
+        alert('success');
+    }
+
+    function fail(error) {
+        alert("An error has occurred: Code = " + error.code);
+        //console.log("upload error source " + error.source);
+        //console.log("upload error target " + error.target);
+    }
+
+    var updateImageFromCamera = function(){
+
+        //// Retrieve image file location from specified source
+        navigator.camera.getPicture(uploadPhoto,
+            function (message) {
+                console.log('get image fail');
+            },
+            {
+                quality: 50,
+                destinationType: navigator.camera.DestinationType.FILE_URI,
+                sourceType: navigator.camera.PictureSourceType.CAMERA
+            }
+        );
+    };
+
+
+    return {
+        scan: scan,
+        scanUser: scanUser,
+        googlemaps: getUserLocation,
+        googlemapForShopDetail: googlemapForShopDetail,
+        updateImageFromLibrary: updateImageFromLibrary,
+        updateImageFromCamera:updateImageFromCamera
+    }
 
 
 });

@@ -168,8 +168,13 @@ define(["jquery", "../services/userService", "../services/mobileService"], funct
     };
 
     var uploadImageFromAlbum = function(){
-        alert('into upload business');
-      //mobile.mobileImage();
+        mobile.updateImageFromLibrary();
+    };
+
+
+    var uploadImageFromCamera = function(){
+
+        mobile.updateImageFromCamera();
     };
     return {
         theApp: theApp,
@@ -180,6 +185,7 @@ define(["jquery", "../services/userService", "../services/mobileService"], funct
         resetPassword: resetPassword,
         userProfileInit: userProfileInit,
         googlemaps: googlemaps,
-        uploadImageFromAlbum:uploadImageFromAlbum
+        uploadImageFromAlbum:uploadImageFromAlbum,
+        uploadImageFromCamera:uploadImageFromCamera
     }
 });
