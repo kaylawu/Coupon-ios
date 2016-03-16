@@ -40,9 +40,43 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
           theApp.alert("Fail to add points", "Error");
       };
 
+      var getUserProfile = function(username){
+        $.ajax({
+            url:baseUrl+"/user/getprofile",
+            type:"POST",
+            data:{username:username},
+            success:getUserProfileSuccess,
+            error:getUserProfileError
+        });
+
+    };
+
+    var getUserProfileSuccess = function(data){
+        localStorage.setItem("userProfile",JSON.stringify(data));
+        var userProfile = JSON.parse(localStorage.getItem('userProfile'));
+        var scanUserFullName = userProfile.name;
+        if (scanUserFullName != null) {
+          $('#scanUsername').text(scanUsername);
+          theApp.hidePreloader();
+        } else {
+          theApp.alert("User does not exist", "Warning");
+          localStorage.removeItem('scanUsername');
+          window.location.href = "businesshome.html";
+        }      
+    };
+
+      var getUserProfileError = function(data){
+        theApp.hidePreloader();
+        theApp.alert("User does not exist", "Warning");
+        console.log(data);
+        localStorage.removeItem('scanUsername');
+        window.location.href = "businesshome.html";
+    };
+
     return{
         theApp:theApp,
-        staffAddPoints:staffAddPoints
+        staffAddPoints:staffAddPoints,
+        getUserProfile:getUserProfile
     }
 
 });

@@ -12,17 +12,20 @@ define(['jquery', '../services/scanUserService','../services/mobileService'], fu
     var addPoints = function() {
         var points = parseFloat($('#textAddPoints').val());
         if ($.isNumeric(points)) {
-            localStorage.setItem('scanUsername', 'Username');
-            localStorage.setItem('staffname', 'staffname');
             service.staffAddPoints(points, localStorage.getItem('scanUsername'), localStorage.getItem('staffname'));
         } else {
             theApp.alert("Invalid points", "Warning");
         }
     };
 
+    var getScanUerFullName = function() {
+        service.getUserProfile(localStorage.getItem('scanUsername'));
+    };
+
     return {
         theApp: theApp,
         addPoints: addPoints,
+        getScanUerFullName:getScanUerFullName,
         mainView:service.mainView
     }
 });
