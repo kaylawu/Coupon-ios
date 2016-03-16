@@ -29,13 +29,16 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
           theApp.alert("Success to use voucher", "Congratulation");
           localStorage.removeItem('scanCouponId');
           window.location.replace("businesshome.html");
+        } else if (data.result == "fail") {
+          theApp.alert("Invalid voucher", "Error");
+        } else {
+          theApp.alert("Fail to use voucher", "Error");
         }
       };
 
       var staffUseCouponError = function(data){
-        if (data.result == "fail") {
-          theApp.alert("Fail to use voucher", "Error");
-        }
+        console.log(data.message);
+        theApp.alert("Fail to use voucher", "Error");
       };
 
     return{
