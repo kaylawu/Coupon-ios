@@ -142,7 +142,6 @@ a.item-content{
 }
 .button.filter-button.active-state{
   font-size: 17px;
-  background-color:
   font-weight: bold;
 }
 
@@ -182,7 +181,6 @@ a.item-content{
   font-size: 18px;
   appearance: none;
   box-shadow: none;
-  border-radius: none;
   padding: 10px;
   border: solid 5px #c9c9c9;
   transition: border 0.3s;
@@ -2048,6 +2046,8 @@ i.rotate-180{
     width: 90px;
     display: block;
     border-radius: 50%;
+    height: 90px;
+    overflow: visible;
 }
 
 .tc-user-card .details{

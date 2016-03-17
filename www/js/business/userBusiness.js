@@ -10,7 +10,7 @@ define(["jquery", "../services/userService", "../services/mobileService"], funct
 
     var phoneNumFormat = /04[\d]{8}/g;
 
-
+    var imgBaseUrl = 'http://47.88.30.91:8080';
     var getInitData = function () {
 
         //variables declaration
@@ -23,10 +23,13 @@ define(["jquery", "../services/userService", "../services/mobileService"], funct
         $('#username').html(userProfile.name);
 
         if(userProfile.profilePicUrl != ''){
-            $('#userProfileImage').attr('src',userProfile.profilePicUrl);
+            $('#userProfileImage').attr('src',imgBaseUrl+userProfile.profilePicUrl);
+        }else{
+            $('#userProfileImage').attr('src','../img/profile_pic.png');
         }
 
-        //execute API to get user Merchants
+
+        //execute API to get user Merchantss
         service.getMerchantCount(username);
         console.log(localStorage.getItem('userMechants'));
 
@@ -162,10 +165,10 @@ define(["jquery", "../services/userService", "../services/mobileService"], funct
         }
     };
 
-    var googlemaps = function () {
-
-        mobile.googlemaps();
-    };
+    //var googlemaps = function () {
+    //
+    //
+    //};
 
     var uploadImageFromAlbum = function(){
         mobile.updateImageFromLibrary();
@@ -184,7 +187,7 @@ define(["jquery", "../services/userService", "../services/mobileService"], funct
         updatePhone: updatePhone,
         resetPassword: resetPassword,
         userProfileInit: userProfileInit,
-        googlemaps: googlemaps,
+        //googlemaps: googlemaps,
         uploadImageFromAlbum:uploadImageFromAlbum,
         uploadImageFromCamera:uploadImageFromCamera
     }

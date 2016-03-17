@@ -106,6 +106,7 @@ define(['jquery', '../services/frameworkService','underscore'], function ($, Fra
     };
 
     var userRedeemCoupon = function (username, couponId) {
+        theApp.alert(username + couponId);
         $.ajax({
             url:baseUrl+"/user/redeemcoupon",
             type:"POST",

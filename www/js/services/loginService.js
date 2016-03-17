@@ -62,7 +62,9 @@ define(["jquery","../services/frameworkService"],function($,Framework7){
     var userLogin = function(e,p){
         theApp.showPreloader();
         console.log("login services activated");
+        
         $.ajax({
+
             type:"POST",
             url:baseUrl+"user/login",
             data:{email:e,password:p},

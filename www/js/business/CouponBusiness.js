@@ -50,12 +50,11 @@ define(["jquery", "../services/couponService","../services/mobileService"], func
 	};
 
 	var redeemCoupon = function() {
+		alert('into coupon redeem');
 		var username = localStorage.getItem("username");
-
 		var couponId = $('#couponID').val();
-
 		service.userRedeemCoupon(username, couponId);
-	}
+	};
 
 	return {
 		getInitData:getInitData,
