@@ -18,8 +18,9 @@ define(["jquery", "../services/merchantService", "../services/mobileService"], f
                 clearInterval(tid);
                 if (localStorage.getItem("AllMerchants") > 0) {
                     console.log('into the initDATA firest if');
+
                     //Init home page mechants
-                    if (localStorage.getItem("AllMerchants") <= 6) {
+                    if (localStorage.getItem("AllMerchants") < 7) {
                         service.getInitMerchantsAll(localStorage.getItem("username"), localStorage.getItem("AllMerchants"), 0);
                         //remove infinite scroll listener
                         theApp.detachInfiniteScroll($$('.infinite-scroll'));
@@ -47,6 +48,7 @@ define(["jquery", "../services/merchantService", "../services/mobileService"], f
         console.log(localStorage.getItem("merchantAllScroll"));
         // Last loaded index
         var lastIndex = $$('.allMerchants li').length;
+       
         console.log(lastIndex);
         var maxItems = localStorage.getItem('AllMerchants');
         console.log(maxItems);
@@ -68,31 +70,24 @@ define(["jquery", "../services/merchantService", "../services/mobileService"], f
 
     };
 
-    var getInitDataByRadius = function (map) {
+    var getInitDataByRadius = function () {
         console.log('into getInitDataByRadius');
         service.getMerchantCountbyRadius();
-        var tid = setInterval(pageLoading(map), 1000);
-    };
 
-
-    var pageLoading = function (map) {
-        if (localStorage.getItem("AllMerchantsByRadius") !== null) {
-            clearInterval(tid);
-            alert('mechants number is :' + localStorage.getItem("AllMerchantsByRadius"));
-            if (localStorage.getItem("AllMerchantsByRadius") > 0) {
-
-                //Init home page mechants
-                if (localStorage.getItem("AllMerchantsByRadius") <= 6) {
-                    service.getInitMerchantsAllByRadius(localStorage.getItem("AllMerchantsByRadius"), 0,map);
-                    //remove infinite scroll listener
-                    theApp.detachInfiniteScroll($$('.infinite-scroll'));
-                    $$('.infinite-scroll-preloader').remove();
-                } else {
-                    service.getInitMerchantsAllByRadius(6, 0,map);
-                }
+        if (localStorage.getItem("AllMerchantsByRadius") > 0) {
+            //Init home page mechants
+            if (localStorage.getItem("AllMerchantsByRadius") < 7) {
+                service.getInitMerchantsAllByRadius(localStorage.getItem("AllMerchantsByRadius"), 0);
+                //remove infinite scroll listener
+                theApp.detachInfiniteScroll($$('.infinite-scroll'));
+                $$('.infinite-scroll-preloader').remove();
+            } else {
+                service.getInitMerchantsAllByRadius(6, 0);
             }
         }
     };
+
+
     var refreshPageByRadius = function (map) {
         var username = localStorage.getItem("username");
 
@@ -111,10 +106,10 @@ define(["jquery", "../services/merchantService", "../services/mobileService"], f
         localStorage.setItem("merchantAllScroll", true);
 
         if (maxItems - lastIndex >= itemsPerLoad) {
-            service.getFreshMechantsAllByRadius(itemsPerLoad, lastIndex,map);
+            service.getFreshMechantsAllByRadius(itemsPerLoad, lastIndex, map);
 
         } else {
-            service.getFreshMechantsAllByRadius(maxItems - lastIndex, lastIndex,map);
+            service.getFreshMechantsAllByRadius(maxItems - lastIndex, lastIndex, map);
         }
 
     };

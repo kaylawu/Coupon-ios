@@ -70,21 +70,18 @@ require(['jquery', 'business/userBusiness', 'business/merchantBusiness', 'busine
 
         });
         //user shop list init
-<<<<<<< HEAD
+
         theApp.onPageInit('business-list', function () {
-=======
-        theApp.onPageInit('business-list',function(){
             var pickerType = theApp.picker({
                 input: '#picker-type',
-                value:['Type'],
+                value: ['Type'],
                 cols: [
                     {
                         textAlign: 'center',
                         values: ['Coffee & Tea Shops', 'Restaurant', 'Bars']
                     }
                 ],
-                toolbarTemplate:
-                '<div class="toolbar">' +
+                toolbarTemplate: '<div class="toolbar">' +
                 '<div class="toolbar-inner">' +
                 '<div class="left">' +
                 '<a href="#" class="link cancel-picker">Close</a>' +
@@ -102,7 +99,6 @@ require(['jquery', 'business/userBusiness', 'business/merchantBusiness', 'busine
                 }
             });
 
->>>>>>> origin/master
             console.log('businiss-list init');
             localStorage.getItem('AllMerchants', false);
             merchant.getInitData();
@@ -136,7 +132,6 @@ require(['jquery', 'business/userBusiness', 'business/merchantBusiness', 'busine
             $('#btnAlbumn').click(user.uploadImageFromAlbum);
             var userProfile = JSON.parse(localStorage.getItem('userProfile'));
             if (userProfile.profilePicUrl != '') {
-
                 $('#uploadImageUserImage').attr('src', imgBaseUrl + userProfile.profilePicUrl);
             }
         });
@@ -150,23 +145,20 @@ require(['jquery', 'business/userBusiness', 'business/merchantBusiness', 'busine
             var map = plugin.google.maps.Map.getMap();
             var userLocation = new plugin.google.maps.LatLng(localStorage.getItem('userLatitude'), localStorage.getItem('userLongitude'));
             theApp.onPageBack('mapview', function () {
-                    map.remove();
+                map.remove();
             });
-            map.addEventListener(plugin.google.maps.event.MAP_READY, function (map) {
+            map.setBackgroundColor('white');
+            map.setDiv(div);
+            map.moveCamera({
+                'target': userLocation,
+                'zoom': 11
+            });
+            console.log('mapview init');
+            localStorage.setItem('radius', 10);
+            console.log('befor init data');
+            merchant.getInitDataByRadius();
+            $$(".infinite-scroll").on('infinite', merchant.refreshPageByRadius());
 
-                map.setBackgroundColor('white');
-                map.setDiv(div);
-                map.moveCamera({
-                    'target': userLocation,
-                    'zoom': 15
-                });
-                map.setMyLocationEnabled(true);
-                console.log('mapview init');
-                localStorage.setItem('radius', 10);
-                console.log('befor init data');
-                merchant.getInitDataByRadius(map);
-                $$(".infinite-scroll").on('infinite', merchant.refreshPageByRadius(map));
-            });
         };
 
         var getUserLocationError = function (error) {

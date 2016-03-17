@@ -247,7 +247,6 @@ define(['jquery', '../services/frameworkService','underscore'], function ($, Fra
             success:getUserProfileSuccess,
             error:getUserProfileError
         });
-
     };
     return{
         theApp : theApp,

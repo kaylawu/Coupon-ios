@@ -24,7 +24,7 @@ define(["jquery", '../services/frameworkService', '../services/couponService'], 
                             window.location.href = "scanVoucher.html";
                         } else {
                             alert("Invalid CouponId", "Warning");
-                        }  
+                        }
                     }
                 }
             },
@@ -63,14 +63,12 @@ define(["jquery", '../services/frameworkService', '../services/couponService'], 
     //        map.setDiv(div);
     //
     //};
-    var googlemaps = function (a, l, map) {
+    var googlemaps = function (a, l) {
 
+        var map = plugin.google.maps.Map.getMap();
         // Initialize the map view
-
-
         map.addMarker({
             'position': new plugin.google.maps.LatLng(a, l)
-
         }, function (marker) {
             marker.showInfoWindow();
         });
@@ -138,52 +136,47 @@ define(["jquery", '../services/frameworkService', '../services/couponService'], 
             var shopLocation = new plugin.google.maps.LatLng(a, l);
             // Initialize the map view
             var map = plugin.google.maps.Map.getMap();
+
             theApp.onPageBack('shopdetail', function () {
                 map.remove();
             });
 
-            // Wait until the map is ready status.
-            map.addEventListener(plugin.google.maps.event.MAP_READY, function (map) {
-                map.setDiv(div);
-                map.setBackgroundColor('white');
-                map.moveCamera({
-                    'target': shopLocation,
-                    'zoom': 15
-                });
+            map.setBackgroundColor('white');
+            map.setDiv(div);
+            map.moveCamera({
+                'target': shopLocation,
+                'zoom': 15
+            });
 
-                map.addMarker({
-                    'position': new plugin.google.maps.LatLng(a, l)
+            map.addMarker({
+                'position': new plugin.google.maps.LatLng(a, l)
 
-                }, function (marker) {
-                    marker.showInfoWindow();
-                });
+            }, function (marker) {
+                marker.showInfoWindow();
+            });
 
-                $$('#btnredeem').click(coupon.userRedeemCoupon);
+            $$('#btnredeem').click(coupon.userRedeemCoupon);
 
-                $$('#info-tab').on('show', function () {
-                    map.setVisible(false);
-                });
+            $$('#info-tab').on('show', function () {
+                map.setVisible(false);
+            });
 
-                $$('#offers-tab').on('show', function () {
-                    map.setVisible(false);
-                });
+            $$('#offers-tab').on('show', function () {
+                map.setVisible(false);
+            });
 
-                $$('#location-tab').on('show', function () {
-                    map.setVisible(true);
-
-                });
-
+            $$('#location-tab').on('show', function () {
+                map.setVisible(true);
 
             });
+
+
         });
 
     };
 
 
     var updateImageFromLibrary = function () {
-
-
-
         // Retrieve image file location from specified source
         navigator.camera.getPicture(uploadPhoto,
             function (message) {

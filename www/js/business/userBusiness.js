@@ -33,7 +33,6 @@ define(["jquery", "../services/userService", "../services/mobileService"], funct
         service.getMerchantCount(username);
         console.log(localStorage.getItem('userMechants'));
 
-
         function pageLoading() {
             if (localStorage.getItem("userProfile") !== null && localStorage.getItem("userMechants") !== null) {
                 //Stop timer(localStorage stored all profile)
@@ -176,7 +175,6 @@ define(["jquery", "../services/userService", "../services/mobileService"], funct
 
 
     var uploadImageFromCamera = function(){
-
         mobile.updateImageFromCamera();
     };
     return {

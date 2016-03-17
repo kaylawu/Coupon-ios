@@ -225,7 +225,6 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
     var getMerchantCountbyRadiusSuccess = function (data) {
         if (data.count >= 0) {
             localStorage.setItem("AllMerchantsByRadius", data.count);
-            alert(data.count);
         } else {
             theApp.alert("System error", "Error");
         }
@@ -237,13 +236,15 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
 
 
     var getInitMerchantsAllByRadiusSuccess = function (data) {
+
         var content = '';
-        mobile.googleInit();
+        //mobile.googleInit();
         _.each(data, function (v, k, list) {
             content += merchantAllByRadiusHtmlHelper(v);
         });
         $('.allMerchantsByRadius ul').empty().append(content);
         $('.infinite-scroll-preloader').append('<div class="preloader"></div>');
+        localStorage.setItem("merchantAllScroll", false);
 
     };
 
@@ -254,9 +255,11 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
         } else if (data.result == 'out_of_index') {
             theApp.alert("Out of index", "Error");
         }
+        localStorage.setItem("merchantAllScroll", false);
     };
 
     var getInitMerchantsAllByRadius = function (needItemNum, existItemNum) {
+
         var userlatitude = localStorage.getItem('userLatitude');
         var userLongitude = localStorage.getItem('userLongitude');
         var radius = localStorage.getItem('radius');
