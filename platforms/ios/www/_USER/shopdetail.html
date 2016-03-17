@@ -1,0 +1,109 @@
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="business-list.html" class="back">Back</a>
+        </div>
+        <!--<form method="get" action="?" class="tc-header-search list-block">-->
+        <!--<div class="item-input item-input-field">-->
+        <!--<input type="text" placeholder="Search..." class="" required>-->
+        <!--</div>-->
+        <!--<button type="submit"></button>-->
+        <!--</form>-->
+        <!--<div class="right">-->
+        <!--<a href="#" class="link icon-only header-search-icon"><i class="uiicon-magnifying55"></i></a>-->
+        <!--</div>-->
+    </div>
+</div>
+<!-- Page, data-page contains page name-->
+<div data-page="shopdetail" class="page">
+    <!-- Scrollable page content-->
+    <div class="page-content">
+        <!-- Slider container -->
+        <div id="merchantSliders">
+        </div>
+        <div class="toolbar tabbar top-0">
+            <div class="toolbar-inner"><a href="#info-tab" class="active tab-link">Info</a>
+              <a href="#offers-tab" class="tab-link">Offers</a>
+                <a href="#location-tab" class="tab-link">Location</a>
+              </div>
+        </div>
+            <div class="tabs">
+                <div id="info-tab" class="page-content tab active bus-info">
+                    <div class="content-block">
+                        <h4 class="margin-bottom-0">Business name</h4>
+                        <small id="merchantName"></small>
+                        <h4 class="margin-bottom-0">Address</h4>
+                        <small id="merchantAddress"></small>
+                        <!--<h4 class="margin-bottom-0">OPENING HOURS </h4>-->
+                        <!--<small>MON-SAT 9:00AM to 9:00PM, SUN 10:00AM to 8:00PM</small>-->
+                        <h4 class="margin-bottom-0">Contact</h4>
+                        <small id="merchantContact">02 000 0004</small>
+                        <div class="tc-divider dark"></div>
+                        <h4>Description:</h4>
+                        <p id="merchantDescription"></p>
+                    </div>
+                </div>
+                <div id="location-tab" class="page-content tab">
+                    <div id="map_canvas1" class="tc-map">
+                    </div>
+                </div>
+                <div id="offers-tab" class="page-content tab">
+                    <div class="content-block">
+                        <p id="reddemPoint"></p>
+                        <p id="userPointInShopDetail"></p>
+                        <p id="couponImageInShopDetial"></p>
+
+                    </div>
+                    <div class="col-40 content-block">
+                        <input id="couponID" type="hidden" readonly>
+                        <p><input type="button" class="button button-medium color-black confirm-1" id="btnredeem"
+                                  value="Redeem Coupon"></p>
+                    </div>
+
+                    <!--  <form method="post" action="?" class="list-block inputs-list">
+                          <ul>
+                              <li>
+                                  <div class="item-content">
+                                      <div class="item-inner">
+                                          <div class="item-title label">Stars</div>
+                                          <div class="item-input">
+                                              <div class="range-slider">
+                                                  <input type="range" min="1" max="5" value="3" step="1"/>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </li>
+                              <li>
+                                  <div class="item-content">
+                                      <div class="item-inner">
+                                          <div class="item-input">
+                                              <textarea name="details" class="resizable" placeholder="Write your review here..." required></textarea>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </li>
+                              <li>
+                                  <p class="buttons-row"><button class="button button-raised button-fill color-green" type="submit">Send</button></p>
+                              </li>
+                          </ul>
+                      </form>--><!-- .list-block | ENDS -->
+
+                    <div class="tc-divider dark"></div>
+
+                </div>
+            </div>
+
+    </div>
+
+    <!-- <div class="content-block tc-footer text-center primary-bg margin-top-0">
+         <div class="content-block-inner">
+             <span>Copyright 2015 by SRC</span>
+             <div>
+                 <a href="#" class="external tc-icon-ball socialicon-facebook43 color-facebook"></a>
+                 <a href="#" class="external tc-icon-ball socialicon-pinterest26 color-pinterest"></a>
+             </div>
+         </div> .content-block-inner | ENDS
+     </div>--><!-- .tc-footer | ENDS -->
+</div><!-- .page-content | ENDS -->
