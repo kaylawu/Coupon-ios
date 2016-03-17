@@ -37,6 +37,7 @@ require(['jquery', 'business/scanUserBusiness'], function ($, business) {
                 });
 
             theApp.onPageInit('scanUser',function(){
+                business.getScanUerFullName();
                 $('#addPoints').click(business.addPoints);
                 $('#cecelAddPoints').click(function(){
                     localStorage.removeItem('scanUsername');

@@ -10,7 +10,7 @@ define(['jquery', '../services/scanUserService','../services/mobileService'], fu
     var $$ = Dom7;
 
     var addPoints = function() {
-        var points = $('#textAddPoints').val();
+        var points = parseFloat($('#textAddPoints').val());
         if ($.isNumeric(points)) {
             service.staffAddPoints(points, localStorage.getItem('scanUsername'), localStorage.getItem('staffname'));
         } else {
@@ -18,9 +18,14 @@ define(['jquery', '../services/scanUserService','../services/mobileService'], fu
         }
     };
 
+    var getScanUerFullName = function() {
+        service.getUserProfile(localStorage.getItem('scanUsername'));
+    };
+
     return {
         theApp: theApp,
         addPoints: addPoints,
+        getScanUerFullName:getScanUerFullName,
         mainView:service.mainView
     }
 });

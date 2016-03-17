@@ -133,7 +133,7 @@ a.item-content{
 .button.filter-button{
   width: 90px;
   overflow: hidden;
-  border: 2px solid #E0001B;
+  border: 3px solid #BF8048;
   border-radius: 8px;
   /* Popluar: */
   font-family: Avenir-Roman;
@@ -142,8 +142,13 @@ a.item-content{
 }
 .button.filter-button.active-state{
   font-size: 17px;
+<<<<<<< HEAD
+=======
+  background-color:#FFFFFF;
+>>>>>>> origin/master
   font-weight: bold;
 }
+
 
 .tab-link.active.button.glass-button{
     background-color:rgba(40,42,53,.5);
@@ -3016,6 +3021,10 @@ h3 + .tc-comment-item{
     position: absolute;
     right: 0;
     top: 0;
+}
+.tabbar a.active{
+  color: #BF8048;
+  font-weight: bold;
 }
 
 /*.button.active{

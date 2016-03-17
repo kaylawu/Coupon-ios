@@ -18,8 +18,13 @@ define(["jquery", '../services/frameworkService', '../services/couponService'], 
             function (result) {
                 if (!result.cancelled) {
                     if (result.format == "QR_CODE") {
-                        localStorage.setItem("scanCouponId", result.text);
-                        window.location.href = "scanVoucher.html";
+                        var couponId = Number(result.text);
+                        if (couponId != NaN) {
+                            localStorage.setItem("scanCouponId", couponId);
+                            window.location.href = "scanVoucher.html";
+                        } else {
+                            alert("Invalid CouponId", "Warning");
+                        }  
                     }
                 }
             },
