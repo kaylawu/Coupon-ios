@@ -64,6 +64,34 @@ require(['jquery', 'business/userBusiness','business/merchantBusiness', 'busines
         });
         //user shop list init
         theApp.onPageInit('business-list',function(){
+            var pickerType = theApp.picker({
+                input: '#picker-type',
+                value:['Type'],
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: ['Coffee & Tea Shops', 'Restaurant', 'Bars']
+                    }
+                ],
+                toolbarTemplate:
+                '<div class="toolbar">' +
+                '<div class="toolbar-inner">' +
+                '<div class="left">' +
+                '<a href="#" class="link cancel-picker">Close</a>' +
+                '</div>' +
+                '<div class="right">' +
+                '<a href="#" class="link close-picker">Done</a>' +
+                '</div>' +
+                '</div>' +
+                '</div>',
+                onOpen: function (picker) {
+                    picker.container.find('.cancel-picker').on('click', function () {
+                        $('#picker-type').val('Type');
+                        picker.close();
+                    });
+                }
+            });
+
             console.log('businiss-list init');
             localStorage.getItem('AllMerchants',false);
             merchant.getInitData();
