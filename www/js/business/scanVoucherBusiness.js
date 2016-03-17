@@ -13,9 +13,14 @@ define(['jquery', '../services/scanVoucherService','../services/mobileService'],
         service.staffUseCoupon(localStorage.getItem('scanCouponId'));
     };
 
+    var initialCoupon = function() {
+        service.getUserCouponDetails(localStorage.getItem('scanCouponId'));
+    }
+
     return {
         theApp: theApp,
         useCoupon: useCoupon,
+        initialCoupon:initialCoupon,
         mainView:service.mainView
     }
 });
