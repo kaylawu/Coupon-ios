@@ -67,10 +67,9 @@ require(['jquery', 'business/userBusiness', 'business/merchantBusiness', 'busine
             } else {
                 $('#userSettingImage').attr('src', '../img/profile_pic.png');
             }
-
         });
-        //user shop list init
 
+        //user shop list init
         theApp.onPageInit('business-list', function () {
             var pickerType = theApp.picker({
                 input: '#picker-type',
@@ -96,13 +95,17 @@ require(['jquery', 'business/userBusiness', 'business/merchantBusiness', 'busine
                         $('#picker-type').val('Type');
                         picker.close();
                     });
+                },
+                onClose:function(picker){
+                    console.log(picker.displayValue[0]);
+                    merchant.getInitData(picker.displayValue[0]);
+                    $$(".infinite-scroll").on('infinite', merchant.refreshPage(picker.displayValue[0]));
                 }
             });
-
             console.log('businiss-list init');
             localStorage.getItem('AllMerchants', false);
-            merchant.getInitData();
-            $$(".infinite-scroll").on('infinite', merchant.refreshPage);
+            merchant.getInitData(null);
+            $$(".infinite-scroll").on('infinite', merchant.refreshPage(null));
         });
 
         //googlemap init
@@ -110,7 +113,6 @@ require(['jquery', 'business/userBusiness', 'business/merchantBusiness', 'busine
             document.addEventListener("deviceready", function () {
                 navigator.geolocation.getCurrentPosition(getUserLocationSuccess, getUserLocationError);
             });
-
         });
 
         theApp.onPageInit('user-voucher', function () {
@@ -136,7 +138,6 @@ require(['jquery', 'business/userBusiness', 'business/merchantBusiness', 'busine
             }
         });
 
-
         var getUserLocationSuccess = function (position) {
 
             localStorage.setItem('userLatitude', position.coords.latitude);
@@ -157,8 +158,8 @@ require(['jquery', 'business/userBusiness', 'business/merchantBusiness', 'busine
             localStorage.setItem('radius', 10);
             console.log('befor init data');
             merchant.getInitDataByRadius();
+            $('#btnredeem').click(user.redeemCoupon);
             $$(".infinite-scroll").on('infinite', merchant.refreshPageByRadius());
-
         };
 
         var getUserLocationError = function (error) {
