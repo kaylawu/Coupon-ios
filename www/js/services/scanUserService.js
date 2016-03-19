@@ -57,7 +57,7 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
         var userProfile = JSON.parse(localStorage.getItem('userProfile'));
         var scanUserFullName = userProfile.name;
         if (scanUserFullName != null) {
-          $('#scanUsername').text(scanUsername);
+          $('#scanUsername').text(scanUserFullName);
           theApp.hidePreloader();
         } else {
           window.location.href = "businesshome.html";
