@@ -27,8 +27,6 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
       var staffAddPointsSuccess = function(data){
         if (data.result == "success") {
           theApp.alert("Success to add points", "Congratulation");
-          localStorage.removeItem('scanUsername');
-          window.location.replace("businesshome.html");
         } else if (data.result == "fail") {
           theApp.alert("Fail to add points", "Warning");
         } else {
@@ -59,18 +57,16 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
           $('#scanUsername').text(scanUsername);
           theApp.hidePreloader();
         } else {
-          theApp.alert("User does not exist", "Warning");
-          localStorage.removeItem('scanUsername');
           window.location.href = "businesshome.html";
         }      
     };
 
       var getUserProfileError = function(data){
         theApp.hidePreloader();
+        window.location.href = "businesshome.html";
         theApp.alert("User does not exist", "Warning");
         console.log(data);
         localStorage.removeItem('scanUsername');
-        window.location.href = "businesshome.html";
     };
 
     return{

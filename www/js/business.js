@@ -38,6 +38,28 @@ require(['jquery', 'business/businessBusiness'], function ($, business) {
         
             theApp.onPageInit('index',function(){
 
+                var couponDetails = JSON.parse(localStorage.getItem('couponDetails'));
+                if (couponDetails != null) {
+                    if (couponDetails.result == 'success' && couponDetails.status == "Expired") {
+                        theApp.alert("Voucher is expired", "Warning");
+                        localStorage.removeItem('couponDetails');
+                    } else if (couponDetails.result == 'success' && couponDetails.status == "Used") {
+                        theApp.alert("Voucher has already been used", "Warning");
+                        localStorage.removeItem('couponDetails');
+                    } else if (couponDetails.result == 'no_record') {
+                        theApp.alert("Voucher does not exist", "Warning");
+                        localStorage.removeItem('couponDetails');
+                    };
+                };
+
+                var userProfile = JSON.parse(localStorage.getItem('userProfile'));
+                if (userProfile != null) {
+                    if (userProfile.name == null) {
+                        theApp.alert("User does not exist", "Warning");
+                        localStorage.removeItem('scanUsername');
+                    };
+                };
+                
                 $('#btnScan').click(function(){
                     business.scan();
                 });
