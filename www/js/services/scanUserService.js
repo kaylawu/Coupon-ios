@@ -15,6 +15,7 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
     var baseUrl = "http://47.88.30.91:8080/CouponManagementSystem/";
 
     var staffAddPoints = function(amount, userUsername, staffUsername){
+        theApp.showPreloader();
         $.ajax({
           url:baseUrl + "/staff/addpoints",
           type:"POST",
@@ -25,6 +26,7 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
       };
 
       var staffAddPointsSuccess = function(data){
+        theApp.hidePreloader();
         if (data.result == "success") {
           theApp.alert("Success to add points", "Congratulation");
         } else if (data.result == "fail") {
@@ -35,10 +37,12 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
       };
 
       var staffAddPointsError = function(data){
+          theApp.hidePreloader();
           theApp.alert("Fail to add points", "Error");
       };
 
       var getUserProfile = function(username){
+        theApp.showPreloader();
         $.ajax({
             url:baseUrl+"/user/getprofile",
             type:"POST",
@@ -46,7 +50,6 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
             success:getUserProfileSuccess,
             error:getUserProfileError
         });
-
     };
 
     var getUserProfileSuccess = function(data){
@@ -58,6 +61,7 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
           theApp.hidePreloader();
         } else {
           window.location.href = "businesshome.html";
+          theApp.showPreloader();
         }      
     };
 
