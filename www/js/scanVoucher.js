@@ -37,7 +37,6 @@ require(['jquery', 'business/scanVoucherBusiness'], function ($, business) {
                 });
 
             theApp.onPageInit('scan-voucher', function(){
-                //var couponId = localStorage.getItem("scanCouponId");
                 business.initialCoupon();
                 $('#useCoupon').click(business.useCoupon);
                 $('#cancelUseCoupon').click(function(){
