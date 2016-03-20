@@ -41,6 +41,7 @@ require(['jquery', 'business/scanVoucherBusiness'], function ($, business) {
                 $('#useCoupon').click(business.useCoupon);
                 $('#cancelUseCoupon').click(function(){
                     localStorage.removeItem('scanCouponId');
+                    localStorage.removeItem('couponDetails');
                     window.location.replace("businesshome.html");
                 });
             });

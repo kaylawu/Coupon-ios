@@ -60,7 +60,7 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
         theApp.hidePreloader();
         localStorage.setItem("couponDetails",JSON.stringify(data));
         var couponDetails = JSON.parse(localStorage.getItem('couponDetails'));
-        if (couponDetails.result == "success" && couponDetails.status != "Expired") {
+        if (couponDetails.result == "success" && couponDetails.status != "Expired" && couponDetails.status != "Used") {
           $('#merchantName').text(couponDetails.merchantName);
           $('#status').text(couponDetails.status);
           var imageSrc = imgBaseUrl + couponDetails.couponImageUrl;

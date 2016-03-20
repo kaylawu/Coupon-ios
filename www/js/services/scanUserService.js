@@ -61,6 +61,7 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
           theApp.hidePreloader();
         } else {
           window.location.href = "businesshome.html";
+          localStorage.removeItem("userProfile");
           theApp.showPreloader();
         }      
     };
