@@ -4,10 +4,10 @@ define(["jquery", "../services/merchantService", "../services/mobileService"], f
     var theApp = service.theApp;
 
     var $$ = Dom7;
-    var getInitData = function () {
+    var getInitData = function (filterType) {
 
 
-        service.getMerchantCountAll();
+        service.getMerchantCountAll(filterType);
         console.log(localStorage.getItem("AllMerchants"));
 
         var tid = setInterval(pageLoading, 1000);
@@ -21,12 +21,12 @@ define(["jquery", "../services/merchantService", "../services/mobileService"], f
 
                     //Init home page mechants
                     if (localStorage.getItem("AllMerchants") < 7) {
-                        service.getInitMerchantsAll(localStorage.getItem("username"), localStorage.getItem("AllMerchants"), 0);
+                        service.getInitMerchantsAll(localStorage.getItem("username"), localStorage.getItem("AllMerchants"), 0,filterType);
                         //remove infinite scroll listener
                         theApp.detachInfiniteScroll($$('.infinite-scroll'));
                         $$('.infinite-scroll-preloader').remove();
                     } else {
-                        service.getInitMerchantsAll(localStorage.getItem("username"), 6, 0);
+                        service.getInitMerchantsAll(localStorage.getItem("username"), 6, 0,filterType);
                     }
                 }
             }
@@ -39,7 +39,7 @@ define(["jquery", "../services/merchantService", "../services/mobileService"], f
         service.getMerchantDetail(username, shopID);
 
     };
-    var refreshPage = function () {
+    var refreshPage = function (filterType) {
 
         console.log("refresh activated");
         var username = localStorage.getItem("username");
@@ -63,10 +63,10 @@ define(["jquery", "../services/merchantService", "../services/mobileService"], f
         localStorage.setItem("merchantAllScroll", true);
 
         if (maxItems - lastIndex >= itemsPerLoad) {
-            service.getFreshMechantsAll(username, itemsPerLoad, lastIndex);
+            service.getFreshMechantsAll(username, itemsPerLoad, lastIndex,filterType);
 
         } else {
-            service.getFreshMechantsAll(username, maxItems - lastIndex, lastIndex);
+            service.getFreshMechantsAll(username, maxItems - lastIndex, lastIndex,filterType);
         }
 
     };
@@ -115,14 +115,19 @@ define(["jquery", "../services/merchantService", "../services/mobileService"], f
 
     };
 
+    var userSearchMerchantByName = function() {
+        var username = localStorage.getItem("username");
+        var keyword = $('#shopName').val();
+        service.userSearchMerchantByName(username, keyword);
+    };
+
     return {
         getInitData: getInitData,
         refreshPage: refreshPage,
         getShopDetail: getshopDetail,
         getInitDataByRadius: getInitDataByRadius,
-        refreshPageByRadius: refreshPageByRadius
-
+        refreshPageByRadius: refreshPageByRadius,
+        userSearchMerchantByName: userSearchMerchantByName
     }
 
-})
-;
+});

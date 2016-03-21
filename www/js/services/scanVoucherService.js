@@ -13,8 +13,10 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
     var $$ = Dom7;
 
     var baseUrl = "http://47.88.30.91:8080/CouponManagementSystem/";
+    var imgBaseUrl = 'http://47.88.30.91:8080'
 
     var staffUseCoupon = function(userCouponId) {
+        theApp.showPreloader();
         $.ajax({
           url:baseUrl + "/staff/usecoupon",
           type:"POST",
@@ -25,6 +27,7 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
       };
 
       var staffUseCouponSuccess = function(data){
+        theApp.hidePreloader();
         if (data.result == "success") {
           theApp.alert("Success to use voucher", "Congratulation");
           localStorage.removeItem('scanCouponId');
@@ -38,10 +41,12 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
 
       var staffUseCouponError = function(data){
         console.log(data.message);
+        theApp.hidePreloader();
         theApp.alert("Fail to use voucher", "Error");
       };
 
       var getUserCouponDetails = function(userCouponId){
+        theApp.showPreloader();
         $.ajax({
           url:baseUrl + "/staff/getusercoupondetails",
           type:"POST",
@@ -52,25 +57,29 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
       };
 
       var getUserCouponDetailsSuccess = function(data){
+        theApp.hidePreloader();
         localStorage.setItem("couponDetails",JSON.stringify(data));
         var couponDetails = JSON.parse(localStorage.getItem('couponDetails'));
-        if (couponDetails.result == "success" && couponDetails.status != "Expired") {
+        if (couponDetails.result == "success" && couponDetails.status != "Expired" && couponDetails.status != "Used") {
           $('#merchantName').text(couponDetails.merchantName);
           $('#status').text(couponDetails.status);
-          $('#couponImage').attr('src', couponDetails.couponImageUrl);
+          var imageSrc = imgBaseUrl + couponDetails.couponImageUrl;
+          $('#couponImage').attr('src', imageSrc);
           $('#terms').text(couponDetails.terms);
           $('#expireDate').text(couponDetails.expiryDatetime);
         } else if (couponDetails.result == 'success' && couponDetails.status == "Expired") {
-          theApp.alert("Voucher is expired", "Warning");
-          window.localStorage.replace("businesshome.html");
+          window.location.replace("businesshome.html");         
+        } else if(couponDetails.result == 'success' && couponDetails.status == "Used") {
+          window.location.replace("businesshome.html");
         } else if (data.result == 'no_record') {
-          theApp.alert("Voucher does not exist", "Warning");
+          window.location.replace("businesshome.html");
         } else {
-          theApp.alert("Fail to use voucher", "Error");
+          window.location.replace("businesshome.html");
         }
       };
 
       var getUserCouponDetailsError = function(){
+          theApp.hidePreloader();
           localStorage.removeItem('scanCouponId');
           window.location.replace("businesshome.html");
       }

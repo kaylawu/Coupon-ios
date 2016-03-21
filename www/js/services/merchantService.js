@@ -13,11 +13,12 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
     var imgBaseUrl = 'http://47.88.30.91:8080';
 
     //get all Merchant count
-    var getMerchantCountAll = function () {
+    var getMerchantCountAll = function (filterType) {
         console.log("merchant count service activated");
         $.ajax({
             url: baseUrl + "user/getmerchantcount",
             type: "GET",
+            Data:{filterType: filterType},
             success: getMerchantCountAllSuccess,
             error: getMerchantCountAllError
         });
@@ -32,11 +33,11 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
     };
 
 
-    var getInitMerchantsAll = function (username, needItemNum, existItemNum) {
+    var getInitMerchantsAll = function (username, needItemNum, existItemNum,filterType) {
         $.ajax({
             url: baseUrl + "/user/getmerchants",
             type: "GET",
-            data: {username: username, needItemNum: needItemNum, existItemNum: existItemNum},
+            data: {username: username, needItemNum: needItemNum, existItemNum: existItemNum,filterType:filterType},
             success: getInitMerchantsAllSuccess,
             error: getInitMerchantsAllError
         });
@@ -46,7 +47,7 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
         _.each(data, function (v, k, list) {
             content += merchantAllHtmlHtmlHelper(v);
         });
-        $('.allMerchants ul').append(content);
+        $('.allMerchants ul').empty().append(content);
         $('.infinite-scroll-preloader').append('<div class="preloader"></div>');
 
     };
@@ -60,11 +61,11 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
         }
     };
 
-    var getFreshMechantsAll = function (username, needItem, existItemNum) {
+    var getFreshMechantsAll = function (username, needItem, existItemNum,filterType) {
         $.ajax({
             url: baseUrl + "/user/getmerchants",
             type: "GET",
-            data: {username: username, needItemNum: needItem, existItemNum: existItemNum},
+            data: {username: username, needItemNum: needItem, existItemNum: existItemNum,filterType:filterType},
             success: getFreshMechantsAllSuccess,
             error: getFreshMechantsAllError
         });
@@ -329,6 +330,38 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
         }
         localStorage.setItem("merchantAllScroll", false);
     };
+
+    var userSearchMerchantByName = function(username, keyword){
+        $.ajax({
+            url:baseUrl + "/user/searchmerchantbyname",
+            type:"GET",
+            data{username:username, keyword,keyword},
+            success:userSearchMerchantByNameSuccess,
+            error:userSearchMerchantByNameError
+        });
+    };
+
+    var userSearchMerchantByNameSuccess = function(data){
+        if (data.result != "no_result" && data.result != "error") {
+            var content = '';
+            _.each(data, function (v, k, list) {
+                content += merchantAllHtmlHtmlHelper(v);
+            });
+            $('.allMerchants ul').empty().append(content);
+            $('.infinite-scroll-preloader').append('<div class="preloader"></div>');
+        } else if (data == "no_result") {
+            theApp.alert("No result", "Warning");
+        } else if (data == "error") {
+            theApp.alert("Cannot find relevant result", "Warning");
+        } else {
+            theApp.alert("Fail to search shop list", "Warning");
+        }
+    };
+
+    var userSearchMerchantByNameError = function() {
+        theApp.alert("Fail to search shop list", "Warning");
+    };
+
     return {
         getFreshMechantsAll: getFreshMechantsAll,
         getInitMerchantsAll: getInitMerchantsAll,
@@ -337,7 +370,8 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
         theApp: theApp,
         getMerchantCountbyRadius:getMerchantCountbyRadius,
         getFreshMechantsAllByRadius:getFreshMechantsAllByRadius,
-        getInitMerchantsAllByRadius:getInitMerchantsAllByRadius
+        getInitMerchantsAllByRadius:getInitMerchantsAllByRadius,
+        userSearchMerchantByName:userSearchMerchantByName
     }
 
 });

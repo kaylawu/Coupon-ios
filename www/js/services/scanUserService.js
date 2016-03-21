@@ -15,6 +15,7 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
     var baseUrl = "http://47.88.30.91:8080/CouponManagementSystem/";
 
     var staffAddPoints = function(amount, userUsername, staffUsername){
+        theApp.showPreloader();
         $.ajax({
           url:baseUrl + "/staff/addpoints",
           type:"POST",
@@ -25,10 +26,9 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
       };
 
       var staffAddPointsSuccess = function(data){
+        theApp.hidePreloader();
         if (data.result == "success") {
           theApp.alert("Success to add points", "Congratulation");
-          localStorage.removeItem('scanUsername');
-          window.location.replace("businesshome.html");
         } else if (data.result == "fail") {
           theApp.alert("Fail to add points", "Warning");
         } else {
@@ -37,10 +37,12 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
       };
 
       var staffAddPointsError = function(data){
+          theApp.hidePreloader();
           theApp.alert("Fail to add points", "Error");
       };
 
       var getUserProfile = function(username){
+        theApp.showPreloader();
         $.ajax({
             url:baseUrl+"/user/getprofile",
             type:"POST",
@@ -48,7 +50,6 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
             success:getUserProfileSuccess,
             error:getUserProfileError
         });
-
     };
 
     var getUserProfileSuccess = function(data){
@@ -56,21 +57,21 @@ define(['jquery', '../services/frameworkService'], function ($, Framework7) {
         var userProfile = JSON.parse(localStorage.getItem('userProfile'));
         var scanUserFullName = userProfile.name;
         if (scanUserFullName != null) {
-          $('#scanUsername').text(scanUsername);
+          $('#scanUsername').text(scanUserFullName);
           theApp.hidePreloader();
         } else {
-          theApp.alert("User does not exist", "Warning");
-          localStorage.removeItem('scanUsername');
           window.location.href = "businesshome.html";
+          localStorage.removeItem("userProfile");
+          theApp.showPreloader();
         }      
     };
 
       var getUserProfileError = function(data){
         theApp.hidePreloader();
+        window.location.href = "businesshome.html";
         theApp.alert("User does not exist", "Warning");
         console.log(data);
         localStorage.removeItem('scanUsername');
-        window.location.href = "businesshome.html";
     };
 
     return{
