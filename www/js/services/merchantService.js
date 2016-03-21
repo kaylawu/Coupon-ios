@@ -330,6 +330,38 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
         }
         localStorage.setItem("merchantAllScroll", false);
     };
+
+    var userSearchMerchantByName = function(username, keyword){
+        $.ajax({
+            url:baseUrl + "/user/searchmerchantbyname",
+            type:"GET",
+            data{username:username, keyword,keyword},
+            success:userSearchMerchantByNameSuccess,
+            error:userSearchMerchantByNameError
+        });
+    };
+
+    var userSearchMerchantByNameSuccess = function(data){
+        if (data.result != "no_result" && data.result != "error") {
+            var content = '';
+            _.each(data, function (v, k, list) {
+                content += merchantAllHtmlHtmlHelper(v);
+            });
+            $('.allMerchants ul').empty().append(content);
+            $('.infinite-scroll-preloader').append('<div class="preloader"></div>');
+        } else if (data == "no_result") {
+            theApp.alert("No result", "Warning");
+        } else if (data == "error") {
+            theApp.alert("Cannot find relevant result", "Warning");
+        } else {
+            theApp.alert("Fail to search shop list", "Warning");
+        }
+    };
+
+    var userSearchMerchantByNameError = function() {
+        theApp.alert("Fail to search shop list", "Warning");
+    };
+
     return {
         getFreshMechantsAll: getFreshMechantsAll,
         getInitMerchantsAll: getInitMerchantsAll,
@@ -338,7 +370,8 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
         theApp: theApp,
         getMerchantCountbyRadius:getMerchantCountbyRadius,
         getFreshMechantsAllByRadius:getFreshMechantsAllByRadius,
-        getInitMerchantsAllByRadius:getInitMerchantsAllByRadius
+        getInitMerchantsAllByRadius:getInitMerchantsAllByRadius,
+        userSearchMerchantByName:userSearchMerchantByName
     }
 
 });

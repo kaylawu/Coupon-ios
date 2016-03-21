@@ -106,6 +106,8 @@ require(['jquery', 'business/userBusiness', 'business/merchantBusiness', 'busine
             localStorage.getItem('AllMerchants', false);
             merchant.getInitData(null);
             $$(".infinite-scroll").on('infinite', merchant.refreshPage(null));
+
+            $('#btnSearchShop').click(merchant.userSearchMerchantByName);
         });
 
         //googlemap init

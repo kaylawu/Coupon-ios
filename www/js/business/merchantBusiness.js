@@ -114,14 +114,19 @@ define(["jquery", "../services/merchantService", "../services/mobileService"], f
 
     };
 
+    var userSearchMerchantByName = function() {
+        var username = localStorage.getItem("username");
+        var keyword = $('#shopName').val();
+        service.userSearchMerchantByName(username, keyword);
+    };
+
     return {
         getInitData: getInitData,
         refreshPage: refreshPage,
         getShopDetail: getshopDetail,
         getInitDataByRadius: getInitDataByRadius,
-        refreshPageByRadius: refreshPageByRadius
-
+        refreshPageByRadius: refreshPageByRadius,
+        userSearchMerchantByName: userSearchMerchantByName
     }
 
-})
-;
+});
