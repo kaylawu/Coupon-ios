@@ -110,7 +110,6 @@ require(['jquery', 'business/userBusiness', 'business/merchantBusiness', 'busine
             document.addEventListener("deviceready", function () {
                 navigator.geolocation.getCurrentPosition(getUserLocationSuccess, getUserLocationError);
             });
-
         });
 
         theApp.onPageInit('user-voucher', function () {
@@ -120,10 +119,15 @@ require(['jquery', 'business/userBusiness', 'business/merchantBusiness', 'busine
             $$(".infinite-scroll").on('infinite', coupon.refreshPage);
         });
 
+        theApp.onPageInit('userQRCode',function(page){
+            console.log('userQRCode and userCouponID = ' + page.query.userCouponId );
+            coupon.qrCodeGenerator(page.query.userCouponId);
+        });
         //shop Detail page init
         theApp.onPageAfterAnimation('shopdetail', function (page) {
             var shopID = page.query.shopId;
             console.log('shopdetail init:' + shopID);
+            $('#btnredeem').click(coupon.redeemCoupon);
             merchant.getShopDetail(shopID);
         });
 

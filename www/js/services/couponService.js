@@ -15,6 +15,7 @@ define(['jquery', '../services/frameworkService','underscore'], function ($, Fra
     var imgBaseUrl = 'http://47.88.30.91:8080';
 
     var getCouponCount = function(username, status){
+        console.log('into get Coupon Count sERVICE');
         $.ajax({
             url:baseUrl+"/user/getcouponcount",
             type:"POST",
@@ -26,6 +27,7 @@ define(['jquery', '../services/frameworkService','underscore'], function ($, Fra
 
     var getCouponCountSuccess = function(data){
         localStorage.setItem("AllUserCoupons",data.count);
+        console.log('coupons count '+ data.count);
     };
 
     var getCouponCountError = function (data) {
@@ -46,10 +48,16 @@ define(['jquery', '../services/frameworkService','underscore'], function ($, Fra
         console.log("into Coupon init success");
         var content = '';
         _.each(data,function(v,k,list) {
+            console.log(v);
             content += couponHtmlHelper(v);
         });
 
         $('.userCoupon ul').append(content);
+        $('.aUseVocher').click(function(){
+            console.log('user covher trigger');
+            var userCouponId = $(this).parent().find('.userCoupon').val();
+            console.log(userCouponId);
+        });
         $('.infinite-scroll-preloader').append('<div class="preloader"></div>');
     };
 
@@ -62,11 +70,13 @@ define(['jquery', '../services/frameworkService','underscore'], function ($, Fra
     };
 
     var couponHtmlHelper = function(v) {
-        var content = '<li> <div class="card facebook-card"> <div class="card-header no-border center"> <h3>' + v.merchantName + '</h3></div>';
-        content += '<div class="card-content"> <img src="../img/five_OFF.png" width="100%"></div>';
-        content += '<div class="card-footer no-border"><a href="#" data-popup=".popup-qr" class = "open-popup link">Use Voucher</a>';
+        var content = '';
+        content = '<li><div class="card facebook-card"> <div class="card-header no-border center"> <h3>' + v.merchantName + '</h3></div>';
+        content += '<div class="card-content"> <img src="'+imgBaseUrl+ v.couponImageUrl+'" width="100%"></div>';
+        content += '<div class="card-footer no-border"><a href="userQRCode.html?userCouponId='+v.userCouponId+'">Use Voucher</a>';
         content += '<p><a href="#" data-popup=".popup-terms" class = "open-popup">Terms</a></p><p>Expire: ' + v.expiredDate + '</p>';
         content += '</div></div></li>';
+        return content;
     };
 
     var getFreshCoupons = function(username,needItemNum,existItemNum){
@@ -106,7 +116,7 @@ define(['jquery', '../services/frameworkService','underscore'], function ($, Fra
     };
 
     var userRedeemCoupon = function (username, couponId) {
-        theApp.alert(username + couponId);
+        theApp.alert(username +'+'+ couponId);
         $.ajax({
             url:baseUrl+"/user/redeemcoupon",
             type:"POST",

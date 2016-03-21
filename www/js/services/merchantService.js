@@ -174,7 +174,7 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
 
             } else {
                 $('#couponImageInShopDetial').append('<img data-src="../img/voucher-default.png" class="lazy lazy-fadein"/>');
-                $('#redeem').addClass('disabled');
+                $('#btnredeem').addClass('disabled');
             }
             var mySwiper = new Swiper('.swiper-container', {
                 preloadImages: false,

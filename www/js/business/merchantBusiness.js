@@ -34,6 +34,7 @@ define(["jquery", "../services/merchantService", "../services/mobileService"], f
     };
 
     var getshopDetail = function (shopID) {
+        console.log('getShopDetail in business');
         var username = localStorage.getItem("username");
         service.getMerchantDetail(username, shopID);
 

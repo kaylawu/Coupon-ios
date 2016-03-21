@@ -13,7 +13,7 @@ define(["jquery", "../services/couponService","../services/mobileService"], func
 		function pageLoading() {
 			if (localStorage.getItem("AllUserCoupons") !== null) {
 				clearInterval(tid);
-				console.log('into pageloading');
+				console.log('into pageloading' + localStorage.getItem("AllUserCoupons"));
 				if (localStorage.getItem("AllUserCoupons") > 0) {
 
 					if (localStorage.getItem("AllUserCoupons") <= 6) {
@@ -53,12 +53,17 @@ define(["jquery", "../services/couponService","../services/mobileService"], func
 		alert('into coupon redeem');
 		var username = localStorage.getItem("username");
 		var couponId = $('#couponID').val();
+		alert(couponId);
 		service.userRedeemCoupon(username, couponId);
 	};
 
+	var qrCodeGenerator = function(userCouponId){
+		mobile.qrCodeGenerator(userCouponId);
+	};
 	return {
 		getInitData:getInitData,
 		refreshPage:refreshPage,
-		redeemCoupon:redeemCoupon
+		redeemCoupon:redeemCoupon,
+		qrCodeGenerator:qrCodeGenerator
 	}
 });

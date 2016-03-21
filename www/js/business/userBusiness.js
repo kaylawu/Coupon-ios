@@ -177,6 +177,7 @@ define(["jquery", "../services/userService", "../services/mobileService"], funct
     var uploadImageFromCamera = function(){
         mobile.updateImageFromCamera();
     };
+
     return {
         theApp: theApp,
         getInitData: getInitData,

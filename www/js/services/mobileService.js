@@ -177,6 +177,7 @@ define(["jquery", '../services/frameworkService', '../services/couponService'], 
 
 
     var updateImageFromLibrary = function () {
+        alert('start upload image');
         // Retrieve image file location from specified source
         navigator.camera.getPicture(uploadPhoto,
             function (message) {
@@ -192,6 +193,7 @@ define(["jquery", '../services/frameworkService', '../services/couponService'], 
     };
 
     function uploadPhoto(imageURI) {
+
         theApp.showPreloader();
         var options = new FileUploadOptions();
         options.fileKey = "photoPath";
@@ -201,17 +203,21 @@ define(["jquery", '../services/frameworkService', '../services/couponService'], 
         params.username = localStorage.getItem('username');
         options.params = params;
         var ft = new FileTransfer();
+
         ft.upload(imageURI, encodeURI(baseUrl + "user/updateprofilepic"), win, fail, options);
+
     }
 
     function win(data) {
         theApp.hidePreloader();
+        alert(data.response.result);
         if (data.response.result == 'error') {
             theApp.alert('upload image failed, please try again');
         } else {
             var result = JSON.parse(data.response);
             var userprofile = JSON.parse(localStorage.get('userProfile'));
-            userprofile.profilePicUrl = result.result;
+            alert(result.result);
+            userprofile.profilePicUrl = imgBaseUrl+result.result;
             localStorage.setItem('userProfile', JSON.stringify(userprofile));
             mainView.router.loadPage('uploadImage.html');
         }
@@ -219,10 +225,19 @@ define(["jquery", '../services/frameworkService', '../services/couponService'], 
     }
 
     function fail(data) {
+        alert('fail');
         theApp.hidePreloader();
         alert("An error has occurred: Code = " + data.response);
     }
 
+    var qrCodeGenerator = function(userCouponID){
+        cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.TEXT_TYPE, userCouponID, function(success) { 
+            $('#qrCode').attr('src',success.file);
+            }, function(fail) {
+                alert("encoding failed: " + fail);
+            }
+        );
+    };
     var updateImageFromCamera = function () {
 
         //// Retrieve image file location from specified source
@@ -245,7 +260,8 @@ define(["jquery", '../services/frameworkService', '../services/couponService'], 
         googlemaps: googlemaps,
         googlemapForShopDetail: googlemapForShopDetail,
         updateImageFromLibrary: updateImageFromLibrary,
-        updateImageFromCamera: updateImageFromCamera
+        updateImageFromCamera: updateImageFromCamera,
+        qrCodeGenerator:qrCodeGenerator
     }
 
 
