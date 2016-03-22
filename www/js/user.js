@@ -122,6 +122,8 @@ require(['jquery', 'business/userBusiness', 'business/merchantBusiness', 'busine
             localStorage.getItem("AllUserCoupons", false);
             coupon.getInitData();
             $$(".infinite-scroll").on('infinite', coupon.refreshPage);
+
+            $('#btnSearchCoupon').click(coupon.searchCouponByMerchant);
         });
 
         theApp.onPageInit('userQRCode',function(page){

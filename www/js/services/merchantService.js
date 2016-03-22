@@ -350,16 +350,16 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
             $('.allMerchants ul').empty().append(content);
             $('.infinite-scroll-preloader').append('<div class="preloader"></div>');
         } else if (data == "no_result") {
-            theApp.alert("No result", "Warning");
+            theApp.alert("No matching result", "Sorry");
         } else if (data == "error") {
-            theApp.alert("Cannot find relevant result", "Warning");
+            theApp.alert("Search Error", "Error");
         } else {
             theApp.alert("Fail to search shop list", "Warning");
         }
     };
 
     var userSearchMerchantByNameError = function() {
-        theApp.alert("Fail to search shop list", "Warning");
+        theApp.alert("Fail to search shop list", "System Error");
     };
 
     return {

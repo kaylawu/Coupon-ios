@@ -60,10 +60,18 @@ define(["jquery", "../services/couponService","../services/mobileService"], func
 	var qrCodeGenerator = function(userCouponId){
 		mobile.qrCodeGenerator(userCouponId);
 	};
+
+	var searchCouponByMerchant = function() {
+		var username = localStorage.getItem("username");
+		var keyword = $('#couponShop').val();
+		service.searchCouponByMerchant(username, keyword);
+	};
+
 	return {
 		getInitData:getInitData,
 		refreshPage:refreshPage,
 		redeemCoupon:redeemCoupon,
-		qrCodeGenerator:qrCodeGenerator
+		qrCodeGenerator:qrCodeGenerator,
+		searchCouponByMerchant:searchCouponByMerchant
 	}
 });

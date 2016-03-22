@@ -157,6 +157,43 @@ define(['jquery', '../services/frameworkService','underscore'], function ($, Fra
         theApp.alert("Fail to get coupon terms!", "System Error");
     };
 
+    var searchCouponByMerchant = function(username, keyword) {
+        $.ajax({
+            url:baseUrl + "/user/searchcouponbymerchant",
+            type:"GET",
+            data:{username:username,keyword:keyword},
+            success:searchCouponByMerchantSuccess,
+            error:searchCouponByMerchantError
+        });
+    };
+
+    var searchCouponByMerchantSuccess = function(data) {
+        if (data.result != "no_result" && data.result != "error") {
+            var content = '';
+            _.each(data,function(v,k,list) {
+                console.log(v);
+                content += couponHtmlHelper(v);
+            });
+    
+            $('.userCoupon ul').empty().append(content);
+            $('.aUseVocher').click(function(){
+                console.log('user covher trigger');
+                var userCouponId = $(this).parent().find('.userCoupon').val();
+                console.log(userCouponId);
+            });
+            $('.infinite-scroll-preloader').append('<div class="preloader"></div>');
+        } else if (data == "no_result") {
+            theApp.alert("No matching result", "Sorry");
+        } else if (data == "error") {
+            theApp.alert("Search Error", "Error");
+        } else {
+            theApp.alert("Fail to search coupon", "Warning");
+        }
+    };
+
+    var searchCouponByMerchantError = function() {
+        theApp.alert("Fail to search coupon", "System Error");
+    }
 
     return{
         theApp:theApp,
@@ -164,6 +201,7 @@ define(['jquery', '../services/frameworkService','underscore'], function ($, Fra
         getInitCoupons:getInitCoupons,
         getFreshCoupons:getFreshCoupons,
         userRedeemCoupon:userRedeemCoupon,
-        userGetCouponTerms:userGetCouponTerms
+        userGetCouponTerms:userGetCouponTerms,
+        searchCouponByMerchant:searchCouponByMerchant
     }
 });
