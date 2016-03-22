@@ -346,6 +346,7 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
     };
 
     var userSearchMerchantByNameSuccess = function(data){
+        theApp.alert(data.result);
         if (data.result != "no_result" && data.result != "error") {
             var content = '';
             _.each(data, function (v, k, list) {
@@ -353,9 +354,9 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
             });
             $('.allMerchants ul').empty().append(content);
             $('.infinite-scroll-preloader').append('<div class="preloader"></div>');
-        } else if (data == "no_result") {
+        } else if (data.result == "no_result") {
             theApp.alert("No matching result", "Sorry");
-        } else if (data == "error") {
+        } else if (data.result == "error") {
             theApp.alert("Search Error", "Error");
         } else {
             theApp.alert("Fail to search shop list", "Warning");

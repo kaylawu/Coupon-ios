@@ -182,9 +182,9 @@ define(['jquery', '../services/frameworkService','underscore'], function ($, Fra
                 console.log(userCouponId);
             });
             $('.infinite-scroll-preloader').append('<div class="preloader"></div>');
-        } else if (data == "no_result") {
+        } else if (data.result == "no_result") {
             theApp.alert("No matching result", "Sorry");
-        } else if (data == "error") {
+        } else if (data.result == "error") {
             theApp.alert("Search Error", "Error");
         } else {
             theApp.alert("Fail to search coupon", "Warning");
