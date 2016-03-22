@@ -230,8 +230,8 @@ define(["jquery", '../services/frameworkService', '../services/couponService'], 
         alert("An error has occurred: Code = " + data.response);
     }
 
-    var qrCodeGenerator = function(userCouponID){
-        cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.TEXT_TYPE, userCouponID, function(success) { 
+    var qrCodeGenerator = function(data){
+        cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.TEXT_TYPE, data, function(success) {
             $('#qrCode').attr('src',success.file);
             }, function(fail) {
                 alert("encoding failed: " + fail);

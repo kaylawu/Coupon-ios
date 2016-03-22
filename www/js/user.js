@@ -130,6 +130,11 @@ require(['jquery', 'business/userBusiness', 'business/merchantBusiness', 'busine
             console.log('userQRCode and userCouponID = ' + page.query.userCouponId );
             coupon.qrCodeGenerator(page.query.userCouponId);
         });
+
+
+        theApp.onPageInit('userQR',function(){
+            user.qrCodeGenerator();
+        });
         //shop Detail page init
         theApp.onPageAfterAnimation('shopdetail', function (page) {
             var shopID = page.query.shopId;

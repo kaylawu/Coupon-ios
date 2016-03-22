@@ -164,10 +164,6 @@ define(["jquery", "../services/userService", "../services/mobileService"], funct
         }
     };
 
-    //var googlemaps = function () {
-    //
-    //
-    //};
 
     var uploadImageFromAlbum = function(){
         mobile.updateImageFromLibrary();
@@ -178,6 +174,10 @@ define(["jquery", "../services/userService", "../services/mobileService"], funct
         mobile.updateImageFromCamera();
     };
 
+    var qrCodeGenerator = function(){
+        var username = localStorage.getItem('username');
+        mobile.qrCodeGenerator(username);
+    };
     return {
         theApp: theApp,
         getInitData: getInitData,
@@ -188,6 +188,7 @@ define(["jquery", "../services/userService", "../services/mobileService"], funct
         userProfileInit: userProfileInit,
         //googlemaps: googlemaps,
         uploadImageFromAlbum:uploadImageFromAlbum,
-        uploadImageFromCamera:uploadImageFromCamera
+        uploadImageFromCamera:uploadImageFromCamera,
+        qrCodeGenerator: qrCodeGenerator
     }
 });
