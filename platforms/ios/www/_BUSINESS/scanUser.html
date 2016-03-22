@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <title>Sweipe - Mobile HTML Web App Ready Theme</title>
+    <meta name="author" content="ThemingCool"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+
+
+    <link rel="stylesheet" href="../css/framework7.ios.min.css">
+    <link rel="stylesheet" href="../css/framework7.ios.colors.min.css"/>
+    <link rel="stylesheet" href="../css/framework7.3dpanels.min.css"/>
+    <link rel="stylesheet" href="../css/essentials.css">
+    <link rel="stylesheet" href="../css/my-app.css"/>
+
+</head>
+<body>
+<div class="statusbar-overlay"></div>
+<!-- Views-->
+<div class="views">
+    <!-- Your main view, should have "view-main" class-->
+    <div class="view view-main">
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+<!--             <a href="businesshome.html" class="link icon-only"><i class="uiicon-left222"></i></a>
+            <div class="page-name">Scan User</div> -->
+        </div>
+    </div>
+</div>
+<!-- Page, data-page contains page name-->
+<div data-page="scanUser" class="page">
+    <!-- Scrollable page content-->
+    <div class="page-content">
+        <div class="content-block">
+          <div class="row">
+    <div class="col-100">
+        <div class="tc-user-card">
+            <div class="avatar">
+                <img src="../img/profile_pic.png" alt="">
+            </div>
+            <div class="details">
+                <h2 id="scanUsername"></h2>
+            </div>
+            <hr>
+        </div><!-- .tc-user-card | ENDS -->
+    </div><!-- .col-100 | ENDS -->
+</div><!-- .row | ENDS -->
+<div class="content-block">
+       <div class="item-inner">
+         <div class="item-title label">Reward Points</div>
+         <div class="item-input reward-points">
+           <input id="textAddPoints" type="text" placeholder="200 points">
+         </div>
+             <p><a href="#" class="button button-big color-black" id="addPoints">Add points</a></p>
+             <p><a href="businesshome.html" class="button button-big color-black" id="cecelAddPoints">Cancel</a></p>
+       </div>
+     </div>
+</div><!-- .content-block | ENDS -->
+</div><!-- .page-content | ENDS -->
+</div>
+        </div><!-- .content-block | ENDS -->
+    </div><!-- .page-content | ENDS -->
+</div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../cordova.js"></script>
+<script data-main="../js/scanUser" src="../js/require.min.js"></script>
+</body>
+</html>
