@@ -123,7 +123,9 @@ a.item-content{
     font-size: 18px;
     background-color: rgba(0,0,0,.3);
 }
-
+.Raised.Buttons {
+  font-size: 15px;
+}
 .button.small{
   font-weight:500;
   font-size: 16px;
@@ -136,7 +138,7 @@ a.item-content{
   border: 3px solid #BF8048;
   border-radius: 8px;
   /* Popluar: */
-  font-family: Avenir-Roman;
+  font-family: sans-serif;
   font-size: 17px;
   color: #BF8048;
 }
@@ -241,6 +243,7 @@ body{
   color: black !important;
 }
 p.score{
+  font-family: sans-serif;
   font-size: 12px;
   margin-top:5px;
   display: inline;
@@ -2976,8 +2979,8 @@ h3 + .tc-comment-item{
     line-height: 1;
     min-width: 2em;
     position: relative;
-    -webkit-transition: width 0.1s ease 0s, background-color 0.1s ease 0s;
-    transition: width 0.1s ease 0s, background-color 0.1s ease 0s;
+    -webkit-transition: width 0.1s ease 0s, background-color 0.1s ease 0.3s;
+    transition: width 0.3s ease 0s, background-color 0.3s ease 0s;
     width: 0;
     height: 25px;
 }
