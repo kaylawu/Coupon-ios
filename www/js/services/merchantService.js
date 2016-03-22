@@ -335,11 +335,7 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
         $.ajax({
             url:baseUrl + "/user/searchmerchantbyname",
             type:"GET",
-<<<<<<< HEAD
             data:{username:username, keyword:keyword},
-=======
-            data:{username:username, keyword,keyword},
->>>>>>> origin/master
             success:userSearchMerchantByNameSuccess,
             error:userSearchMerchantByNameError
         });
