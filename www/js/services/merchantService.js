@@ -342,14 +342,13 @@ define(['jquery', '../services/frameworkService', 'underscore', '../services/mob
     };
 
     var userSearchMerchantByNameSuccess = function(data){
-        theApp.alert(data.result);
         if (data.result != "no_result" && data.result != "error") {
             var content = '';
             _.each(data, function (v, k, list) {
                 content += merchantAllHtmlHtmlHelper(v);
             });
             $('.allMerchants ul').empty().append(content);
-            $('.infinite-scroll-preloader').append('<div class="preloader"></div>');
+            $('.infinite-scroll-preloader').empty();
         } else if (data.result == "no_result") {
             theApp.alert("No matching result", "Sorry");
         } else if (data.result == "error") {

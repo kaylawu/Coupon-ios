@@ -181,7 +181,7 @@ define(['jquery', '../services/frameworkService','underscore'], function ($, Fra
                 var userCouponId = $(this).parent().find('.userCoupon').val();
                 console.log(userCouponId);
             });
-            $('.infinite-scroll-preloader').append('<div class="preloader"></div>');
+            $('.infinite-scroll-preloader').empty();
         } else if (data.result == "no_result") {
             theApp.alert("No matching result", "Sorry");
         } else if (data.result == "error") {

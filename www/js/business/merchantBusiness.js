@@ -117,7 +117,7 @@ define(["jquery", "../services/merchantService", "../services/mobileService"], f
 
     var userSearchMerchantByName = function() {
         var username = localStorage.getItem("username");
-        var keyword = $('#shopName').val();
+        var keyword = $('#couponShop').val();
         service.userSearchMerchantByName(username, keyword);
     };
 
