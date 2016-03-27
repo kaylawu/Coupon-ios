@@ -59,6 +59,10 @@
  *   - Infinite scroll
  *   - Mechants in HomePage
  *************************/
+ html,body{
+   color: #333;
+   font-family: 'Roboto', sans-serif;
+ }
 .small {
     float: right;
     height: 15px;
@@ -200,6 +204,86 @@ a.item-content{
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+
+/** -- Round button style
+**/
+
+
+#maintitle{
+  height: 250px;
+  margin-bottom: -100px;
+  padding-top: 20%;
+  font-size: 30px;
+}
+span.roundbutton{
+  font-size: 20px;
+}
+
+.accent{
+  background-color: #C98F31;
+}
+
+.center{
+  text-align: center;
+}
+
+.intro-text{
+  font-size: 50px;
+  text-shadow: 2px 2px 2px #173078;
+  color: #E4E3E3;
+}
+
+.top-space{
+  margin-top: 30%;
+  text-align: right;
+}
+
+.floating-button{
+  position: absolute; bottom: 20px; right: 5%;
+}
+
+.pop-down{
+  margin-bottom: -35px;
+}
+
+.round-button{
+  color: #fff;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26);
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.round-button:active{
+  width: 60px;
+  height: 60px;
+  background-color: #c2185b;
+}
+
+.round-button:hover{
+  width: 80px;
+  height: 80px;
+  margin-top: -10px;
+}
+
+.fa-fw {
+  width: 2em;
+  color: #BADFFF;
+}
+
+.fa-fw:hover {
+  color: #fff;
+}
+
+/** end of round button style
+
+/*.item-input.item-input-field.search{
+  width: 150px;
+  height: 50px;
+}*/
 /**---------------------
  *
  * General
@@ -299,7 +383,7 @@ h3{
 .content-block-title{
     /*    text-align:center;*/
     margin-top: 10px;
-    margin-right: 16px;
+    /*margin-right: 16px;*/
 }
 .content-block-QRcode{
     display: inline-block;
